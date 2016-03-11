@@ -1,0 +1,22 @@
+{
+  "name": "spTools",
+  "version": "3.0.0",
+  "manifest_version": 2,
+
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "include_globs": ["http://planets.nu/*" ,"http://play.planets.nu/*"
+//      ,"http://test.planets.nu/*"
+    ],
+    "js": ["spMenu.js"
+      ,"hypCircle.js"
+      ,"checkReady.js"
+      ,"showMinerals.js"
+      ,"setRandom.js"
+      ,"hitText.js"
+//      ,"history.js"
+    ],
+
+    "run_at": "document_idle"
+  }]
+}

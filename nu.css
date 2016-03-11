@@ -1,0 +1,6577 @@
+#eleftcolumn {
+  width: 200px;
+  float: left
+}
+#erightcolumn {
+  border: solid 1px #444;
+  background-color: #333;
+  width: 970px
+}
+#eprofilepic {
+  width: 100px;
+  height: 100px;
+  margin: 0 20px 0 0;
+  float: left
+}
+#eprofiledesc {
+  width: 180px;
+  clear: both;
+  padding: 20px 0 20px 0
+}
+#eprofiledesc a {
+  font-size: 11px;
+  text-transform: uppercase
+}
+#ecountry {
+  padding: 0 20px 0 0
+}
+#elighttabs {
+  height: 50px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border-top: solid 1px #ccc;
+  border-bottom: solid 1px #ccc;
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#999),color-stop(100%,#ccc))
+}
+#elighttabs li {
+  display: block;
+  float: left;
+  width: 130px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer
+}
+#elighttabs li.eselected {
+  background-color: #fff;
+  border-right: solid 1px #ccc;
+  border-top: solid 1px #ccc;
+  border-left: solid 1px #ccc;
+  height: 52px;
+  position: relative;
+  top: -2px;
+  left: -1px
+}
+#etabs {
+  height: 50px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border-top: solid 1px #444;
+  border-bottom: solid 1px #444;
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#444),color-stop(100%,#333))
+}
+#etabs li {
+  display: block;
+  float: left;
+  width: 130px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer
+}
+#etabs li.eselected {
+  background-color: #222;
+  border-right: solid 1px #444;
+  border-top: solid 1px #444;
+  border-left: solid 1px #444;
+  height: 52px;
+  position: relative;
+  top: -2px;
+  left: -1px
+}
+.etabcontent {
+  background-color: #222;
+  padding: 20px 0 20px 0
+}
+.etab {
+  padding: 20px
+}
+#etenacityhistory {
+  font-size: 14px;
+  line-height: 18px;
+  padding: 0
+}
+#etenacityhistory th {
+  font-size: 16px;
+  text-align: left
+}
+#etenacityhistory tr {
+  border-bottom: solid 1px #444
+}
+#etenacityhistory tr th:first-child {
+  padding-left: 10px
+}
+#etenacityhistory tr td:first-child {
+  padding-left: 10px
+}
+#etenacityhistory tr td:last-child {
+  padding-right: 10px
+}
+#etenacityhistory td {
+  padding: 10px 0 10px 0
+}
+#egamelist {
+  font-size: 16px;
+  line-height: 24px;
+  padding: 0
+}
+#egamelist th {
+  text-align: left
+}
+#egamelist tr {
+  border-bottom: solid 1px #444
+}
+#egamelist tr th:first-child {
+  padding-left: 10px
+}
+#egamelist tr td:first-child {
+  padding-left: 10px
+}
+#egamelist tr td:last-child {
+  padding-right: 10px
+}
+#egamelist td {
+  padding: 10px 0 10px 0
+}
+#egamelist .eactionColumn {
+  text-align: right
+}
+#egamelist .ecolumnHeader {
+  font-weight: bold;
+  border-bottom: solid 1px #ccc
+}
+.egamedescription {
+  font-size: 13px
+}
+.egamedescription img {
+  width: 60px;
+  height: 60px;
+  float: left;
+  margin: 0 10px 0 0
+}
+#egamelist .egamedescription a {
+  font-size: 14px;
+  margin: 0 0 5px 0
+}
+#egamelist .egamedescription span {
+  display: block;
+  font-size: 12px;
+  line-height: 18px;
+  color: #999
+}
+#egamelist .egamedescription span b {
+  color: #fff;
+  font-weight: normal
+}
+.egameactions a,#ecreategamemenu a,.elinkbutton {
+  float: right;
+  display: block;
+  font-size: 11px;
+  width: 90px;
+  text-align: center;
+  background-color: #333;
+  margin: 0 0 5px 5px;
+  cursor: pointer;
+  line-height: 24px;
+  text-transform: uppercase
+}
+#ecreategamemenu a {
+  width: 120px
+}
+#ecreategamemenu {
+  height: 40px;
+  padding: 0 10px 0 0
+}
+#epost h1 {
+  line-height: 30px
+}
+#epost h3 {
+  font-weight: bold;
+  margin: 0 0 10px 0
+}
+.eturnstatus3 {
+  width: 32px;
+  height: 32px;
+  float: right;
+  background-color: #444;
+  border-radius: 16px
+}
+.eturnstatus0,.eturnstatus1,.eturnstatus2,.eturnstatus-1 {
+  background-image: url(http://play.planets.nu/img/ui/statuslinkrot.png);
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  float: right
+}
+.eturnstatus0 {
+  background-position: 0 -64px
+}
+.eturnstatus1 {
+  background-position: 0 -32px
+}
+.eturnstatus-1 {
+  background-position: 0 -96px
+}
+.estartgametable img {
+  width: 100px;
+  height: 100px
+}
+.estartgametable td {
+  cursor: pointer;
+  padding: 20px 0 20px 0!important
+}
+.estartgametable tr {
+  border-bottom: solid 1px #444
+}
+.estartgametable tr:hover {
+  background-color: #444
+}
+.estartgametable h3 {
+  margin: 0 0 10px 0
+}
+.elevelgap td {
+  height: 10px
+}
+.eracename {
+  color: #fff!important;
+  font-size: 14px!important
+}
+.efinishbox {
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#fff),color-stop(100%,#ccc));
+  color: #000;
+  font-size: 20px;
+  width: 60px;
+  line-height: 60px;
+  border-radius: 5px;
+  text-align: center
+}
+.edisplayoptions {
+  height: 60px;
+  padding: 0 10px 0 0
+}
+.edisplayoptions div {
+  float: right;
+  color: #fff;
+  padding: 5px 10px 5px 10px;
+  text-transform: uppercase;
+  font-size: 11px;
+  line-height: 20px;
+  cursor: pointer
+}
+.edisplayoptions div.esel {
+  border-radius: 3px;
+  background-color: #0094ff;
+  cursor: default
+}
+#eeditprofile h3 {
+  margin: 0 0 10px 0!important
+}
+#eaccountfeed textarea {
+  background-color: #444;
+  border: solid 1px #555;
+  color: #fff;
+  padding: 10px
+}
+.eaccountfeedline {
+  margin: 10px 0 0 0;
+  padding: 10px 0 0 0;
+  border-top: solid 1px #222
+}
+.ewritereply {
+  cursor: pointer
+}
+.eaccountfeedtitle {
+  text-transform: capitalize;
+  font-size: 14px;
+  margin: 0 0 5px 0;
+  color: #569999;
+  display: none
+}
+#eaccountfeed .ereply {
+  background-color: transparent;
+  border: solid 1px #111;
+  color: #fff;
+  background-image: url(http://play.planets.nu/img/ui/25percentblack.png);
+  margin: 0 0 5px 20px
+}
+#ecountry {
+  margin: -10px 0 0 0
+}
+#eaccountdata {
+  font-size: 11px;
+  text-transform: uppercase;
+  padding: 0 20px 20px 20px
+}
+#eeditprofile,#esendmessage {
+  text-transform: uppercase;
+  font-size: 11px;
+  display: block;
+  padding: 10px 0 0 0;
+  cursor: pointer
+}
+#etenacitychart {
+  position: relative;
+  width: 100%;
+  background-color: #222;
+  margin-bottom: 20px
+}
+
+.estartfeed {
+  width: 620px;
+  margin: 0 0 0 80px;
+  color: #666;
+  height: 130px
+}
+#estartfeedpic {
+  float: left;
+  margin: 0 20px 0 0;
+  width: 60px;
+  height: 60px
+}
+.eshowfeed {
+  width: 100px;
+  float: right;
+  display: none
+}
+.eshowfeed div {
+  cursor: pointer
+}
+.eshowfeed div:hover {
+  cursor: pointer;
+  color: #0f0
+}
+.efeedmessage {
+  text-overflow: ellipsis
+}
+.efeedmessage img {
+  max-width: 500px;
+  max-height: 500px
+}
+.ethreadlink {
+  text-transform: uppercase;
+  color: #666;
+  font-size: 11px
+}
+.ethreadlink a {
+  color: #666
+}
+.eshowsel {
+  font-weight: bold;
+  color: #0f0
+}
+#efeed textarea {
+  background-color: #666;
+  border: solid 1px #555;
+  color: #fff;
+  padding: 10px
+}
+.eunfocused {
+  color: #999!important;
+  cursor: pointer
+}
+.eactivityactions a {
+  float: right;
+  display: block;
+  font-size: 11px;
+  width: 90px;
+  text-align: center;
+  background-color: #ccc;
+  margin: 0 0 5px 5px;
+  cursor: pointer;
+  line-height: 24px;
+  text-transform: uppercase
+}
+.efadetowhite {
+  height: 300px
+}
+#efeed {
+  color: #fff
+}
+#efeed a {
+  color: #569999!important
+}
+.efeedline {
+  padding: 10px;
+  border-bottom: solid 1px #444;
+  margin: 10px
+}
+#emaintitle {
+  font-size: 24px;
+  line-height: 30px;
+  margin: 0 0 10px 0;
+  text-transform: capitalize
+}
+.ereply {
+  border: solid 1px #444;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  margin: 10px 0 0 0
+}
+.ehider {
+  display: none
+}
+.ehidecount,.ehidereplies,.elongthread {
+  color: #569999!important;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 11px
+}
+.ehidereplies {
+  display: none
+}
+.etimeago {
+  color: #999;
+  font-size: 11px;
+  text-transform: uppercase;
+  margin: 0 0 10px 0
+}
+.efeedtitle {
+  font-weight: bold;
+  font-size: 14px
+}
+.eprivatetitle {
+  color: #f60
+}
+.eprivateme {
+  color: yellow!important
+}
+.ereplies {
+  margin: 10px 0 0 0
+}
+.efeedactions {
+  font-size: 11px;
+  text-transform: uppercase
+}
+.etargetaccount {
+  text-transform: capitalize
+}
+.elike {
+  cursor: pointer
+}
+.elikecount span,.ereplylikecount span {
+  color: #569999
+}
+.elikecount,.ereplylikecount {
+  font-size: 11px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: bold
+}
+.ereplylikecount {
+  padding: 5px 0 0 0;
+  margin: 10px 0 0 0;
+  border-top: solid 1px #555;
+  font-weight: normal
+}
+#ethread {
+  background-color: #222
+}
+.efromuser {
+  color: #ffd800;
+  font-weight: bold
+}
+.eactsum {
+  padding: 20px;
+  border-bottom: solid 1px #444;
+  cursor: pointer
+}
+.eactsum:hover {
+  background-color: #444
+}
+.esumtitle {
+  font-size: 16px;
+  margin: 0 0 10px 0
+}
+.esumtitle span {
+  color: #569999;
+  text-transform: capitalize
+}
+.esumbody {
+  padding: 0 0 0 20px;
+  font-size: 12px;
+  color: #ccc
+}
+.esumbody span {
+  color: #569999;
+  text-transform: capitalize
+}
+.esumreplycount {
+  font-size: 11px;
+  text-transform: uppercase;
+  float: right;
+  width: 80px
+}
+.eshowmore {
+  color: #569999;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 11px
+}
+.eeditpost,.esaveedit {
+  color: #569999;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 11px;
+  float: right
+}
+.editarea {
+  width: 98%
+}
+.etargetcategory {
+  width: 220px;
+  float: left;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 11px;
+  text-transform: uppercase;
+  overflow: hidden;
+  float: left
+}
+.ecategorylist tr {
+  cursor: pointer
+}
+.ecategorylist tr:hover {
+  background-color: #666
+}
+
+#eadmin {
+  background-color: #333;
+  border: solid 1px #444;
+  padding: 10px
+}
+.widedoc h3 {
+  padding: 10px 0 10px 0
+}
+
+#eassistant {
+  position: fixed;
+  width: 64px;
+  height: 64px;
+  right: 10px;
+  bottom: 10px;
+  z-index: 1000;
+  cursor: pointer
+}
+#eassistant img {
+  width: 64px;
+  height: 64px
+}
+#eawin {
+  position: fixed;
+  width: 0;
+  height: 0;
+  background-color: #000;
+  border-radius: 10px;
+  right: 40px;
+  bottom: 30px;
+  z-index: 990;
+  border-style: solid;
+  border-width: medium;
+  border-color: rgba(120,120,120,0.5);
+  color: #fff;
+  padding: 10px;
+  overflow: hidden
+}
+#eawin b {
+  color: #6bff36
+}
+#eawin h1 {
+  font-size: 20px!important;
+  line-height: 26px;
+  margin: 0 0 10px 0!important;
+  padding: 0!important
+}
+#eawin [data-topic] {
+  color: cyan;
+  cursor: pointer
+}
+#ebacktotoc,#etutclose,#ebacktotut {
+  float: right;
+  font-size: 11px;
+  text-transform: uppercase;
+  padding: 0 0 0 20px;
+  color: cyan;
+  cursor: pointer
+}
+#trainer {
+  position: fixed;
+  width: 64px;
+  height: 90px;
+  right: 10px;
+  bottom: 0;
+  z-index: 1000;
+  cursor: pointer;
+  background-repeat: no-repeat
+}
+.startButtonInTaskWindow {
+  font-size: medium;
+  left: 15px;
+  position: absolute;
+  bottom: 60px;
+  margin: 0;
+  padding: 0
+}
+#trainer.taskIncomplete {
+  background-image: url("http://play.planets.nu/img/trainers/Paranoid-android-Mini.png")
+}
+#trainer.taskComplete {
+  background-image: url("http://play.planets.nu/img/trainers/Paranoid-android-Mini-glow.png");
+  bottom: 11px
+}
+#trainerWindow {
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  background-color: #000;
+  border-radius: 10px;
+  right: 40px;
+  bottom: 30px;
+  z-index: 990;
+  border-style: solid;
+  border-width: medium;
+  border-color: rgba(120,120,120,0.5);
+  color: #fff
+}
+#infoWindow {
+  display: none;
+  position: fixed;
+  width: 300px;
+  height: 60px;
+  background-color: #000;
+  border-radius: 10px;
+  right: 40px;
+  bottom: 50px;
+  z-index: 990;
+  border-style: solid;
+  border-width: medium;
+  border-color: rgba(120,120,120,0.5)
+}
+#trainer.disabled {
+  background-image: url("img/trainers/Paranoid android Mini Disabled.png")
+}
+.TaskOK {
+  display: block;
+  width: 40px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #666;
+  color: #fff;
+  margin: 10px 0 0 0;
+  cursor: pointer
+}
+.taskWindowImageDisplay {
+  float: right;
+  margin: 0 0 10px 10px;
+  width: 140px;
+  height: 140px;
+  border-style: solid;
+  border-width: medium;
+  border-color: rgba(120,120,120,0.5)
+}
+.taskWindowImage {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  display: none;
+  right: 10px;
+  top: 70px
+}
+#trainerWrench {
+  position: fixed;
+  width: 48px;
+  height: 48px;
+  background-image: url("img/trainers/Repair.png");
+  right: 15px;
+  top: 140px;
+  z-index: 1000
+}
+#CloseAssist {
+  z-index: 1100;
+  right: 5px;
+  top: 5px;
+  position: absolute
+}
+#tasktitle {
+  font-weight: bold;
+  font-size: medium
+}
+.taskbodywithpic {
+  font-size: small
+}
+.taskbodyfull {
+  font-size: 12px
+}
+.taskbodyfull b,.taskbodywithpic b {
+  font-weight: normal;
+  color: #0a0
+}
+#infoText {
+  color: #F0F0F0;
+  font-size: medium;
+  font-family: Arial;
+  margin: 10px 10px 10px 10px
+}
+#tutorialText {
+  color: #F0F0F0;
+  font-family: Arial;
+  margin: 10px 10px 10px 10px
+}
+.closeButton {
+  right: 50px;
+  position: absolute;
+  bottom: 12px
+}
+.tasknum {
+  font-size: 11px;
+  left: 265px;
+  position: absolute;
+  bottom: 12px;
+  margin: 0;
+  padding: 0
+}
+.showHistory {
+  font-size: 11px;
+  left: 20px;
+  position: absolute;
+  bottom: 12px;
+  margin: 0;
+  padding: 0
+}
+#assistcrumb {
+  font-size: 11px;
+  left: 20px;
+  position: absolute;
+  bottom: 12px;
+  margin: 0;
+  padding: 0
+}
+.showDoc {
+  font-size: 11px;
+  left: 100px;
+  position: absolute;
+  bottom: 12px;
+  margin: 0;
+  padding: 0
+}
+.disableButton {
+  font-size: medium;
+  left: 100px;
+  position: absolute;
+  bottom: 12px;
+  margin: 0;
+  padding: 0
+}
+.taskTitle:hover {
+  -webkit-stroke-width: 5.3px;
+  -webkit-stroke-color: #FFF;
+  -webkit-fill-color: #FFF;
+  text-shadow: 1px 0 20px yellow;
+  -webkit-transition: width .3s;
+  transition: width .3s;
+  -moz-transition: width .3s;
+  -o-transition: width .3s;
+  cursor: pointer
+}
+.showHistory:hover {
+  -webkit-stroke-width: 5.3px;
+  -webkit-stroke-color: #FFF;
+  -webkit-fill-color: #FFF;
+  text-shadow: 1px 0 20px yellow;
+  -webkit-transition: width .3s;
+  transition: width .3s;
+  -moz-transition: width .3s;
+  -o-transition: width .3s;
+  cursor: pointer
+}
+.showDoc:hover {
+  -webkit-stroke-width: 5.3px;
+  -webkit-stroke-color: #FFF;
+  -webkit-fill-color: #FFF;
+  text-shadow: 1px 0 20px yellow;
+  -webkit-transition: width .3s;
+  transition: width .3s;
+  -moz-transition: width .3s;
+  -o-transition: width .3s;
+  cursor: pointer
+}
+.closeButton:hover {
+  -webkit-stroke-width: 5.3px;
+  -webkit-stroke-color: #FFF;
+  -webkit-fill-color: #FFF;
+  text-shadow: 1px 0 20px yellow;
+  -webkit-transition: width .3s;
+  transition: width .3s;
+  -moz-transition: width .3s;
+  -o-transition: width .3s;
+  cursor: pointer
+}
+.nextButton,.prevButton {
+  cursor: pointer
+}
+.nextButton:hover {
+  -webkit-stroke-width: 5.3px;
+  -webkit-stroke-color: #FFF;
+  -webkit-fill-color: #FFF;
+  text-shadow: 1px 0 20px yellow;
+  -webkit-transition: width .3s;
+  transition: width .3s;
+  -moz-transition: width .3s;
+  -o-transition: width .3s;
+  cursor: pointer
+}
+.prevButton:hover {
+  -webkit-stroke-width: 5.3px;
+  -webkit-stroke-color: #FFF;
+  -webkit-fill-color: #FFF;
+  text-shadow: 1px 0 20px yellow;
+  -webkit-transition: width .3s;
+  transition: width .3s;
+  -moz-transition: width .3s;
+  -o-transition: width .3s;
+  cursor: pointer
+}
+.prevButtonGrey {
+  color: #505050
+}
+.nextButtonGrey {
+  color: #505050
+}
+.hoverClass:hover {
+  cursor: pointer;
+  -webkit-stroke-width: 5.3px;
+  -webkit-stroke-color: #FFF;
+  -webkit-fill-color: #FFF;
+  text-shadow: 1px 0 20px yellow;
+  -webkit-transition: width .3s;
+  transition: width .3s;
+  -moz-transition: width .3s;
+  -o-transition: width .3s
+}
+.prevButtonGrey:hover {
+  cursor: pointer;
+  -webkit-stroke-width: 5.3px;
+  -webkit-stroke-color: #FFF;
+  -webkit-fill-color: #FFF;
+  text-shadow: 1px 0 20px yellow;
+  -webkit-transition: width .3s;
+  transition: width .3s;
+  -moz-transition: width .3s;
+  -o-transition: width .3s
+}
+.taskNumbering {
+  right: 50px;
+  position: absolute
+}
+
+.CodeMirror {
+  font-family: monospace;
+  border: dotted 1px #999;
+  _position: relative;
+  overflow-y: auto;
+  line-height: 1em;
+  overflow-x: scroll
+}
+.CodeMirror-scroll {
+  overflow: auto
+}
+.CodeMirror-lines {
+  padding: 4px 0
+}
+.CodeMirror pre {
+  padding: 0 4px
+}
+.CodeMirror-scrollbar-filler {
+  background-color: white
+}
+.CodeMirror-gutters {
+  border-right: 1px solid #ddd;
+  background-color: #f7f7f7
+}
+.CodeMirror-linenumber {
+  padding: 0 3px 0 5px;
+  min-width: 20px;
+  text-align: right;
+  color: #999
+}
+.CodeMirror div.CodeMirror-cursor {
+  border-left: 1px solid black
+}
+.CodeMirror div.CodeMirror-secondarycursor {
+  border-left: 1px solid silver
+}
+.CodeMirror.cm-keymap-fat-cursor div.CodeMirror-cursor {
+  width: auto;
+  border: 0;
+  background: transparent;
+  background: rgba(0,200,0,.4);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#6600c800,endColorstr=#4c00c800)
+}
+.CodeMirror.cm-keymap-fat-cursor div.CodeMirror-cursor:not(#nonsense_id) {
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)
+}
+.cm-s-default .cm-keyword {
+  color: #708
+}
+.cm-s-default .cm-atom {
+  color: #219
+}
+.cm-s-default .cm-number {
+  color: #164
+}
+.cm-s-default .cm-def {
+  color: #00f
+}
+.cm-s-default .cm-variable {
+  color: black
+}
+.cm-s-default .cm-variable-2 {
+  color: #05a
+}
+.cm-s-default .cm-variable-3 {
+  color: #085
+}
+.cm-s-default .cm-property {
+  color: black
+}
+.cm-s-default .cm-operator {
+  color: black
+}
+.cm-s-default .cm-comment {
+  color: #a50
+}
+.cm-s-default .cm-string {
+  color: #a11
+}
+.cm-s-default .cm-string-2 {
+  color: #f50
+}
+.cm-s-default .cm-meta {
+  color: #555
+}
+.cm-s-default .cm-error {
+  color: #f00
+}
+.cm-s-default .cm-qualifier {
+  color: #555
+}
+.cm-s-default .cm-builtin {
+  color: #30a
+}
+.cm-s-default .cm-bracket {
+  color: #997
+}
+.cm-s-default .cm-tag {
+  color: #170
+}
+.cm-s-default .cm-attribute {
+  color: #00c
+}
+.cm-s-default .cm-header {
+  color: blue
+}
+.cm-s-default .cm-quote {
+  color: #090
+}
+.cm-s-default .cm-hr {
+  color: #999
+}
+.cm-s-default .cm-link {
+  color: #00c
+}
+.cm-negative {
+  color: #d44
+}
+.cm-positive {
+  color: #292
+}
+.cm-header,.cm-strong {
+  font-weight: bold
+}
+.cm-em {
+  font-style: italic
+}
+.cm-emstrong {
+  font-style: italic;
+  font-weight: bold
+}
+.cm-link {
+  text-decoration: underline
+}
+.cm-invalidchar {
+  color: #f00
+}
+div.CodeMirror span.CodeMirror-matchingbracket {
+  color: #0f0
+}
+div.CodeMirror span.CodeMirror-nonmatchingbracket {
+  color: #f22
+}
+.CodeMirror {
+  line-height: 1;
+  position: relative;
+  overflow: hidden
+}
+.CodeMirror-scroll {
+  margin-bottom: -30px;
+  margin-right: -30px;
+  padding-bottom: 30px;
+  padding-right: 30px;
+  height: 100%;
+  outline: 0;
+  position: relative
+}
+.CodeMirror-sizer {
+  position: relative
+}
+.CodeMirror-vscrollbar,.CodeMirror-hscrollbar,.CodeMirror-scrollbar-filler {
+  position: absolute;
+  z-index: 6;
+  display: none
+}
+.CodeMirror-vscrollbar {
+  right: 0;
+  top: 0;
+  overflow-x: hidden;
+  overflow-y: scroll
+}
+.CodeMirror-hscrollbar {
+  bottom: 0;
+  left: 0;
+  overflow-y: hidden;
+  overflow-x: scroll
+}
+.CodeMirror-scrollbar-filler {
+  right: 0;
+  bottom: 0;
+  z-index: 6
+}
+.CodeMirror-gutters {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: 3
+}
+.CodeMirror-gutter {
+  height: 100%;
+  display: inline-block;
+  *zoom:1;*display: inline
+}
+.CodeMirror-gutter-elt {
+  position: absolute;
+  cursor: default;
+  z-index: 4
+}
+.CodeMirror-lines {
+  cursor: text
+}
+.CodeMirror pre {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  border-width: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  white-space: pre;
+  word-wrap: normal;
+  line-height: inherit;
+  color: inherit;
+  z-index: 2;
+  position: relative;
+  overflow: visible
+}
+.CodeMirror-wrap pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: normal
+}
+.CodeMirror-linebackground {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 0
+}
+.CodeMirror-linewidget {
+  position: relative;
+  z-index: 2;
+  overflow: auto
+}
+.CodeMirror-wrap .CodeMirror-scroll {
+  overflow-x: hidden
+}
+.CodeMirror-measure {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden
+}
+.CodeMirror-measure pre {
+  position: static
+}
+.CodeMirror div.CodeMirror-cursor {
+  position: absolute;
+  visibility: hidden;
+  border-right: 0;
+  width: 0
+}
+.CodeMirror-focused div.CodeMirror-cursor {
+  visibility: visible
+}
+.CodeMirror-selected {
+  background: #d9d9d9
+}
+.CodeMirror-focused .CodeMirror-selected {
+  background: #d7d4f0
+}
+.cm-searching {
+  background: #ffa;
+  background: rgba(255,255,0,.4)
+}
+.CodeMirror span {
+  *vertical-align: text-bottom
+}
+@media print {
+  .CodeMirror div.CodeMirror-cursor {
+    visibility: hidden
+  }
+}
+.CodeMirror-foldmarker {
+  color: blue;
+  text-shadow: #b9f 1px 1px 2px,#b9f -1px -1px 2px,#b9f 1px -1px 2px,#b9f -1px 1px 2px;
+  font-family: arial;
+  line-height: .3;
+  cursor: pointer
+}
+.CodeMirror-foldgutter {
+  width: .7em
+}
+.CodeMirror-foldgutter-open,.CodeMirror-foldgutter-folded {
+  color: #555;
+  cursor: pointer
+}
+.CodeMirror-foldgutter-open:after {
+  content: "\25BE"
+}
+.CodeMirror-foldgutter-folded:after {
+  content: "\25B8"
+}
+
+.eresulttable {
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  border-spacing: 0;
+  border-collapse: collapse
+}
+.eresulttable th {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 12px
+}
+.eresulttable td {
+  padding: 10px
+}
+.eresulttable tbody tr {
+  border-bottom: solid 1px #eee;
+  cursor: pointer
+}
+.eresulttable tbody tr:hover {
+  background-color: #eee
+}
+.eresulttable .eleft {
+  text-align: left
+}
+.eresulttable .ecenter {
+  text-align: center
+}
+.eresulttable .eright {
+  text-align: right
+}
+.einputtable {
+  width: 100%;
+  padding: 0;
+  border-spacing: 0;
+  border-collapse: collapse
+}
+.etabtitle {
+  height: 25px;
+  line-height: 25px;
+  font-size: 14px
+}
+.btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top,#0ef,#006363);
+  background-image: -moz-linear-gradient(top,#0ef,#006363);
+  background-image: -ms-linear-gradient(top,#0ef,#006363);
+  background-image: -o-linear-gradient(top,#0ef,#006363);
+  background-image: linear-gradient(to bottom,#0ef,#006363);
+  -webkit-border-radius: 28px;
+  -moz-border-radius: 28px;
+  border-radius: 28px;
+  font-family: PlanetX,Arial;
+  color: #fff!important;
+  font-size: 18px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer
+}
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top,#0ef,#028585);
+  background-image: -moz-linear-gradient(top,#0ef,#028585);
+  background-image: -ms-linear-gradient(top,#0ef,#028585);
+  background-image: -o-linear-gradient(top,#0ef,#028585);
+  background-image: linear-gradient(to bottom,#0ef,#028585);
+  text-decoration: none
+}
+
+#egamesettings label {
+  display: block;
+  float: left;
+  width: 250px
+}
+#egamesettings input[type=text],#egamesettings textarea {
+  background-color: #666;
+  color: #fff;
+  border: solid 1px #999;
+  height: 22px;
+  padding: 3px;
+  font-size: 14px
+}
+#egamesettings select {
+  background-color: #666;
+  color: #fff;
+  border: solid 1px #999
+}
+#eeditgamesettings label {
+  display: block;
+  float: left;
+  width: 150px
+}
+
+body {
+  background-image: url(http://play.planets.nu/img/ui/starbacking.jpg)
+}
+#eframe {
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  font-family: Arial;
+  font-size: 13px;
+  line-height: 18px;
+  position: relative
+}
+#etopbar {
+  position: relative;
+  z-index: 3;
+  height: 60px;
+  border-bottom: solid 1px #333;
+  margin: 0 0 10px 0;
+  background-color: #111;
+  overflow: hidden;
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#333),color-stop(100%,#111))
+}
+#eservertime {
+  float: right;
+  font-size: 24px;
+  margin: 20px 20px 0 0
+}
+#eheader {
+  width: 500px;
+  margin: 0 auto 0 auto;
+  font-size: 20px;
+  text-align: center;
+  line-height: 28px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 2px #666
+}
+#eheader span {
+  font-size: 16px;
+  display: block
+}
+#eframe a {
+  text-decoration: none;
+  cursor: pointer;
+  color: cyan
+}
+#eframe a:hover {
+  text-decoration: none
+}
+#elogo {
+  cursor: pointer
+}
+.ecleantable {
+  padding: 0;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-color: none
+}
+.ecleantable td,.ecleantable th {
+  padding: 0
+}
+#enavlinks {
+  display: none;
+  position: relative;
+  z-index: 3;
+  margin: 0 30px 0 0;
+  padding: 0;
+  list-style-type: none;
+  height: 30px;
+  float: left
+}
+#enavlinks li {
+  float: right;
+  padding: 5px 10px 5px 10px;
+  font-size: 11px;
+  color: #666;
+  cursor: pointer;
+  text-transform: uppercase;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+#etoplinks {
+  margin: 0;
+  padding: 0 10px 0 0;
+  list-style-type: none;
+  height: 40px;
+  float: right;
+  position: relative
+}
+#etoplinks li {
+  float: right;
+  padding: 5px 10px 5px 3px;
+  font-size: 11px;
+  color: #999;
+  cursor: pointer;
+  text-transform: uppercase
+}
+#etoplinks .esel {
+  background-color: #333;
+  color: #fff
+}
+#eloggedin {
+  float: right;
+  padding: 5px 0 5px 10px;
+  font-size: 11px;
+  color: #999;
+  cursor: pointer;
+  text-transform: uppercase
+}
+#eloggedin a {
+  color: #999
+}
+#eupgrade {
+  border-right: none!important;
+  margin: 0 20px 0 0
+}
+#esignout {
+  border-right: none!important
+}
+#emainmenu {
+  position: relative;
+  z-index: 3;
+  margin: 0 auto 0 auto;
+  padding: 0;
+  list-style-type: none;
+  width: 650px
+}
+#emainmenu li {
+  float: right;
+  padding: 5px 10px 5px 10px;
+  font-size: 11px;
+  cursor: pointer;
+  text-transform: uppercase
+}
+#emainmenu li a {
+  color: #fff
+}
+#emainmenu .esel {
+  background-color: #333;
+  color: #fff
+}
+#epush {
+  height: 30px
+}
+#efooter {
+  position: relative;
+  z-index: 3;
+  height: 30px;
+  line-height: 30px;
+  border-top: solid 1px #333;
+  margin: 10px 0 0 0;
+  background-color: #111;
+  overflow: hidden;
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#333),color-stop(100%,#111))
+}
+#efootermenu {
+  position: relative;
+  z-index: 3;
+  margin: 0 auto 0 auto;
+  padding: 0;
+  list-style-type: none;
+  width: 200px
+}
+#efootermenu li {
+  float: right;
+  padding: 0 10px 0 10px;
+  font-size: 11px;
+  cursor: pointer;
+  text-transform: uppercase
+}
+#efootermenu li a {
+  color: #fff
+}
+#econtent {
+  clear: both;
+  width: 970px;
+  margin: 0 auto 0 auto;
+  min-height: 800px;
+  padding: 30px 0 30px 0
+}
+.eviewcontent {
+  float: left;
+  width: 80%
+}
+.esubmenu {
+  float: right;
+  width: 20%
+}
+.elabel {
+  float: left;
+  width: 115px;
+  color: #A0A0A0
+}
+.estandardbutton {
+  width: 150px;
+  padding: 10px 0 10px 0;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  margin: 0 0 8px 0;
+  color: #000;
+  clear: right
+}
+.elargebutton {
+  padding: 10px 20px 10px 20px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  margin: 0 10px 10px 0;
+  color: #000;
+  clear: right
+}
+.etinybutton {
+  height: auto!important;
+  padding: 3px 10px
+}
+.edisabled {
+  cursor: default!important;
+  opacity: .4
+}
+.erowselect {
+  background-color: #ccc
+}
+.erowselect:hover {
+  background-color: #ccc!important
+}
+.eadd {
+  background-color: #35AA47;
+  color: #fff!important
+}
+.eadd.edisabled {
+  background-color: #35AA47!important
+}
+.eadd:hover {
+  background-color: #1D943B
+}
+.edel {
+  background-color: #D84A38;
+  color: #fff!important
+}
+.edel:hover {
+  background-color: #BB2413
+}
+.edel.edisabled {
+  background-color: #D84A38!important
+}
+.enav {
+  background-color: #E5E5E5;
+  color: #000!important
+}
+.enav:hover {
+  background-color: #d8d8d8
+}
+.enav.edisabled {
+  background-color: #E5E5E5!important
+}
+.ecancel {
+  background-color: #eee!important;
+  color: #000!important
+}
+.ehelp {
+  background-color: #eee!important;
+  color: #000!important
+}
+.eedit {
+  background-color: #eee!important;
+  color: #000!important
+}
+.esave {
+  background-color: #4D90FE;
+  color: #fff!important
+}
+.esave:hover {
+  background-color: #0362FD
+}
+.esubmenu hr {
+  clear: both;
+  border: 0;
+  margin: 15px;
+  width: 150px;
+  float: right
+}
+.eclear {
+  clear: both
+}
+.eselect {
+  height: 38px;
+  font-size: 14px;
+  margin: 0 0 10px 0;
+  padding: 5px;
+  width: 150px
+}
+#eindi {
+  background-image: url(http://play.planets.nu/img/ui/indicator.gif);
+  display: none;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: 10
+}
+.esignform {
+  background-color: #222;
+  border: solid 1px #444;
+  padding: 30px;
+  position: relative
+}
+.esignform p {
+  width: 309px;
+  padding: 5px;
+  margin: 0
+}
+.esignform input[type="checkbox"] {
+  margin: 5px 5px 0 0
+}
+.esignform select {
+  width: 295px
+}
+.esignform input[type="text"],.esignform input[type="password"] {
+  width: 295px;
+  font-size: 16px;
+  height: 20px
+}
+.esignform input[type="button"] {
+  border: 0;
+  background-color: #666;
+  border: solid 1px #333;
+  color: #fff;
+  width: 80px;
+  padding: 3px 5px 3px 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  float: right
+}
+.esignform label {
+  font-size: 14px;
+  line-height: 24px
+}
+.esignform label a {
+  float: right;
+  display: block;
+  font-size: 11px
+}
+#eselectlang {
+  float: right;
+  width: auto
+}
+.esimplewin {
+  position: absolute;
+  width: 400px;
+  border: solid 2px #666;
+  background-color: #444;
+  color: #fff;
+  z-index: 10
+}
+.esimplewintitle {
+  background-color: #555;
+  font-size: 20px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 0 0 10px;
+  font-family: Arial;
+  cursor: move;
+  color: #fff
+}
+.esimplewinclose {
+  height: 40px;
+  width: 40px;
+  font-weight: bold;
+  text-align: center;
+  float: right;
+  cursor: pointer
+}
+.esimplewinclose:hover {
+  background-color: #ff6a00
+}
+.esimplewincontent {
+  padding: 30px;
+  font-family: Arial;
+  font-size: 13px;
+  line-height: 18px
+}
+#eoverlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 9;
+  opacity: .3;
+  display: none
+}
+.esimplewinbtn {
+  padding: 5px;
+  background-color: #555;
+  margin: 5px;
+  display: block;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center
+}
+.esimplewinbtn:hover {
+  background-color: #666
+}
+.evaluelist {
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: right
+}
+.evaluelist li {
+  clear: left;
+  margin: 0 0 10px 0
+}
+.evaluelist label {
+  text-align: left;
+  display: block;
+  float: left;
+  color: #666;
+  min-width: 115px
+}
+.elargeinput {
+  border: solid 1px #eee;
+  height: 34px;
+  font-size: 12px;
+  color: #333;
+  padding-left: 10px;
+  outline: 0
+}
+.elargeselect {
+  height: 34px;
+  font-size: 14px;
+  margin: 0 0 10px 0;
+  padding: 5px;
+  width: 150px
+}
+.esmall {
+  width: 64px!important
+}
+#epagination {
+  display: inline-block;
+  float: right;
+  margin: 10px auto
+}
+#epagination span,#epagination div {
+  background-color: #FFF;
+  border-color: #DDD;
+  border-image: none;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  line-height: 18px;
+  padding: 2px 12px;
+  text-decoration: none;
+  float: left;
+  font-size: 11px
+}
+#epagination span:hover,.active {
+  background: #EEE!important;
+  color: #999;
+  cursor: pointer
+}
+#epagination span:hover {
+  color: #900
+}
+
+#GameOverviewLoc {
+  width: 800px;
+  height: 400px;
+  z-index: 0
+}
+.GameInfoTurn,.GamePlayButton,.GameResignButton,#ehostcontrols {
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 5px
+}
+.GameInfoTurn {
+  right: 20px;
+  top: -18px;
+  font-size: 13px;
+  background-color: #222;
+  border: solid 1px #555
+}
+#ehostcontrols {
+  right: 300px;
+  top: -18px;
+  font-size: 13px;
+  background-color: #222;
+  border: solid 1px #555
+}
+#ehostcontrols span {
+  padding: 0 5px 0 0;
+  color: cyan;
+  cursor: pointer
+}
+.GamePlayButton,.GameResignButton {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #444;
+  border: solid 2px #555;
+  right: -74px;
+  width: 60px;
+  cursor: pointer
+}
+.GamePlayButton:hover,.GameResignButton:hover {
+  background-color: #555
+}
+.GamePlayButton {
+  top: 90px;
+  font-weight: bold;
+  color: #0ff;
+  font-size: 16px;
+  line-height: 30px
+}
+.GameResignButton {
+  top: 140px;
+  color: #c00;
+  font-size: 12px;
+  line-height: 16px
+}
+#GameContent {
+  position: relative;
+  margin: 0 0 0 200px
+}
+#egamelocmap {
+  position: absolute;
+  z-index: 1;
+  left: -300px;
+  top: -100px
+}
+#egameinfo {
+  z-index: 3;
+  background: #333;
+  border: solid 1px #444;
+  position: relative;
+  color: #fff
+}
+#egameinfo:before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 50px;
+  width: 0;
+  height: 0;
+  border-top: 30px solid transparent;
+  border-right: 60px solid #555;
+  border-bottom: 30px solid transparent;
+  z-index: 3
+}
+#egametabs #etabs li {
+  width: 100px
+}
+#egamecircle {
+  z-index: 2;
+  position: absolute;
+  top: 68px;
+  left: -75px;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  border: solid 2px #0f0
+}
+.GameInfoTitle {
+  font-size: 22px;
+  margin: 0 0 5px 0;
+  padding: 20px
+}
+.SectorDescription {
+  font-size: 14px;
+  line-height: 20px;
+  padding: 0 20px 20px 20px
+}
+.SectorDescription [data-help] {
+  cursor: help
+}
+#egameinfoMenu {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 10px
+}
+#egameinfoMenu li {
+  display: block;
+  float: left;
+  padding: 10px 20px 10px 20px;
+  cursor: pointer
+}
+#egameinfoMenu li.selected {
+  background-color: #999;
+  border-radius: 5px
+}
+#GamePlayers {
+  position: relative;
+  top: 40px;
+  width: 800px;
+  padding: 0 0 100px 0;
+  z-index: 1;
+  color: #fff
+}
+#GameEvents,#GameAllies,#GameScoreData,#GameMilitaryScore,#GamePlanetScore {
+  display: none;
+  width: 696px;
+  background: #444;
+  border: solid 2px #555;
+  border-radius: 5px;
+  padding: 10px
+}
+.eplayeractionlink {
+  float: right;
+  width: 50px;
+  line-height: 40px;
+  color: cyan;
+  cursor: pointer;
+  text-transform: lowercase
+}
+#escoredata {
+  padding: 20px 10px 20px 10px
+}
+#GameEvents td,#escoredata th,#escoredata td {
+  text-align: left;
+  padding: 5px 0 5px 0
+}
+#GameMilitaryScore,#GamePlanetScore {
+  background-color: #000;
+  width: 900px
+}
+#GameScoreContent {
+  position: relative;
+  top: 40px;
+  padding: 0 0 100px 0;
+  z-index: 1;
+  color: #fff
+}
+.PlayerPlanets {
+  width: 300px;
+  float: right;
+  font-size: 11px;
+  color: #ccc;
+  line-height: 20px
+}
+.PlayerPlanets img {
+  width: 16px;
+  height: 16px;
+  margin: 2px;
+  float: left
+}
+.PlayerDisplay .RaceIcon {
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin: 0 5px 0 0
+}
+.PlayerDisplay .CommandShip {
+  width: 40px;
+  height: 40px;
+  margin: 0 5px 0 0;
+  float: left
+}
+.PlayerDisplay {
+  border-bottom: solid 1px #333;
+  padding: 10px 10px 10px 10px
+}
+.eresign,.eviewturn {
+  font-size: 11px;
+  text-transform: uppercase;
+  margin: 0 20px 0 0
+}
+.PlayerStatus00 {
+  background: #060;
+  cursor: pointer
+}
+.PlayerStatus30 {
+  background: #111
+}
+.PlayerStatus11 {
+  background: #c60
+}
+.PlayerStatus12,.PlayerStatus13,.PlayerStatus14,.PlayerStatus15 {
+  background: #600
+}
+.PlayerDisplay .PTurnStatus {
+  margin: 4px 0 0 0;
+  width: 32px;
+  height: 32px;
+  float: right
+}
+.PlayerDisplay .FloatClear {
+  clear: both
+}
+.PlayerDisplayContent {
+  font-size: 14px;
+  color: #fff;
+  padding: 5px;
+  display: block;
+  float: left;
+  margin: 0 5px 0 0;
+  width: 260px;
+  overflow: hidden;
+  height: 30px;
+  text-transform: uppercase
+}
+.PlayerDisplayContent b {
+  text-transform: uppercase
+}
+.PlayerDisplay span {
+  font-weight: normal;
+  font-size: 11px;
+  text-transform: uppercase;
+  display: block;
+  color: #ccc
+}
+#ScoreDisplay {
+  left: 4000px;
+  top: 1500px;
+  width: 900px;
+  z-index: 5
+}
+#LeaderBoardContent {
+  border-radius: 10px;
+  margin: 10px 10px 10px 10px;
+  background-color: #222;
+  border-color: rgba(0,0,0,1);
+  border-style: solid;
+  border-width: thin
+}
+#NuLeaderBoardContainer {
+  left: 100px;
+  top: 100px;
+  width: 1000px;
+  height: 7660px;
+  border-radius: 10px;
+  background-color: #222
+}
+#NuProfileContainer {
+  left: 100px;
+  top: 100px;
+  width: 500px;
+  background-repeat: repeat;
+  border-radius: 10px;
+  background-image: url(http://play.planets.nu/img/ui/25percentblack.png)
+}
+#NuProfileHistoryContainer {
+  left: 1700px;
+  top: 100px;
+  width: 500px;
+  border-radius: 10px;
+  background-repeat: repeat;
+  background-image: url(http://play.planets.nu/img/ui/25percentblack.png)
+}
+#ScoreMenu {
+  padding: 0;
+  margin: 20px auto 20px 80px;
+  list-style-type: none;
+  font-size: 20px
+}
+#ScoreMenu li {
+  display: inline;
+  padding: 0 20px 0 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer
+}
+#LeaderMenu {
+  padding: 0;
+  margin: 20px auto 20px 20px;
+  list-style-type: none;
+  font-size: 16px;
+  background-color: #222
+}
+#LeaderMenu li {
+  display: inline;
+  padding: 0;
+  margin: 0 35px 0 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #222
+}
+.TeamGroup {
+  border: solid 2px #666;
+  float: left;
+  width: 720px;
+  padding: 5px 5px 10px 5px;
+  margin: 0 5px 35px 0
+}
+.TeamGroup .PlayerDisplay:last-of-type {
+  border-bottom: 0
+}
+.TeamTitle {
+  margin-top: -30px;
+  text-align: center;
+  padding: 0 0 15px 0;
+  line-height: 20px
+}
+div.google_chart svg g g g g rect {
+  stroke-width: 0;
+  fill: red
+}
+#echartdisplay {
+  position: relative;
+  left: -203px;
+  border: solid 1px #444;
+  width: 1000px;
+  background-color: #222;
+  margin: -21px 0 0 0
+}
+#eresources {
+  float: right
+}
+.evertbar {
+  float: left;
+  margin: 0 10px 0 0;
+  height: 100px;
+  width: 20px;
+  border: solid 1px #666
+}
+.evertbar span {
+  display: block;
+  width: 20px;
+  background-color: #000
+}
+#eneu span {
+  background-color: #060
+}
+#edur span {
+  background-color: #4800ff
+}
+#etri span {
+  background-color: #600
+}
+#emol span {
+  background-color: #c60
+}
+#eden span {
+  background-color: #ffd800
+}
+
+#CreateGameWindow label {
+  width: 150px;
+  display: block;
+  float: left;
+  line-height: 22px;
+  height: 22px
+}
+#LaunchSim {
+  background-color: #000;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  padding: 10px;
+  margin: 0 0 5px 5px;
+  float: right;
+  cursor: pointer
+}
+.BasicFlatButton {
+  background-color: #000;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  padding: 10px;
+  margin: 0 0 5px 5px;
+  float: left;
+  cursor: pointer
+}
+#BasicTrainingInfo {
+  width: 600px;
+  padding: 20px
+}
+#MessageInbox {
+  clear: both
+}
+#MessageInbox table {
+  margin: 0 0 10px 0
+}
+#MessageInbox tr:hover {
+  background-color: #333;
+  cursor: pointer
+}
+#MessageInbox th {
+  text-align: left;
+  border-bottom: solid 1px #333;
+  padding: 0 5px 5px 5px
+}
+#MessageInbox td {
+  border-bottom: solid 1px #333;
+  padding: 5px 5px 5px 5px
+}
+.MessageSubject {
+  font-size: 18px;
+  padding: 10px 0 10px 0
+}
+.MessageBody {
+  padding: 0 0 30px 0
+}
+.MessageType {
+  width: 100px
+}
+.FilterMenu {
+  padding: 0;
+  list-style-type: none;
+  margin: 0
+}
+.FilterMenu li {
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  display: block;
+  float: left;
+  padding: 0 5px 0 5px;
+  margin: 0 10px 10px 0;
+  line-height: 20px;
+  cursor: pointer
+}
+.FilterMenu li:hover {
+  background-color: #999
+}
+.FilterMenu .SelectedFilter {
+  background-color: #666
+}
+.Window {
+  position: absolute;
+  overflow: hidden;
+  background-color: #fff;
+  color: #333;
+  font-family: arial;
+  border-radius: 10px
+}
+.WHeader {
+  border-top: solid 2px #ccc;
+  border-left: solid 2px #ccc;
+  border-right: solid 2px #ccc;
+  background-color: #eee;
+  height: 32px;
+  line-height: 32px;
+  border-bottom: solid 1px #ccc
+}
+.WTitle {
+  cursor: move;
+  font-size: 18px;
+  padding-left: 5px;
+  color: #666
+}
+.WClose {
+  background-image: url(http://play.planets.nu/img/ui/close.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  float: right;
+  width: 16px;
+  height: 27px;
+  line-height: 27px;
+  margin: 0 5px 0 0;
+  border-radius: 3px
+}
+.WContent {
+  border-bottom: solid 2px #ccc;
+  border-left: solid 2px #ccc;
+  border-right: solid 2px #ccc;
+  overflow: visible
+}
+.WContent a:hover {
+  text-decoration: none;
+  color: #333
+}
+#VCRSimWin {
+  z-index: 10
+}
+#NextVCR,#RunVCR {
+  background-image: url(http://play.planets.nu/img/game/smallrightarrow2.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+  padding: 0 20px 0 0;
+  margin: 0 20px 0 10px
+}
+#PrevVCR {
+  background-image: url(http://play.planets.nu/img/game/smallleftarrow2.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding: 0 0 0 20px
+}
+#StopVCR {
+  margin: 0 20px 0 0
+}
+#VCRSim {
+  background-color: #111;
+  padding: 10px;
+  width: 900px;
+  height: 440px;
+  z-index: 100;
+  color: #fff;
+  line-height: 22px;
+  font-size: 14px
+}
+#VCRSim input {
+  border: 0;
+  background-color: transparent;
+  color: #060
+}
+#SimButtons,#PlayButtons {
+  float: right;
+  margin: 0;
+  padding: 0
+}
+#SpeedButtons {
+  float: right;
+  margin: 0 20px 0 0;
+  padding: 0
+}
+#CameraButtons {
+  float: left;
+  margin: 0 0 0 20px;
+  padding: 0;
+  background-color: #eee
+}
+#SimButtons li {
+  display: inline;
+  list-style-type: none
+}
+#ShipVsPlanetButton {
+  margin: 0 30px 0 0;
+  padding: 5px
+}
+#ShipVsShipButton {
+  margin: 0 10px 0 0;
+  padding: 5px
+}
+#SpeedButtons li,#CameraButtons li {
+  display: inline;
+  list-style-type: none;
+  padding: 5px;
+  margin: 0 10px 0 0
+}
+.SelectedSpeed {
+  background-color: #ccc;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px
+}
+#PlayButtons li {
+  display: inline;
+  list-style-type: none
+}
+#VCRSim select {
+  border: 0;
+  background-color: #111;
+  color: #060
+}
+.SimShort {
+  width: 200px
+}
+.SimLong {
+  width: 235px
+}
+#VCRSim span {
+  color: #060;
+  margin: 0 0 0 5px
+}
+#VCRSim p {
+  padding: 0;
+  margin: 0;
+  clear: left
+}
+#LeftSide {
+  width: 450px;
+  float: left;
+  margin: 10px 0 0 0
+}
+#RightSide,#PlanetSide {
+  margin: 10px 0 0 0;
+  width: 450px;
+  float: right
+}
+#VCRSim input[type=text] {
+  width: 30px;
+  margin: 0 0 0 5px
+}
+#VCRSim label {
+  float: left;
+  width: 120px
+}
+#Battlefield {
+  position: relative;
+  width: 900px;
+  height: 200px;
+  background-color: #000;
+  overflow: hidden;
+  background-image: url(http://play.planets.nu/img/ui/starbacking.jpg)
+}
+#BattlePaper {
+  position: absolute;
+  width: 900px;
+  height: 360px;
+  left: 0;
+  top: 0;
+  z-index: 11
+}
+#LeftImg {
+  left: 30px
+}
+#RightImg {
+  left: 640px
+}
+#LeftImg,#RightImg,#BaseImg {
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 200px;
+  display: none;
+  z-index: 10
+}
+#BattleDist {
+  width: 900px;
+  position: absolute;
+  height: 30px;
+  top: 330px;
+  color: #0f0;
+  text-align: center
+}
+#BattleResult {
+  text-align: center;
+  width: 900px;
+  position: absolute;
+  height: 30px;
+  top: 0
+}
+#TurnSummary ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  float: left
+}
+#TurnSummary img {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  top: -10px
+}
+#TurnSummary .iconholder {
+  width: 90px;
+  height: 80px;
+  overflow: hidden
+}
+#TurnSummary ul li {
+  border-radius: 5px;
+  text-align: center;
+  display: block;
+  float: left;
+  font-size: 11px;
+  text-transform: uppercase;
+  margin: 0 15px 15px 0;
+  width: 100px;
+  height: 120px;
+  cursor: pointer
+}
+.DashPane {
+  outline: 0
+}
+.RelationImg {
+  width: 80px;
+  height: 80px
+}
+.SelectedCheck {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px 0 10px
+}
+.RelationIcons img {
+  width: 30px;
+  height: 30px
+}
+#DashboardContent h3 {
+  color: #fff
+}
+#SetDiplomacy tr {
+  cursor: pointer
+}
+#MessageTo {
+  width: 500px
+}
+.ChooseTo {
+  width: 250px;
+  float: left
+}
+#MessageBody {
+  width: 500px;
+  height: 120px;
+  background-color: #333;
+  border: solid 2px #000;
+  color: #fff
+}
+#MessageButtons {
+  width: 500px
+}
+#MessageBodyDiv {
+  padding: 10px 0 10px 0;
+  clear: left
+}
+.OutMessageButtons {
+  text-align: right;
+  font-size: 11px;
+  text-transform: uppercase
+}
+.OutMessageButtons span {
+  padding: 0 0 0 10px
+}
+.TinyIcon {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px 0 0
+}
+#SecondMenu {
+  position: absolute;
+  top: -100px;
+  right: 250px;
+  padding: 0;
+  margin: 0;
+  z-index: 2;
+  color: #fff;
+  border-bottom-left-radius: 10px 10px;
+  border-bottom-right-radius: 10px 10px;
+  background-color: #000;
+  list-style-type: none
+}
+#SecondMenu li {
+  display: block;
+  float: left;
+  padding: 10px;
+  cursor: pointer
+}
+#PDashboardContent {
+  position: relative
+}
+#PlanetsDashboard {
+  color: #fff;
+  width: 990px;
+  padding: 0;
+  margin: 0 auto 0 auto;
+  border-top-right-radius: 10px 10px;
+  border-bottom-right-radius: 10px 10px;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background-image: url(http://play.planets.nu/img/game/dashboardbg.png);
+  background-repeat: repeat-x
+}
+#GameTitle {
+  text-align: left;
+  padding: 5px 40px 20px 0;
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  color: #fff
+}
+#DashboardLeft {
+  width: 200px;
+  float: left;
+  height: 100%;
+  background-image: url(http://play.planets.nu/img/game/dashboardbg.png)
+}
+#DashboardContent {
+  float: right;
+  overflow: hidden;
+  outline: 0;
+  padding: 20px
+}
+.DashPane {
+  width: 100%;
+  height: 100%
+}
+#RaceStrip {
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 100%;
+  float: left
+}
+#DashboardMenu {
+  font-size: 13px;
+  line-height: 18px;
+  padding: 0 0 0 90px
+}
+#DashboardMenu h1 {
+  font-family: Arial;
+  margin: 0 0 5px 0;
+  padding: 0;
+  font-size: 20px;
+  line-height: 24px
+}
+#DashboardMenu ul {
+  padding: 10px 0 0 0;
+  margin: 0;
+  list-style: none;
+  font-size: 14px;
+  line-height: 22px
+}
+#DashboardMenu li {
+  cursor: pointer
+}
+#TurnReadyContainer {
+  position: absolute;
+  font-size: 14px;
+  bottom: 20px;
+  left: 30px;
+  width: 140px
+}
+#TurnReadyContainer a {
+  color: #fff
+}
+#TurnReadyContainer a:visited {
+  color: #fff!important
+}
+#TurnReadyButton:hover {
+  color: #0ff;
+  text-decoration: none;
+  cursor: pointer
+}
+#TurnReadyButton.TurnReady,#TurnReadyButton.TurnNotReady {
+  background-image: url(http://play.planets.nu/img/game/turnready3.png);
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 14px;
+  width: 140px;
+  height: 34px;
+  line-height: 32px;
+  text-align: center;
+  display: block
+}
+#TurnReadyButton.TurnReady {
+  padding: 0 30px 0 0
+}
+#TurnReadyButton.TurnNotReady {
+  background-position: 0 -34px
+}
+.ListPlanet img {
+  width: 30px;
+  float: left;
+  margin: 0 5px 0 0
+}
+.ListPlanet {
+  font-size: 16px;
+  line-height: 30px;
+  float: left;
+  margin: 0 20px 5px 0;
+  cursor: pointer;
+  width: 200px;
+  height: 30px;
+  overflow: hidden
+}
+#PlanetTable td,#ShipTable td {
+  border-bottom: solid 1px #666
+}
+.forumInfo {
+  float: left;
+  position: absolute;
+  bottom: 20px
+}
+.DashPane .forumInfo a {
+  color: white
+}
+.forumTitle {
+  font-weight: bold
+}
+.postContent {
+  font-size: 10px
+}
+#DashboardSpace {
+  float: left;
+  width: 100%;
+  height: 10%
+}
+.ActiveAdvantageSummary {
+  font-size: 16px;
+  height: 40px
+}
+.ActiveAdvantageSummary span {
+  color: #0f0
+}
+.AdvantageSet h3 {
+  margin: 0 0 10px 0;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 0
+}
+.AdvantageSet td {
+  vertical-align: top;
+  padding: 0 0 20px 0
+}
+.AdvantageSet tr {
+  border-bottom: solid 1px #fff
+}
+.AdvantageSet img {
+  width: 80px;
+  height: 80px;
+  float: left;
+  margin: 0 10px 10px 0
+}
+.AdvantageSet span {
+  float: right;
+  display: block;
+  background-color: #333;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  line-height: 40px
+}
+.AdvantageSet {
+  border-right: solid 2px #333;
+  padding: 0 20px 0 20px;
+  width: 600px;
+  color: #fff;
+  float: left
+}
+.AdvantageSet h1 {
+  margin: 0 0 10px 0;
+  padding: 0;
+  text-align: center;
+  font-size: 14px;
+  text-transform: uppercase
+}
+.activeadv {
+  background-color: #333;
+  margin: 0 0 10px 0
+}
+.etargetplayer {
+  width: 220px;
+  float: left;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 11px;
+  text-transform: uppercase
+}
+.etargetsel {
+  background-color: #9c9
+}
+#epublicboard.etargetsel {
+  background-color: #f96
+}
+#eselecttarget {
+  margin: 0 0 10px 0;
+  border: solid 1px #333
+}
+#egamefeed textarea {
+  background-color: #444;
+  border: solid 1px #555;
+  color: #fff;
+  padding: 10px
+}
+#egamefeed .ereply {
+  background-color: #444;
+  border: solid 1px #333;
+  color: #fff
+}
+.egamefeedline {
+  border-bottom: solid 1px #444;
+  margin: 10px
+}
+.ewritereply {
+  cursor: pointer
+}
+.egamefeedtitle {
+  font-size: 13px
+}
+.egamefeedtitle span {
+  color: #fff!important
+}
+#gameover {
+  position: absolute;
+  width: 500px;
+  height: 350px;
+  border: double 10px #666;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  z-index: 10
+}
+#gameover td {
+  padding: 0 0 5px 0
+}
+#eclosegameover {
+  width: 100px;
+  font-size: 16px;
+  background-color: #666;
+  color: #fff;
+  margin: 20px auto 0 auto;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer
+}
+#finishtrophy {
+  width: 100px;
+  float: right;
+  position: relative;
+  top: -10px;
+  right: -10px
+}
+#WinCondition {
+  position: absolute;
+  bottom: 30px;
+  padding: 0 0 0 10px
+}
+
+.CleanTable {
+  padding: 0;
+  border-spacing: 0;
+  border-collapse: collapse
+}
+.CleanTable td,.CleanTable th {
+  padding: 0
+}
+.LeftBlind,.RightBlind {
+  position: absolute;
+  top: 0;
+  z-index: 11;
+  background-color: #000
+}
+.LeftBlind {
+  left: 0
+}
+.RightBlind {
+  right: 0
+}
+#ExitWin {
+  z-index: 20;
+  color: #fff;
+  text-align: center
+}
+#ExitWin h1 {
+  line-height: 160px
+}
+#ExitWin span {
+  background-color: #333;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  padding: 20px;
+  font-size: 16px;
+  margin: 20px 0 5px 20px;
+  cursor: pointer
+}
+#FullScreenTip {
+  position: absolute;
+  left: 40%;
+  top: 0;
+  height: 30px;
+  width: 200px;
+  background-image: url(http://play.planets.nu/img/game/fullscreentip2.png);
+  background-repeat: no-repeat
+}
+#DebugWin {
+  position: absolute;
+  z-index: 1000;
+  background-color: #000;
+  color: #fff;
+  left: 10px;
+  bottom: 10px;
+  padding: 10px
+}
+#PlanetsMenu {
+  padding: 0 10px 0 10px;
+  margin: 0;
+  position: absolute;
+  right: 20px;
+  z-index: 6;
+  color: #fff;
+  border-bottom-left-radius: 10px 10px;
+  border-bottom-right-radius: 10px 10px;
+  background-color: #333;
+  list-style-type: none
+}
+#PlanetsMenu li {
+  display: block;
+  float: left;
+  padding: 10px;
+  cursor: pointer
+}
+.LoadingText {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #fff;
+  font-size: 24px;
+  font-family: Arial;
+  z-index: 12;
+  text-align: center;
+  height: 40px
+}
+.LoadingText span {
+  font-size: 11px;
+  line-height: 30px
+}
+.WorkingIndicator {
+  position: absolute;
+  top: -20px;
+  height: 20px;
+  width: 80px;
+  z-index: 100;
+  font-size: 11px;
+  border-bottom-left-radius: 5px 5px;
+  border-bottom-right-radius: 5px 5px;
+  background-color: #347778;
+  color: #fff;
+  text-align: center
+}
+#PLogoBar {
+  width: 100%;
+  border-bottom: solid 1px #39C
+}
+#PLogoBar img {
+  margin: 15px 0 0 5px
+}
+#PLogoBar a {
+  position: absolute;
+  right: 120px;
+  font-size: 11px;
+  text-transform: uppercase;
+  margin: 15px 30px 0 0;
+  color: #ccc
+}
+#PlanetsContainer {
+  font-family: Arial;
+  font-size: 13px;
+  line-height: 18px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: #000
+}
+#PlanetsDashboardContainer {
+  background-image: url(http://play.planets.nu/img/backgrounds/close_planets-wallpaper-opt.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  overflow: hidden
+}
+#PlanetsContainer {
+  overflow: hidden;
+  width: 100%
+}
+#PlanetsContainer [data-topic] {
+  cursor: help
+}
+#PlanetsActivity {
+  width: 400px;
+  height: 100%;
+  position: absolute;
+  right: -385px;
+  z-index: 5
+}
+#PlanetsActivityBar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 15px;
+  float: left;
+  height: 100%;
+  background: -webkit-gradient(linear,left top,right top,color-stop(0%,#333),color-stop(100%,#111));
+  cursor: pointer
+}
+#PlanetsActivityBarText {
+  position: absolute;
+  left: -17px;
+  top: 45%;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 11px;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  cursor: pointer
+}
+#PlanetsContainer h1 {
+  font-size: 24px;
+  padding: 0;
+  margin: 0
+}
+#PlanetsContainer h1,h2,h3 {
+  font-weight: normal;
+  padding: 0;
+  margin: 0
+}
+#PlanetsContainer a {
+  text-decoration: none
+}
+#PlanetsContainer a:visited {
+  color: cyan
+}
+#PlanetsMapContainer {
+  background-image: url(http://play.planets.nu/img/game/starbacking2.jpg);
+  position: relative;
+  overflow: hidden
+}
+#rNav {
+  font-size: 11px;
+  position: absolute;
+  left: 400px;
+  top: 10px;
+  height: 16px;
+  line-height: 16px;
+  padding: 5px;
+  color: #fff
+}
+#replayNav {
+  font-size: 11px;
+  position: absolute;
+  line-height: 16px;
+  padding: 0;
+  color: #fff;
+  left: 10px;
+  top: 60px;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 5px;
+  border: 1px solid #333
+}
+#replayNavStep {
+  width: 280px;
+  display: block;
+  border: 2px solid #333;
+  margin-bottom: 5px!important
+}
+#rNav span,#replayNav span {
+  padding: 7px;
+  background-color: #333;
+  border-radius: 5px 5px;
+  -moz-border-radius: 5px 5px;
+  -webkit-border-radius: 5px 5px;
+  margin: 0
+}
+#rNav a,#replayNav a {
+  border-radius: 5px 5px;
+  -moz-border-radius: 5px 5px;
+  -webkit-border-radius: 5px 5px;
+  font-size: 11px;
+  color: #fff;
+  margin: 0 7px 0 7px;
+  background-color: #000;
+  cursor: pointer
+}
+#replayNav a {
+  padding: 7px;
+  border: 2px solid #888;
+  display: inline-block
+}
+#replayPausePlay {
+  font-size: 36px!important;
+  padding: 15px!important;
+  float: right;
+  clear: both
+}
+.rNavLeft {
+  background-image: url(http://play.planets.nu/img/game/smallleftarrow2.png);
+  background-repeat: no-repeat;
+  background-position: left 9px;
+  padding: 7px 7px 7px 22px
+}
+.rNavRight {
+  background-image: url(http://play.planets.nu/img/game/smallrightarrow2.png);
+  background-repeat: no-repeat;
+  background-position: right 9px;
+  padding: 7px 22px 7px 7px;
+  position: relative;
+  left: -5px
+}
+.rNavFirst {
+  padding: 7px;
+  position: relative;
+  left: 5px
+}
+#rNav a:hover {
+  text-decoration: none;
+  color: #35cdbd
+}
+#rNav #idleAll {
+  background-color: black
+}
+.rIdle,.rNavToggle,.rNavReplay,.replayFirst {
+  background-repeat: no-repeat;
+  padding: 7px
+}
+.rNavReplay,.replayFirst,.replayNext,.replayPrev,.replayClose {
+  background-repeat: no-repeat;
+  padding: 7px
+}
+.jspContainer {
+  overflow: hidden;
+  position: relative;
+  outline: 0
+}
+.jspPane {
+  position: absolute;
+  outline: 0
+}
+.jspVerticalBar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 12px;
+  height: 100%;
+  background: transparent
+}
+.jspHorizontalBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 16px;
+  background: red
+}
+.jspVerticalBar *,.jspHorizontalBar * {
+  margin: 0;
+  padding: 0
+}
+.jspCap {
+  display: none
+}
+.jspHorizontalBar .jspCap {
+  float: left
+}
+.jspTrack {
+  background: transparent;
+  position: relative
+}
+.jspDrag {
+  background: #333;
+  position: relative;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px
+}
+.jspHorizontalBar .jspTrack,.jspHorizontalBar .jspDrag {
+  float: left;
+  height: 100%
+}
+.jspArrow {
+  background: #50506d;
+  text-indent: -20000px;
+  display: block;
+  cursor: pointer
+}
+.jspArrow.jspDisabled {
+  cursor: default;
+  background: #80808d
+}
+.jspVerticalBar .jspArrow {
+  height: 16px
+}
+.jspHorizontalBar .jspArrow {
+  width: 16px;
+  float: left;
+  height: 100%
+}
+.jspVerticalBar .jspArrow:focus {
+  outline: 0
+}
+.jspCorner {
+  background: #eeeef4;
+  float: left;
+  height: 100%
+}
+* html .jspCorner {
+  margin: 0 -3px 0 0
+}
+
+#LeftContent,.LeftContent {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: -420px;
+  width: 400px;
+  height: 100%;
+  background-image: url(http://play.planets.nu/img/game/lbg.png);
+  background-repeat: repeat-x;
+  background-color: #f3f5f5;
+  box-shadow: 3px 3px 3px #666;
+  -moz-box-shadow: 3px 3px 3px #666;
+  -webkit-box-shadow: 3px 3px 3px #666
+}
+.CloseLeftScreen {
+  background-image: url(http://play.planets.nu/img/game/closebutton.png);
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 32px;
+  background-position: left center;
+  cursor: pointer;
+  position: absolute
+}
+.CloseScreen {
+  background-image: url(http://play.planets.nu/img/ui/close.gif);
+  background-repeat: no-repeat;
+  float: right;
+  padding: 8px 8px 8px 20px;
+  width: 16px;
+  height: 16px;
+  background-position: center center;
+  cursor: pointer
+}
+.TitleBar {
+  line-height: 32px;
+  height: 32px;
+  font-size: 12px;
+  border-bottom: solid 1px #ccc;
+  background-image: url(http://play.planets.nu/img/game/sepbar.png);
+  background-repeat: repeat-x;
+  background-position: left bottom;
+  background-color: #fff;
+  position: relative
+}
+.DarkBar {
+  clear: both;
+  line-height: 24px;
+  height: 24px;
+  font-size: 12px;
+  background-image: url(http://play.planets.nu/img/game/darkbar2.png);
+  background-repeat: repeat-x;
+  padding: 0 5px 0 5px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px
+}
+.SepBar,.BuildBar {
+  line-height: 28px;
+  height: 28px;
+  font-size: 12px;
+  border-bottom: solid 1px #ccc;
+  background-image: url(http://play.planets.nu/img/game/sebbar34.png);
+  background-repeat: repeat-x;
+  padding: 0 0 0 5px
+}
+.BuildBar {
+  cursor: pointer
+}
+.BuildBar .SepTitle {
+  padding: 0 0 0 30px;
+  background-image: url(http://play.planets.nu/img/game/sepbutton.png);
+  background-repeat: no-repeat;
+  background-position: left center
+}
+.MoreActionButton {
+  padding: 0 20px 0 20px;
+  display: inline;
+  line-height: 24px;
+  height: 24px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  background-image: url(http://play.planets.nu/img/game/sepbar.png);
+  background-repeat: repeat-x;
+  border: solid 1px #ccc;
+  text-align: center;
+  color: #333
+}
+.SepTitle {
+  font-size: 14px
+}
+.SepTitle span {
+  font-size: 12px
+}
+.TopTitle {
+  font-size: 18px;
+  width: 300px;
+  height: 32px;
+  overflow: hidden;
+  padding: 0 0 0 20px;
+  position: absolute
+}
+#MainFleetContainer {
+  background-image: url(http://play.planets.nu/img/game/starbacking.jpg);
+  background-color: #000
+}
+#HoverContent {
+  position: absolute;
+  top: 53px;
+  left: 410px;
+  border: solid 5px #333;
+  background-color: #000;
+  color: #fff;
+  display: none;
+  width: 310px;
+  height: 100px;
+  z-index: 30;
+  line-height: 14px
+}
+#HoverContent .ItemSelection {
+  border-bottom: 0
+}
+.SepContainer {
+  padding: 3px;
+  line-height: 12px;
+  font-size: 12px;
+  overflow: hidden
+}
+.SepSummary {
+  font-size: 11px;
+  padding: 3px
+}
+#PlanetScreen table {
+  margin: 0;
+  padding: 0
+}
+#PlanetScreen td {
+  vertical-align: top
+}
+.TempText {
+  float: right;
+  position: relative;
+  right: -30px;
+  margin: 0 8px 0 0
+}
+.TempMoreText {
+  float: right;
+  margin: 0 8px 0 0
+}
+.SepButton,.DarkButton {
+  float: right;
+  padding: 0 30px 0 10px;
+  margin: 0 5px 0 0;
+  background-image: url(http://play.planets.nu/img/game/sepbutton.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+  cursor: pointer
+}
+.SepButton {
+  border-left: solid 1px #ccc
+}
+.SepButton span,.DarkButton span {
+  color: green
+}
+.headright {
+  width: 80px;
+  padding: 0 0 0 10px
+}
+.head {
+  width: 75px
+}
+.widehead {
+  width: 90px
+}
+.colpic {
+  width: 60px
+}
+.colpic img {
+  width: 60px;
+  border: double 3px #ccc
+}
+#Colony .val {
+  width: 120px
+}
+.fcd,.val,.fc {
+  text-align: right;
+  padding: 0 5px 0 0;
+  width: 50px;
+  font-weight: bold;
+  color: #060
+}
+.fc {
+  cursor: pointer
+}
+.costval {
+  text-align: right;
+  padding: 0 5px 0 0;
+  width: 50px
+}
+.textval {
+  font-weight: bold;
+  color: #060
+}
+.fc span {
+  padding: 2px 5px 2px 5px;
+  color: #006;
+  font-size: 14px;
+  border: solid 1px #ccc
+}
+.fcd span {
+  padding: 2px 5px 2px 5px;
+  color: #a7f5fe;
+  font-size: 14px;
+  border: solid 1px #ccc
+}
+.valsup {
+  font-size: 11px;
+  color: #666;
+  font-weight: normal
+}
+.ValButton {
+  padding: 5px 15px 5px 0;
+  text-align: right;
+  float: right;
+  color: #347778
+}
+.ValLink {
+  padding: 0 15px 0 0;
+  text-align: right;
+  color: #347778
+}
+#MoreScreen,.MoreScreen {
+  display: none;
+  position: absolute;
+  z-index: 9;
+  color: #fff;
+  padding: 10px 10px 10px 20px;
+  top: 0;
+  left: -100px;
+  height: 100%;
+  border-radius: 10px 10px;
+  background-color: #000
+}
+#MoreScreen h1 {
+  font-family: Arial;
+  font-size: 18px;
+  line-height: 20px;
+  margin: 0 0 10px 0;
+  padding: 0
+}
+.MoreBack {
+  display: block;
+  width: 83px;
+  height: 24px;
+  color: #000;
+  padding: 0 0 0 20px;
+  text-align: center;
+  background-image: url(http://play.planets.nu/img/game/mback.png);
+  background-repeat: no-repeat;
+  cursor: pointer;
+  line-height: 24px;
+  margin: 20px 0 0 0
+}
+.ColTaxRateDisplay {
+  width: 100px;
+  font-size: 30px;
+  color: #fff;
+  text-align: center
+}
+#TaxEditScreen {
+  font-size: 16px;
+  line-height: 20px
+}
+#TaxEditScreen p {
+  margin: 0;
+  padding: 0
+}
+.TaxTitle {
+  line-height: 68px
+}
+#SurveyPic {
+  margin: 0 10px 0 0
+}
+#EditNote {
+  margin: 5px 0 5px 0;
+  width: 291px;
+  height: 250px;
+  background-color: #333;
+  border: solid 2px #000;
+  color: #fff
+}
+#NoteColorSelection {
+  margin: 10px 0 10px 0
+}
+.NoteColor {
+  width: 40px;
+  height: 40px;
+  margin: 0 10px 10px 0;
+  border: solid 1px #333
+}
+.SelectedColor {
+  border: solid 1px #fff
+}
+.DipColor {
+  width: 20px;
+  height: 20px;
+  border: solid 1px #333
+}
+.AutoAdjustHappinesCheckBox {
+  margin-top: 10px
+}
+#PlanetFCText {
+  color: #fff;
+  font-size: 30px;
+  line-height: 40px;
+  background-color: transparent;
+  border: solid 2px #fff;
+  width: 80px;
+  text-align: center
+}
+#BuildingScreen input {
+  color: #fff;
+  font-size: 14px;
+  line-height: 16px;
+  background-color: transparent;
+  border: solid 1px #999;
+  width: 30px;
+  text-align: center
+}
+.SellSuppliesTable {
+  margin: 10px 0 10px 0;
+  padding: 0;
+  border-spacing: 0;
+  border-collapse: collapse
+}
+.SellSuppliesTable td {
+  line-height: 18px;
+  vertical-align: top
+}
+#StarbaseScreen {
+  overflow: hidden
+}
+#BuildShipScreen {
+  overflow: hidden
+}
+#BuildStarbaseScreen img {
+  width: 100px;
+  height: 100px
+}
+#BuildingStarbaseMessage {
+  width: 150px;
+  height: 100px;
+  font-size: 30px;
+  line-height: 40px;
+  font-family: 'Century Gothic';
+  color: green
+}
+.MainScreenPic {
+  float: left
+}
+.FleetPic {
+  width: 50px;
+  cursor: pointer;
+  border: solid 1px transparent
+}
+.FleetBad {
+  background-color: #600
+}
+.FleetNeutral {
+  background-color: #336
+}
+.FleetCurrent {
+  background-color: #066
+}
+#OrdersScreen p,#OrdersScreenSmall p {
+  font-size: 11px
+}
+#OrdersScreen div {
+  font-size: 14px;
+  background-color: #333;
+  border: solid 1px #666;
+  margin: 5px 0 5px 0;
+  padding: 2px 5px 2px 5px;
+  cursor: pointer
+}
+#OrdersScreen div span {
+  display: block;
+  font-size: 11px
+}
+#OrdersScreen div.OrangeBox {
+  background-color: #c30;
+  border: solid 1px #fc6;
+  color: #fc6
+}
+#OrdersScreen div.RedBox {
+  background-color: #600;
+  border: solid 1px #fcc;
+  color: #fcc
+}
+#OrdersScreenSmall div {
+  font-size: 11px;
+  line-height: 11px;
+  background-color: #333;
+  border: solid 1px #444;
+  margin: 0 0 1px 0;
+  padding: 1px 5px 1px 5px;
+  cursor: pointer
+}
+.TransferTitle {
+  padding: 0 0 5px 0;
+  margin: 0 0 10px 0;
+  border-bottom: solid 1px #35cdbd
+}
+.TransferVal {
+  width: 60px;
+  font-weight: bold;
+  color: #41dc31;
+  text-align: right;
+  padding: 0 10px 0 0
+}
+.TransferTotalText {
+  text-align: right
+}
+.lrtext-small {
+  width: 25px;
+  height: 24px;
+  line-height: 24px;
+  float: left;
+  text-align: center;
+  font-size: 11px;
+  color: white
+}
+.sac-small {
+  width: 35px;
+  height: 24px;
+  float: left;
+  cursor: pointer;
+  border: solid 1px #333;
+  border-radius: 3px;
+  margin: 0 1px 0 1px
+}
+.sa-small {
+  width: 17px;
+  height: 20px;
+  margin: 2px 10px;
+  background-image: url(http://play.planets.nu/img/game/updownleftright.png);
+  background-repeat: no-repeat
+}
+.LeftRight1000-small {
+  width: 212px;
+  height: 20px
+}
+.LeftRight100-small {
+  width: 184px;
+  height: 20px
+}
+.LeftRight10-small {
+  width: 136px;
+  height: 20px
+}
+.LeftRight-small {
+  height: 20px;
+  width: 54px;
+  overflow: hidden
+}
+.lrtext {
+  width: 25px;
+  height: 40px;
+  line-height: 40px;
+  float: left;
+  text-align: center;
+  font-size: 11px;
+  color: white
+}
+.sac {
+  width: 35px;
+  height: 40px;
+  float: left;
+  cursor: pointer;
+  border: solid 1px #333;
+  border-radius: 3px;
+  margin: 0 1px 0 1px
+}
+.sa {
+  width: 17px;
+  height: 20px;
+  margin: 10px 10px 10px 10px;
+  background-image: url(http://play.planets.nu/img/game/updownleftright.png);
+  background-repeat: no-repeat
+}
+.sac:hover .rights {
+  background-position: -136px 0
+}
+.sac:hover .lefts {
+  background-position: -119px 0
+}
+.lefts {
+  background-position: -42px 0
+}
+.rights {
+  background-position: -59px 0
+}
+.rights:hover {
+  background-position: -136px 0
+}
+.lefts:hover {
+  background-position: -119px 0
+}
+.LeftRight1000 {
+  width: 340px;
+  height: 20px
+}
+.LeftRight100 {
+  width: 280px;
+  height: 20px
+}
+.LeftRight10 {
+  width: 200px;
+  height: 20px
+}
+.LeftRight {
+  height: 20px;
+  width: 86px;
+  overflow: hidden
+}
+.UpDown1000 {
+  width: 176px;
+  height: 93px
+}
+.UpDown100 {
+  width: 132px;
+  height: 93px
+}
+.UpDown10 {
+  width: 88px;
+  height: 93px
+}
+.UpDown {
+  width: 44px;
+  height: 93px;
+  overflow: hidden
+}
+.ups {
+  height: 40px
+}
+.downs {
+  height: 40px
+}
+.ups .uda {
+  background-position: 0 0
+}
+.downs .uda {
+  background-position: -20px 0
+}
+.ups .udsac:hover .uda {
+  background-position: -77px 0
+}
+.downs .udsac:hover .uda {
+  background-position: -97px 0
+}
+.udtext {
+  height: 13px;
+  line-height: 13px;
+  text-align: center;
+  font-size: 11px;
+  color: #fff
+}
+.ups .udsac {
+  float: left
+}
+.downs .udsac {
+  float: right
+}
+.udsac {
+  width: 40px;
+  height: 40px;
+  border: solid 1px #333;
+  border-radius: 3px;
+  margin: 1px
+}
+.uda {
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+  background-image: url(http://play.planets.nu/img/game/updownleftright.png);
+  background-repeat: no-repeat;
+  cursor: pointer
+}
+.VeryBadText {
+  color: #ff0404
+}
+.UnknownText {
+  color: #666
+}
+.BadText {
+  color: #e30404
+}
+.GoodText {
+  color: #099
+}
+.AllyText {
+  color: #669
+}
+.GreatText {
+  color: #48b03d
+}
+.NeutralText {
+  color: yellow
+}
+.WarnText {
+  color: #f60
+}
+#readyCheckBox {
+  background-image: url(http://play.planets.nu/img/game/threereadycheckspace.png);
+  width: 66px;
+  height: 32px;
+  float: right;
+  background-repeat: no-repeat;
+  cursor: pointer
+}
+.readyCheckBox0 {
+  background-position: 80% -57px
+}
+.readyCheckBox1 {
+  background-position: 80% -24px
+}
+.readyCheckBox2 {
+  background-position: 80% 8px
+}
+#LeftContent #SelectLocation {
+  padding: 10px
+}
+#SelectLocation {
+  outline: 0
+}
+.ItemSelection img {
+  width: 70px;
+  float: left;
+  margin: 0 10px 0 0;
+  background-color: #000
+}
+.ItemSelection {
+  clear: left;
+  padding: 5px 0 5px 0;
+  border-bottom: solid 1px #999;
+  font-size: 11px;
+  line-height: 14px;
+  cursor: pointer;
+  min-height: 75px
+}
+.ItemSelection table {
+  width: 210px
+}
+.ItemSelection span {
+  display: block;
+  overflow: hidden;
+  height: 16px;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: Arial;
+  margin: 0;
+  padding: 0;
+  line-height: 16px
+}
+
+#GameList {
+  font-size: 16px;
+  line-height: 24px
+}
+#GameList td {
+  padding: 10px 0 0 0
+}
+#GameList .ActionColumn {
+  text-align: right
+}
+#GameList .ColumnHeader {
+  font-weight: bold;
+  border-bottom: solid 1px #ccc
+}
+#CreateGameWindow {
+  width: 500px
+}
+.GameButtons {
+  text-align: center;
+  padding: 10px
+}
+
+#PlanetsMap {
+  position: absolute
+}
+#PlanetsImgCover {
+  position: absolute;
+  width: 4000px;
+  height: 4000px;
+  z-index: 2;
+  background-image: url(http://play.planets.nu/img/game/transparentbg.png)
+}
+#PaperDiv {
+  position: absolute;
+  z-index: 3
+}
+.maphelper {
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  background-color: #999;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px
+}
+#MapTip {
+  position: absolute;
+  top: 100px;
+  left: 250px;
+  z-index: 4
+}
+#zoomin,#zoomout {
+  position: absolute;
+  bottom: 10px;
+  width: 35px;
+  height: 35px;
+  padding: 10px;
+  opacity: .25;
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer
+}
+#zoomin:hover,#zoomout:hover {
+  opacity: 1
+}
+#zoomin {
+  background-image: url(http://play.planets.nu/img/ui/zoomplusicon35px.png);
+  right: 266px
+}
+#zoomout {
+  right: 201px;
+  background-image: url(http://play.planets.nu/img/ui/zoomminusicon35px.png)
+}
+#mover {
+  position: absolute;
+  bottom: 0;
+  right: 75px;
+  width: 127px;
+  height: 127px;
+  opacity: .25;
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+  background-image: url(http://play.planets.nu/img/ui/mover.png)
+}
+#PlanetsLoc {
+  position: absolute;
+  top: 58px;
+  right: 10px;
+  color: #fff
+}
+.ItemSelection_border {
+  background-image: url(http://play.planets.nu/img/game/backgroundBox.png)
+}
+.minCorrection {
+  min-height: 30px!important
+}
+.coordDisplay {
+  font-size: 12px
+}
+.enemyShipStyle {
+  color: white
+}
+.zoomDisplay {
+  padding-left: 5px
+}
+.titleSelectionBox {
+  float: left;
+  line-height: 9px;
+  padding: 8px 9px 9px 10px
+}
+.ItemSelectionBox {
+  border-top: 1px solid #999;
+  clear: left;
+  cursor: pointer;
+  font-size: 11px;
+  line-height: 14px!important;
+  min-height: 0!important;
+  padding: 6px 8px 8px 10px
+}
+.GoodTextNote {
+  max-width: 200px;
+  color: #099
+}
+#FindObjectFeature {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background-color: #333;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomright: 10px 10px;
+  -moz-border-radius-bottomleft: 10px 10px;
+  -moz-border-radius-topright: 10px 10px;
+  -moz-border-radius-topleft: 10px 10px;
+  -webkit-border-bottom-right-radius: 10px 10px;
+  -webkit-border-bottom-left-radius: 10px 10px;
+  -webkit-border-top-right-radius: 10px 10px;
+  -webkit-border-top-left-radius: 10px 10px;
+  font-family: Arial;
+  font-size: 13px;
+  line-height: 18px;
+  padding: 10px;
+  top: 10px;
+  display: none;
+  position: absolute;
+  right: 220px;
+  color: white;
+  z-index: 5;
+  width: 270px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  margin-left: -135px;
+  margin-top: -26px
+}
+#ID-NameInputText {
+  background-color: #555;
+  width: 179px;
+  color: white;
+  margin-bottom: 10px;
+  border: solid 1px #666;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-top-color: #666;
+  border-right-color: #666;
+  border-bottom-color: #666;
+  border-left-color: #666
+}
+#FindObjectFeatureTitle {
+  font-family: Verdana,Arial;
+  font-size: 11px;
+  height: 22px;
+  background-color: #444;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomright: 10px 10px;
+  -moz-border-radius-bottomleft: 10px 10px;
+  -moz-border-radius-topright: 10px 10px;
+  -moz-border-radius-topleft: 10px 10px;
+  -webkit-border-bottom-right-radius: 10px 10px;
+  -webkit-border-bottom-left-radius: 10px 10px;
+  -webkit-border-top-right-radius: 10px 10px;
+  -webkit-border-top-left-radius: 10px 10px;
+  width: 150px;
+  margin-bottom: 10px;
+  text-align: center;
+  line-height: 21px
+}
+#FindObjectFeatureFindButton {
+  float: right;
+  text-align: center;
+  width: 50px;
+  border-radius: 5px 5px;
+  -moz-border-radius: 5px 5px;
+  -webkit-border-radius: 5px 5px;
+  border-top-left-radius: 5px 5px;
+  border-top-right-radius: 5px 5px;
+  border-bottom-right-radius: 5px 5px;
+  border-bottom-left-radius: 5px 5px;
+  font-size: 11px;
+  color: white;
+  margin: 0 5px 0 5px;
+  margin-top: 0;
+  margin-right: 5px;
+  margin-bottom: 0;
+  margin-left: 5px;
+  background-color: black;
+  cursor: pointer
+}
+#FindObjectFeatureFindButton a:hover {
+  text-decoration: none;
+  color: white
+}
+#FindObjectFeatureFindButton a:hover {
+  text-decoration: none;
+  color: #35CDBD
+}
+.FindRadioButtons {
+  left: 135px;
+  padding-bottom: 8px;
+  position: relative
+}
+#FindObjectFeatureCancelButton {
+  float: right;
+  text-align: center;
+  width: 50px;
+  border-radius: 5px 5px;
+  -moz-border-radius: 5px 5px;
+  -webkit-border-radius: 5px 5px;
+  border-top-left-radius: 5px 5px;
+  border-top-right-radius: 5px 5px;
+  border-bottom-right-radius: 5px 5px;
+  border-bottom-left-radius: 5px 5px;
+  font-size: 11px;
+  color: white;
+  margin: 0 5px 0 5px;
+  margin-top: 0;
+  margin-right: 5px;
+  margin-bottom: 0;
+  margin-left: 5px;
+  background-color: black;
+  cursor: pointer
+}
+#FindObjectFeatureCancelButton a:hover {
+  text-decoration: none;
+  color: white
+}
+#FindObjectFeatureCancelButton a:hover {
+  text-decoration: none;
+  color: #35CDBD
+}
+#MapControls {
+  background-color: #333;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomright: 10px 10px;
+  -moz-border-radius-bottomleft: 10px 10px;
+  -webkit-border-bottom-right-radius: 10px 10px;
+  -webkit-border-bottom-left-radius: 10px 10px;
+  top: 0;
+  display: none;
+  position: absolute;
+  right: 20px;
+  color: #fff;
+  z-index: 5;
+  width: 240px
+}
+#MapToolsMenu {
+  display: block;
+  width: 80px;
+  padding: 0 10px 0 10px;
+  line-height: 38px;
+  height: 38px;
+  background-image: url(http://play.planets.nu/img/game/maptools.png);
+  background-repeat: no-repeat;
+  clear: both;
+  cursor: pointer
+}
+.DownArrow {
+  background-position: 80px -38px
+}
+.UpArrow {
+  background-position: 80px 0
+}
+#MapTools {
+  list-style-type: none;
+  margin: 45px 0 0 0;
+  padding: 0;
+  display: none
+}
+#MapTools li {
+  border: dotted 1px #666;
+  display: block;
+  float: left;
+  width: 105px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  margin: 0 0 5px 5px;
+  cursor: pointer
+}
+#MapTools li.selectedmaptool {
+  background-color: #35CDBD
+}
+.ZoomIn {
+  background-position: 100px -96px
+}
+.ZoomOut {
+  background-position: 100px -76px
+}
+.HypCircle {
+  background-position: 100px -116px
+}
+.Measure {
+  background-position: 100px -116px
+}
+.ClearMap {
+  background-position: 100px -136px
+}
+.ShowMinerals {
+  background-position: 100px -136px
+}
+.PlanetName {
+  position: absolute;
+  z-index: 5;
+  color: #ccc;
+  font-size: 11px;
+  line-height: 11px
+}
+.Pin {
+  position: absolute;
+  z-index: 10;
+  color: #ccc;
+  font-size: 12px;
+  line-height: 13px;
+  padding: 12px;
+  background-color: #222;
+  border: 1px #777 solid;
+  border-radius: 20px;
+  border-top-left-radius: 0;
+  width: 200px
+}
+.CurrentPin {
+  border: 1px #ff0 solid
+}
+.SmallPin {
+  width: auto
+}
+.PinImage {
+  height: 50px;
+  width: 50px
+}
+.PinFloatImage {
+  float: left;
+  padding-right: 10px;
+  padding-bottom: 10px
+}
+.AcademyResource {
+  float: right;
+  margin-right: 20px;
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 10px
+}
+.mappin {
+  position: relative;
+  padding: 15px;
+  margin: 1em 0 3em;
+  color: #000;
+  background: #f3961c;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px
+}
+.mappin:after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50px;
+  border-width: 15px 15px 0;
+  border-style: solid;
+  border-color: #f3961c transparent;
+  display: block;
+  width: 0
+}
+
+#PlanetsContainer.Narrow .HullImg {
+  top: 75px;
+  left: 145px;
+  width: 250px
+}
+#PlanetsContainer.Narrow .HullEngines {
+  width: 190px
+}
+#PlanetsContainer.Narrow .HullBeams {
+  width: 200px;
+  left: 290px;
+  top: 50px
+}
+#PlanetsContainer.Narrow .HullAux {
+  width: 200px;
+  left: 290px;
+  top: 250px
+}
+#PlanetsContainer.Narrow .EngineBar,#PlanetsContainer.Narrow .EngineBarRed,#PlanetsContainer.Narrow #EngineLegend div {
+  margin-left: 20px
+}
+#PlanetsContainer.Narrow .BuyActions {
+  width: 55px
+}
+#PlanetsContainer.Narrow .BuyActions div {
+  float: left;
+  cursor: pointer;
+  color: #2ab0a8;
+  padding: 0 0 0 5px
+}
+#PlanetsContainer.Narrow #MoreScreen {
+  padding: 5px 10px 10px 5px
+}
+.GreenBox {
+  background-color: #9f9;
+  color: #060
+}
+.RedBox {
+  background-color: #fcc;
+  color: #600
+}
+.OrangeBox {
+  background-color: #fc6;
+  color: #c30
+}
+
+#egames {
+  background-color: #333;
+  border: solid 1px #444
+}
+.erendergamerow {
+  cursor: pointer
+}
+#etitlearea {
+  padding: 20px
+}
+.egamedescription {
+  vertical-align: top
+}
+#egames .egamedescription a {
+  font-size: 14px;
+  margin: 0 0 5px 0
+}
+#egames .egamedescription span {
+  display: block;
+  font-size: 12px;
+  line-height: 18px;
+  color: #999
+}
+.estandardgamelist td {
+  vertical-align: top;
+  border-bottom: solid 1px #333;
+  padding: 10px 0 10px 10px
+}
+.estandardgamelist tr:hover {
+  background-color: #333
+}
+.estandardgamelist th {
+  text-align: left;
+  border-bottom: solid 1px #333;
+  padding: 0 0 8px 8px;
+  font-size: 16px
+}
+
+#FuelStatus,#WarpStatus,#FuelNeeded,#ArrivalStatus {
+  float: left;
+  height: 40px;
+  margin: 5px 0 5px 3px;
+  padding: 0 0 2px 0
+}
+#FuelStatus {
+  width: 160px
+}
+#WarpStatus {
+  width: 50px
+}
+#FuelNeeded {
+  width: 80px
+}
+#ArrivalStatus {
+  width: 80px
+}
+.BoxStatus {
+  text-align: center;
+  color: #000;
+  font-size: 11px;
+  line-height: 14px
+}
+.BoxVal {
+  text-align: center;
+  font-size: 16px;
+  line-height: 26px
+}
+.BoxVal span {
+  font-size: 11px
+}
+#ShipNameText {
+  width: 250px;
+  height: 30px;
+  font-size: 14px
+}
+
+.BuildContainer {
+  overflow: hidden
+}
+.LoadBuyDisabled img {
+  background-color: #000;
+  opacity: .5
+}
+.LoadBuyDisabled {
+  background-color: #000;
+  opacity: .5;
+  color: #999
+}
+.LoadBuy {
+  background-color: #000;
+  border: solid 2px #000;
+  border-radius: 3px
+}
+.LoadBuy:hover {
+  cursor: pointer;
+  border: solid 2px #56E4D5
+}
+.LoadBuySelected {
+  background-color: #000;
+  color: #fff;
+  border: solid 2px #56E4D5!important
+}
+.LoadBuySelected img {
+  opacity: 1!important
+}
+.LoadBuyDisabled {
+  cursor: pointer;
+  background-color: #000;
+  border: solid 2px #000;
+  border-radius: 3px
+}
+#SelectEngine,#SelectBeam,#SelectLauncher {
+  border: solid 2px #333;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer
+}
+#BuyHull {
+  position: relative
+}
+.HullImg {
+  position: absolute;
+  top: 50px;
+  left: 165px;
+  width: 300px
+}
+.HullSepcs,.HullEngines,.HullBeams,.HullAux {
+  position: absolute;
+  height: 100px;
+  background-image: url(http://play.planets.nu/img/game/hullspeclines.png);
+  background-repeat: no-repeat
+}
+.HullSpecs {
+  width: 160px;
+  left: 10px;
+  top: 50px;
+  background-position: -500px 0
+}
+.HullEngines {
+  width: 210px;
+  left: 20px;
+  top: 250px;
+  background-position: right -100px;
+  padding: 0 100px 0 0;
+  z-index: 10
+}
+.HullBeams {
+  width: 230px;
+  left: 370px;
+  top: 50px;
+  background-position: 0 -300px;
+  padding: 0 0 0 100px
+}
+.HullAux {
+  width: 230px;
+  left: 370px;
+  top: 250px;
+  background-position: 0 -200px;
+  padding: 0 0 0 100px
+}
+#HullPurchase {
+  position: absolute;
+  top: 350px;
+  left: 20px;
+  width: 350px;
+  padding: 10px;
+  height: 120px;
+  border: solid 2px #333
+}
+#HullPurchase .val,#ShipPurchase .val {
+  color: #fff
+}
+#ShipPurchase {
+  position: absolute;
+  top: 355px;
+  left: 23px;
+  width: 550px;
+  padding: 10px;
+  height: 150px;
+  border: solid 2px #333;
+  border-radius: 5px
+}
+.CostTable {
+  width: 180px
+}
+.CostTableTd {
+  width: 195px
+}
+#BuildShipCost {
+  width: 450px
+}
+#HullsInStock {
+  font-size: 30px;
+  height: 70px;
+  line-height: 70px;
+  padding: 0 0 20px 0
+}
+#HullSpecial {
+  position: absolute;
+  top: 350px;
+  left: 400px;
+  width: 200px;
+  height: 100px;
+  padding: 10px
+}
+.SpecNum,.SpecNum2 {
+  font-size: 15px;
+  font-weight: bold
+}
+.SpecNum {
+  width: 60px
+}
+.SelectedStock {
+  background-color: #060;
+  color: #fff
+}
+#BuildShipMessage {
+  position: absolute;
+  top: 350px;
+  left: 25px;
+  font-size: 30px;
+  line-height: 40px;
+  font-family: Century Gothic;
+  color: green
+}
+#BuildShipError {
+  position: absolute;
+  top: 535px;
+  left: 25px
+}
+#AssemblyHullSpecial {
+  position: absolute;
+  top: 535px;
+  left: 150px;
+  width: 450px;
+  height: 40px
+}
+#BuyShipBox {
+  padding: 0 0 0 10px
+}
+#CancelShipButton {
+  position: absolute;
+  top: 400px;
+  left: 25px;
+  width: 120px
+}
+#AssemblyBack {
+  position: absolute;
+  top: 565px;
+  left: 25px
+}
+#SpaceDock img {
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin: 0 10px 10px 0;
+  background-color: #000;
+  border: solid 1px #666
+}
+#SpaceDock h2 {
+  font-family: Arial;
+  font-size: 16px;
+  line-height: 20px
+}
+#SpaceDock {
+  line-height: 14px
+}
+#EngineGraph {
+  background-image: url(http://play.planets.nu/img/game/graphbg.png);
+  background-repeat: repeat-x;
+  border: solid 2px #333;
+  padding: 10px 10px 0 10px;
+  height: 250px
+}
+.EngineBar,.EngineBarRed,#EngineLegend div {
+  width: 25px;
+  float: left;
+  margin-left: 30px
+}
+.EngineBar {
+  background-color: #35cdbd;
+  border: solid 1px #56e4d5
+}
+.EngineBarRed {
+  background-color: #d02a18;
+  border: solid 1px #fa371d
+}
+#EngineLegend {
+  clear: both;
+  padding: 0 0 0 10px;
+  border: solid 2px #000
+}
+#EngineLegend div {
+  font-size: 15px;
+  text-align: center;
+  border: solid 1px #000
+}
+#GraphTitle {
+  position: absolute;
+  top: 50px;
+  left: 30px
+}
+.OptimalEngine {
+  background-color: #35cdbd;
+  border: solid 1px #56e4d5;
+  width: 16px;
+  height: 16px;
+  float: left;
+  margin: 0 10px 0 0
+}
+.BarTitle {
+  clear: left;
+  padding: 0 0 0 5px;
+  line-height: 20px;
+  font-size: 13px
+}
+#BeamGraph {
+  background-image: url(http://play.planets.nu/img/game/graphbg.png);
+  background-repeat: repeat-x;
+  background-position: left bottom;
+  border: solid 2px #333;
+  padding: 10px 10px 10px 0;
+  line-height: 32px;
+  font-size: 16px;
+  height: 250px
+}
+.DamageBar,.KillBar,.SweepBar {
+  height: 30px;
+  margin: 0 10px 30px 0;
+  float: left
+}
+.DamageBar {
+  background-color: #d02a18;
+  border: solid 1px #fa371d
+}
+.KillBar {
+  background-color: #35cdbd;
+  border: solid 1px #56e4d5
+}
+.SweepBar {
+  background-color: #66d032;
+  border: solid 1px #7ff446
+}
+.BuyActions {
+  width: 80px
+}
+.BuyActions div {
+  float: left;
+  cursor: pointer;
+  color: #2ab0a8;
+  padding: 0 5px 0 5px
+}
+#ShipHulls .SepContainer,#ShipEngines .SepContainer,#ShipLaunchers .SepContainer,#ShipBeams .SepContainer,#ShipAssembly .SepContainer {
+  line-height: 16px
+}
+
+.eleaderrace {
+  margin: 0 0 30px 0
+}
+.eleaderrace h3 {
+  margin: 0 0 20px 10px
+}
+#eplayerlist h2 {
+  margin: 0 0 20px 10px
+}
+.eachievement,.etonssunk,.ecaptured,.edefense {
+  height: 20px;
+  border: solid 1px #444;
+  width: 400px;
+  overflow: hidden
+}
+.eachievement div {
+  height: 20px;
+  background-color: #009
+}
+.etonssunk div {
+  height: 20px;
+  background-color: #900
+}
+.ecaptured div {
+  height: 20px;
+  background-color: yellow
+}
+.edefense div {
+  height: 20px;
+  background-color: brown
+}
+.eplayerlist td {
+  vertical-align: top;
+  padding: 10px 0 10px 10px
+}
+.eplayerlist tr:hover {
+  background-color: #333
+}
+.eplayerlist th {
+  text-align: left;
+  padding: 0 0 8px 8px;
+  font-size: 16px
+}
+
+/*! jQuery UI - v1.9.2 - 2013-01-15
+* http://jqueryui.com
+* Includes: jquery.ui.core.css, jquery.ui.datepicker.css, jquery.ui.slider.css
+* To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Verdana%2CArial%2Csans-serif&fwDefault=normal&fsDefault=1.1em&cornerRadius=4px&bgColorHeader=cccccc&bgTextureHeader=03_highlight_soft.png&bgImgOpacityHeader=75&borderColorHeader=aaaaaa&fcHeader=222222&iconColorHeader=222222&bgColorContent=ffffff&bgTextureContent=01_flat.png&bgImgOpacityContent=75&borderColorContent=aaaaaa&fcContent=222222&iconColorContent=222222&bgColorDefault=e6e6e6&bgTextureDefault=02_glass.png&bgImgOpacityDefault=75&borderColorDefault=d3d3d3&fcDefault=555555&iconColorDefault=888888&bgColorHover=dadada&bgTextureHover=02_glass.png&bgImgOpacityHover=75&borderColorHover=999999&fcHover=212121&iconColorHover=454545&bgColorActive=ffffff&bgTextureActive=02_glass.png&bgImgOpacityActive=65&borderColorActive=aaaaaa&fcActive=212121&iconColorActive=454545&bgColorHighlight=fbf9ee&bgTextureHighlight=02_glass.png&bgImgOpacityHighlight=55&borderColorHighlight=fcefa1&fcHighlight=363636&iconColorHighlight=2e83ff&bgColorError=fef1ec&bgTextureError=02_glass.png&bgImgOpacityError=95&borderColorError=cd0a0a&fcError=cd0a0a&iconColorError=cd0a0a&bgColorOverlay=aaaaaa&bgTextureOverlay=01_flat.png&bgImgOpacityOverlay=0&opacityOverlay=30&bgColorShadow=aaaaaa&bgTextureShadow=01_flat.png&bgImgOpacityShadow=0&opacityShadow=30&thicknessShadow=8px&offsetTopShadow=-8px&offsetLeftShadow=-8px&cornerRadiusShadow=8px
+* Copyright (c) 2013 jQuery Foundation and other contributors Licensed MIT */
+.ui-helper-hidden {
+  display: none
+}
+.ui-helper-hidden-accessible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px
+}
+.ui-helper-reset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  line-height: 1.3;
+  text-decoration: none;
+  font-size: 100%;
+  list-style: none
+}
+.ui-helper-clearfix:before,.ui-helper-clearfix:after {
+  content: "";
+  display: table
+}
+.ui-helper-clearfix:after {
+  clear: both
+}
+.ui-helper-clearfix {
+  zoom:1}
+.ui-helper-zfix {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  opacity: 0;
+  filter: Alpha(Opacity=0)
+}
+.ui-state-disabled {
+  cursor: default!important
+}
+.ui-icon {
+  display: block;
+  text-indent: -99999px;
+  overflow: hidden;
+  background-repeat: no-repeat
+}
+.ui-widget-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%
+}
+.ui-datepicker {
+  width: 17em;
+  padding: .2em .2em 0;
+  display: none
+}
+.ui-datepicker .ui-datepicker-header {
+  position: relative;
+  padding: .2em 0
+}
+.ui-datepicker .ui-datepicker-prev,.ui-datepicker .ui-datepicker-next {
+  position: absolute;
+  top: 2px;
+  width: 1.8em;
+  height: 1.8em
+}
+.ui-datepicker .ui-datepicker-prev-hover,.ui-datepicker .ui-datepicker-next-hover {
+  top: 1px
+}
+.ui-datepicker .ui-datepicker-prev {
+  left: 2px
+}
+.ui-datepicker .ui-datepicker-next {
+  right: 2px
+}
+.ui-datepicker .ui-datepicker-prev-hover {
+  left: 1px
+}
+.ui-datepicker .ui-datepicker-next-hover {
+  right: 1px
+}
+.ui-datepicker .ui-datepicker-prev span,.ui-datepicker .ui-datepicker-next span {
+  display: block;
+  position: absolute;
+  left: 50%;
+  margin-left: -8px;
+  top: 50%;
+  margin-top: -8px
+}
+.ui-datepicker .ui-datepicker-title {
+  margin: 0 2.3em;
+  line-height: 1.8em;
+  text-align: center
+}
+.ui-datepicker .ui-datepicker-title select {
+  font-size: 1em;
+  margin: 1px 0
+}
+.ui-datepicker select.ui-datepicker-month-year {
+  width: 100%
+}
+.ui-datepicker select.ui-datepicker-month,.ui-datepicker select.ui-datepicker-year {
+  width: 49%
+}
+.ui-datepicker table {
+  width: 100%;
+  font-size: .9em;
+  border-collapse: collapse;
+  margin: 0 0 .4em
+}
+.ui-datepicker th {
+  padding: .7em .3em;
+  text-align: center;
+  font-weight: bold;
+  border: 0
+}
+.ui-datepicker td {
+  border: 0;
+  padding: 1px
+}
+.ui-datepicker td span,.ui-datepicker td a {
+  display: block;
+  padding: .2em;
+  text-align: right;
+  text-decoration: none
+}
+.ui-datepicker .ui-datepicker-buttonpane {
+  background-image: none;
+  margin: .7em 0 0 0;
+  padding: 0 .2em;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0
+}
+.ui-datepicker .ui-datepicker-buttonpane button {
+  float: right;
+  margin: .5em .2em .4em;
+  cursor: pointer;
+  padding: .2em .6em .3em .6em;
+  width: auto;
+  overflow: visible
+}
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
+  float: left
+}
+.ui-datepicker.ui-datepicker-multi {
+  width: auto
+}
+.ui-datepicker-multi .ui-datepicker-group {
+  float: left
+}
+.ui-datepicker-multi .ui-datepicker-group table {
+  width: 95%;
+  margin: 0 auto .4em
+}
+.ui-datepicker-multi-2 .ui-datepicker-group {
+  width: 50%
+}
+.ui-datepicker-multi-3 .ui-datepicker-group {
+  width: 33.3%
+}
+.ui-datepicker-multi-4 .ui-datepicker-group {
+  width: 25%
+}
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header {
+  border-left-width: 0
+}
+.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header {
+  border-left-width: 0
+}
+.ui-datepicker-multi .ui-datepicker-buttonpane {
+  clear: left
+}
+.ui-datepicker-row-break {
+  clear: both;
+  width: 100%;
+  font-size: 0
+}
+.ui-datepicker-rtl {
+  direction: rtl
+}
+.ui-datepicker-rtl .ui-datepicker-prev {
+  right: 2px;
+  left: auto
+}
+.ui-datepicker-rtl .ui-datepicker-next {
+  left: 2px;
+  right: auto
+}
+.ui-datepicker-rtl .ui-datepicker-prev:hover {
+  right: 1px;
+  left: auto
+}
+.ui-datepicker-rtl .ui-datepicker-next:hover {
+  left: 1px;
+  right: auto
+}
+.ui-datepicker-rtl .ui-datepicker-buttonpane {
+  clear: right
+}
+.ui-datepicker-rtl .ui-datepicker-buttonpane button {
+  float: left
+}
+.ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current {
+  float: right
+}
+.ui-datepicker-rtl .ui-datepicker-group {
+  float: right
+}
+.ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header {
+  border-right-width: 0;
+  border-left-width: 1px
+}
+.ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header {
+  border-right-width: 0;
+  border-left-width: 1px
+}
+.ui-datepicker-cover {
+  position: absolute;
+  z-index: -1;
+  filter: mask();
+  top: -4px;
+  left: -4px;
+  width: 200px;
+  height: 200px
+}
+.ui-slider {
+  position: relative;
+  text-align: left
+}
+.ui-slider .ui-slider-handle {
+  position: absolute;
+  z-index: 2;
+  width: 1.2em;
+  height: 1.2em;
+  cursor: default
+}
+.ui-slider .ui-slider-range {
+  position: absolute;
+  z-index: 1;
+  font-size: .7em;
+  display: block;
+  border: 0;
+  background-position: 0 0
+}
+.ui-slider-horizontal {
+  height: .8em
+}
+.ui-slider-horizontal .ui-slider-handle {
+  top: -.3em;
+  margin-left: -.6em
+}
+.ui-slider-horizontal .ui-slider-range {
+  top: 0;
+  height: 100%
+}
+.ui-slider-horizontal .ui-slider-range-min {
+  left: 0
+}
+.ui-slider-horizontal .ui-slider-range-max {
+  right: 0
+}
+.ui-slider-vertical {
+  width: .8em;
+  height: 100px
+}
+.ui-slider-vertical .ui-slider-handle {
+  left: -.3em;
+  margin-left: 0;
+  margin-bottom: -.6em
+}
+.ui-slider-vertical .ui-slider-range {
+  left: 0;
+  width: 100%
+}
+.ui-slider-vertical .ui-slider-range-min {
+  bottom: 0
+}
+.ui-slider-vertical .ui-slider-range-max {
+  top: 0
+}
+.ui-widget {
+  font-family: Verdana,Arial,sans-serif;
+  font-size: 12px
+}
+.ui-widget .ui-widget {
+  font-size: 1em
+}
+.ui-widget input,.ui-widget select,.ui-widget textarea,.ui-widget button {
+  font-family: Verdana,Arial,sans-serif;
+  font-size: 1em
+}
+.ui-widget-content {
+  border: 1px solid #aaa;
+  background: #fff;
+  color: #222
+}
+.ui-widget-content a {
+  color: #222
+}
+.ui-widget-header {
+  border: 1px solid #aaa;
+  background: #ccc;
+  color: #222;
+  font-weight: bold
+}
+.ui-widget-header a {
+  color: #222
+}
+.ui-state-default,.ui-widget-content .ui-state-default,.ui-widget-header .ui-state-default {
+  border: 1px solid #d3d3d3;
+  background: #e6e6e6;
+  font-weight: normal;
+  color: #555
+}
+.ui-state-default a,.ui-state-default a:link,.ui-state-default a:visited {
+  color: #555;
+  text-decoration: none
+}
+.ui-state-hover,.ui-widget-content .ui-state-hover,.ui-widget-header .ui-state-hover,.ui-state-focus,.ui-widget-content .ui-state-focus,.ui-widget-header .ui-state-focus {
+  border: 1px solid #999;
+  background: #dadada;
+  font-weight: normal;
+  color: #212121
+}
+.ui-state-hover a,.ui-state-hover a:hover,.ui-state-hover a:link,.ui-state-hover a:visited {
+  color: #212121;
+  text-decoration: none
+}
+.ui-state-active,.ui-widget-content .ui-state-active,.ui-widget-header .ui-state-active {
+  border: 1px solid #aaa;
+  background: #fff;
+  font-weight: normal;
+  color: #212121
+}
+.ui-state-active a,.ui-state-active a:link,.ui-state-active a:visited {
+  color: #212121;
+  text-decoration: none
+}
+.ui-state-highlight,.ui-widget-content .ui-state-highlight,.ui-widget-header .ui-state-highlight {
+  border: 1px solid #fcefa1;
+  background: #fbf9ee;
+  color: #363636
+}
+.ui-state-highlight a,.ui-widget-content .ui-state-highlight a,.ui-widget-header .ui-state-highlight a {
+  color: #363636
+}
+.ui-state-error,.ui-widget-content .ui-state-error,.ui-widget-header .ui-state-error {
+  border: 1px solid #cd0a0a;
+  background: #fef1ec;
+  color: #cd0a0a
+}
+.ui-state-error a,.ui-widget-content .ui-state-error a,.ui-widget-header .ui-state-error a {
+  color: #cd0a0a
+}
+.ui-state-error-text,.ui-widget-content .ui-state-error-text,.ui-widget-header .ui-state-error-text {
+  color: #cd0a0a
+}
+.ui-priority-primary,.ui-widget-content .ui-priority-primary,.ui-widget-header .ui-priority-primary {
+  font-weight: bold
+}
+.ui-priority-secondary,.ui-widget-content .ui-priority-secondary,.ui-widget-header .ui-priority-secondary {
+  opacity: .7;
+  filter: Alpha(Opacity=70);
+  font-weight: normal
+}
+.ui-state-disabled,.ui-widget-content .ui-state-disabled,.ui-widget-header .ui-state-disabled {
+  opacity: .35;
+  filter: Alpha(Opacity=35);
+  background-image: none
+}
+.ui-state-disabled .ui-icon {
+  filter: Alpha(Opacity=35)
+}
+.ui-icon {
+  width: 16px;
+  height: 16px
+}
+.ui-icon-carat-1-n {
+  background-position: 0 0
+}
+.ui-icon-carat-1-ne {
+  background-position: -16px 0
+}
+.ui-icon-carat-1-e {
+  background-position: -32px 0
+}
+.ui-icon-carat-1-se {
+  background-position: -48px 0
+}
+.ui-icon-carat-1-s {
+  background-position: -64px 0
+}
+.ui-icon-carat-1-sw {
+  background-position: -80px 0
+}
+.ui-icon-carat-1-w {
+  background-position: -96px 0
+}
+.ui-icon-carat-1-nw {
+  background-position: -112px 0
+}
+.ui-icon-carat-2-n-s {
+  background-position: -128px 0
+}
+.ui-icon-carat-2-e-w {
+  background-position: -144px 0
+}
+.ui-icon-triangle-1-n {
+  background-position: 0 -16px
+}
+.ui-icon-triangle-1-ne {
+  background-position: -16px -16px
+}
+.ui-icon-triangle-1-e {
+  background-position: -32px -16px
+}
+.ui-icon-triangle-1-se {
+  background-position: -48px -16px
+}
+.ui-icon-triangle-1-s {
+  background-position: -64px -16px
+}
+.ui-icon-triangle-1-sw {
+  background-position: -80px -16px
+}
+.ui-icon-triangle-1-w {
+  background-position: -96px -16px
+}
+.ui-icon-triangle-1-nw {
+  background-position: -112px -16px
+}
+.ui-icon-triangle-2-n-s {
+  background-position: -128px -16px
+}
+.ui-icon-triangle-2-e-w {
+  background-position: -144px -16px
+}
+.ui-icon-arrow-1-n {
+  background-position: 0 -32px
+}
+.ui-icon-arrow-1-ne {
+  background-position: -16px -32px
+}
+.ui-icon-arrow-1-e {
+  background-position: -32px -32px
+}
+.ui-icon-arrow-1-se {
+  background-position: -48px -32px
+}
+.ui-icon-arrow-1-s {
+  background-position: -64px -32px
+}
+.ui-icon-arrow-1-sw {
+  background-position: -80px -32px
+}
+.ui-icon-arrow-1-w {
+  background-position: -96px -32px
+}
+.ui-icon-arrow-1-nw {
+  background-position: -112px -32px
+}
+.ui-icon-arrow-2-n-s {
+  background-position: -128px -32px
+}
+.ui-icon-arrow-2-ne-sw {
+  background-position: -144px -32px
+}
+.ui-icon-arrow-2-e-w {
+  background-position: -160px -32px
+}
+.ui-icon-arrow-2-se-nw {
+  background-position: -176px -32px
+}
+.ui-icon-arrowstop-1-n {
+  background-position: -192px -32px
+}
+.ui-icon-arrowstop-1-e {
+  background-position: -208px -32px
+}
+.ui-icon-arrowstop-1-s {
+  background-position: -224px -32px
+}
+.ui-icon-arrowstop-1-w {
+  background-position: -240px -32px
+}
+.ui-icon-arrowthick-1-n {
+  background-position: 0 -48px
+}
+.ui-icon-arrowthick-1-ne {
+  background-position: -16px -48px
+}
+.ui-icon-arrowthick-1-e {
+  background-position: -32px -48px
+}
+.ui-icon-arrowthick-1-se {
+  background-position: -48px -48px
+}
+.ui-icon-arrowthick-1-s {
+  background-position: -64px -48px
+}
+.ui-icon-arrowthick-1-sw {
+  background-position: -80px -48px
+}
+.ui-icon-arrowthick-1-w {
+  background-position: -96px -48px
+}
+.ui-icon-arrowthick-1-nw {
+  background-position: -112px -48px
+}
+.ui-icon-arrowthick-2-n-s {
+  background-position: -128px -48px
+}
+.ui-icon-arrowthick-2-ne-sw {
+  background-position: -144px -48px
+}
+.ui-icon-arrowthick-2-e-w {
+  background-position: -160px -48px
+}
+.ui-icon-arrowthick-2-se-nw {
+  background-position: -176px -48px
+}
+.ui-icon-arrowthickstop-1-n {
+  background-position: -192px -48px
+}
+.ui-icon-arrowthickstop-1-e {
+  background-position: -208px -48px
+}
+.ui-icon-arrowthickstop-1-s {
+  background-position: -224px -48px
+}
+.ui-icon-arrowthickstop-1-w {
+  background-position: -240px -48px
+}
+.ui-icon-arrowreturnthick-1-w {
+  background-position: 0 -64px
+}
+.ui-icon-arrowreturnthick-1-n {
+  background-position: -16px -64px
+}
+.ui-icon-arrowreturnthick-1-e {
+  background-position: -32px -64px
+}
+.ui-icon-arrowreturnthick-1-s {
+  background-position: -48px -64px
+}
+.ui-icon-arrowreturn-1-w {
+  background-position: -64px -64px
+}
+.ui-icon-arrowreturn-1-n {
+  background-position: -80px -64px
+}
+.ui-icon-arrowreturn-1-e {
+  background-position: -96px -64px
+}
+.ui-icon-arrowreturn-1-s {
+  background-position: -112px -64px
+}
+.ui-icon-arrowrefresh-1-w {
+  background-position: -128px -64px
+}
+.ui-icon-arrowrefresh-1-n {
+  background-position: -144px -64px
+}
+.ui-icon-arrowrefresh-1-e {
+  background-position: -160px -64px
+}
+.ui-icon-arrowrefresh-1-s {
+  background-position: -176px -64px
+}
+.ui-icon-arrow-4 {
+  background-position: 0 -80px
+}
+.ui-icon-arrow-4-diag {
+  background-position: -16px -80px
+}
+.ui-icon-extlink {
+  background-position: -32px -80px
+}
+.ui-icon-newwin {
+  background-position: -48px -80px
+}
+.ui-icon-refresh {
+  background-position: -64px -80px
+}
+.ui-icon-shuffle {
+  background-position: -80px -80px
+}
+.ui-icon-transfer-e-w {
+  background-position: -96px -80px
+}
+.ui-icon-transferthick-e-w {
+  background-position: -112px -80px
+}
+.ui-icon-folder-collapsed {
+  background-position: 0 -96px
+}
+.ui-icon-folder-open {
+  background-position: -16px -96px
+}
+.ui-icon-document {
+  background-position: -32px -96px
+}
+.ui-icon-document-b {
+  background-position: -48px -96px
+}
+.ui-icon-note {
+  background-position: -64px -96px
+}
+.ui-icon-mail-closed {
+  background-position: -80px -96px
+}
+.ui-icon-mail-open {
+  background-position: -96px -96px
+}
+.ui-icon-suitcase {
+  background-position: -112px -96px
+}
+.ui-icon-comment {
+  background-position: -128px -96px
+}
+.ui-icon-person {
+  background-position: -144px -96px
+}
+.ui-icon-print {
+  background-position: -160px -96px
+}
+.ui-icon-trash {
+  background-position: -176px -96px
+}
+.ui-icon-locked {
+  background-position: -192px -96px
+}
+.ui-icon-unlocked {
+  background-position: -208px -96px
+}
+.ui-icon-bookmark {
+  background-position: -224px -96px
+}
+.ui-icon-tag {
+  background-position: -240px -96px
+}
+.ui-icon-home {
+  background-position: 0 -112px
+}
+.ui-icon-flag {
+  background-position: -16px -112px
+}
+.ui-icon-calendar {
+  background-position: -32px -112px
+}
+.ui-icon-cart {
+  background-position: -48px -112px
+}
+.ui-icon-pencil {
+  background-position: -64px -112px
+}
+.ui-icon-clock {
+  background-position: -80px -112px
+}
+.ui-icon-disk {
+  background-position: -96px -112px
+}
+.ui-icon-calculator {
+  background-position: -112px -112px
+}
+.ui-icon-zoomin {
+  background-position: -128px -112px
+}
+.ui-icon-zoomout {
+  background-position: -144px -112px
+}
+.ui-icon-search {
+  background-position: -160px -112px
+}
+.ui-icon-wrench {
+  background-position: -176px -112px
+}
+.ui-icon-gear {
+  background-position: -192px -112px
+}
+.ui-icon-heart {
+  background-position: -208px -112px
+}
+.ui-icon-star {
+  background-position: -224px -112px
+}
+.ui-icon-link {
+  background-position: -240px -112px
+}
+.ui-icon-cancel {
+  background-position: 0 -128px
+}
+.ui-icon-plus {
+  background-position: -16px -128px
+}
+.ui-icon-plusthick {
+  background-position: -32px -128px
+}
+.ui-icon-minus {
+  background-position: -48px -128px
+}
+.ui-icon-minusthick {
+  background-position: -64px -128px
+}
+.ui-icon-close {
+  background-position: -80px -128px
+}
+.ui-icon-closethick {
+  background-position: -96px -128px
+}
+.ui-icon-key {
+  background-position: -112px -128px
+}
+.ui-icon-lightbulb {
+  background-position: -128px -128px
+}
+.ui-icon-scissors {
+  background-position: -144px -128px
+}
+.ui-icon-clipboard {
+  background-position: -160px -128px
+}
+.ui-icon-copy {
+  background-position: -176px -128px
+}
+.ui-icon-contact {
+  background-position: -192px -128px
+}
+.ui-icon-image {
+  background-position: -208px -128px
+}
+.ui-icon-video {
+  background-position: -224px -128px
+}
+.ui-icon-script {
+  background-position: -240px -128px
+}
+.ui-icon-alert {
+  background-position: 0 -144px
+}
+.ui-icon-info {
+  background-position: -16px -144px
+}
+.ui-icon-notice {
+  background-position: -32px -144px
+}
+.ui-icon-help {
+  background-position: -48px -144px
+}
+.ui-icon-check {
+  background-position: -64px -144px
+}
+.ui-icon-bullet {
+  background-position: -80px -144px
+}
+.ui-icon-radio-on {
+  background-position: -96px -144px
+}
+.ui-icon-radio-off {
+  background-position: -112px -144px
+}
+.ui-icon-pin-w {
+  background-position: -128px -144px
+}
+.ui-icon-pin-s {
+  background-position: -144px -144px
+}
+.ui-icon-play {
+  background-position: 0 -160px
+}
+.ui-icon-pause {
+  background-position: -16px -160px
+}
+.ui-icon-seek-next {
+  background-position: -32px -160px
+}
+.ui-icon-seek-prev {
+  background-position: -48px -160px
+}
+.ui-icon-seek-end {
+  background-position: -64px -160px
+}
+.ui-icon-seek-start {
+  background-position: -80px -160px
+}
+.ui-icon-seek-first {
+  background-position: -80px -160px
+}
+.ui-icon-stop {
+  background-position: -96px -160px
+}
+.ui-icon-eject {
+  background-position: -112px -160px
+}
+.ui-icon-volume-off {
+  background-position: -128px -160px
+}
+.ui-icon-volume-on {
+  background-position: -144px -160px
+}
+.ui-icon-power {
+  background-position: 0 -176px
+}
+.ui-icon-signal-diag {
+  background-position: -16px -176px
+}
+.ui-icon-signal {
+  background-position: -32px -176px
+}
+.ui-icon-battery-0 {
+  background-position: -48px -176px
+}
+.ui-icon-battery-1 {
+  background-position: -64px -176px
+}
+.ui-icon-battery-2 {
+  background-position: -80px -176px
+}
+.ui-icon-battery-3 {
+  background-position: -96px -176px
+}
+.ui-icon-circle-plus {
+  background-position: 0 -192px
+}
+.ui-icon-circle-minus {
+  background-position: -16px -192px
+}
+.ui-icon-circle-close {
+  background-position: -32px -192px
+}
+.ui-icon-circle-triangle-e {
+  background-position: -48px -192px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-left: 16px solid #333;
+  border-bottom: 8px solid transparent
+}
+.ui-icon-circle-triangle-s {
+  background-position: -64px -192px
+}
+.ui-icon-circle-triangle-w {
+  background-position: -80px -192px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-right: 16px solid #333;
+  border-bottom: 8px solid transparent
+}
+.ui-icon-circle-triangle-n {
+  background-position: -96px -192px
+}
+.ui-icon-circle-arrow-e {
+  background-position: -112px -192px
+}
+.ui-icon-circle-arrow-s {
+  background-position: -128px -192px
+}
+.ui-icon-circle-arrow-w {
+  background-position: -144px -192px
+}
+.ui-icon-circle-arrow-n {
+  background-position: -160px -192px
+}
+.ui-icon-circle-zoomin {
+  background-position: -176px -192px
+}
+.ui-icon-circle-zoomout {
+  background-position: -192px -192px
+}
+.ui-icon-circle-check {
+  background-position: -208px -192px
+}
+.ui-icon-circlesmall-plus {
+  background-position: 0 -208px
+}
+.ui-icon-circlesmall-minus {
+  background-position: -16px -208px
+}
+.ui-icon-circlesmall-close {
+  background-position: -32px -208px
+}
+.ui-icon-squaresmall-plus {
+  background-position: -48px -208px
+}
+.ui-icon-squaresmall-minus {
+  background-position: -64px -208px
+}
+.ui-icon-squaresmall-close {
+  background-position: -80px -208px
+}
+.ui-icon-grip-dotted-vertical {
+  background-position: 0 -224px
+}
+.ui-icon-grip-dotted-horizontal {
+  background-position: -16px -224px
+}
+.ui-icon-grip-solid-vertical {
+  background-position: -32px -224px
+}
+.ui-icon-grip-solid-horizontal {
+  background-position: -48px -224px
+}
+.ui-icon-gripsmall-diagonal-se {
+  background-position: -64px -224px
+}
+.ui-icon-grip-diagonal-se {
+  background-position: -80px -224px
+}
+.ui-widget-overlay {
+  background: #aaa;
+  opacity: .3;
+  filter: Alpha(Opacity=30)
+}
+.ui-widget-shadow {
+  margin: -8px 0 0 -8px;
+  padding: 8px;
+  background: #aaa;
+  opacity: .3;
+  filter: Alpha(Opacity=30)
+}
+.mCSB_container {
+  width: auto;
+  margin-right: 30px;
+  overflow: hidden
+}
+.mCSB_container.mCS_no_scrollbar {
+  margin-right: 0
+}
+.mCS_disabled>.mCustomScrollBox>.mCSB_container.mCS_no_scrollbar,.mCS_destroyed>.mCustomScrollBox>.mCSB_container.mCS_no_scrollbar {
+  margin-right: 30px
+}
+.mCustomScrollBox>.mCSB_scrollTools {
+  width: 16px;
+  height: 100%;
+  top: 0;
+  right: 0
+}
+.mCSB_scrollTools .mCSB_draggerContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: auto
+}
+.mCSB_scrollTools a+.mCSB_draggerContainer {
+  margin: 20px 0
+}
+.mCSB_scrollTools .mCSB_draggerRail {
+  width: 2px;
+  height: 100%;
+  margin: 0 auto;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px
+}
+.mCSB_scrollTools .mCSB_dragger {
+  cursor: pointer;
+  width: 100%;
+  height: 30px
+}
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  width: 4px;
+  height: 100%;
+  margin: 0 auto;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  text-align: center
+}
+.mCSB_scrollTools .mCSB_buttonUp,.mCSB_scrollTools .mCSB_buttonDown {
+  display: block;
+  position: relative;
+  height: 20px;
+  overflow: hidden;
+  margin: 0 auto;
+  cursor: pointer
+}
+.mCSB_scrollTools .mCSB_buttonDown {
+  top: 100%;
+  margin-top: -40px
+}
+.mCSB_horizontal>.mCSB_container {
+  height: auto;
+  margin-right: 0;
+  margin-bottom: 30px;
+  overflow: hidden
+}
+.mCSB_horizontal>.mCSB_container.mCS_no_scrollbar {
+  margin-bottom: 0
+}
+.mCS_disabled>.mCSB_horizontal>.mCSB_container.mCS_no_scrollbar,.mCS_destroyed>.mCSB_horizontal>.mCSB_container.mCS_no_scrollbar {
+  margin-right: 0;
+  margin-bottom: 30px
+}
+.mCSB_horizontal.mCustomScrollBox>.mCSB_scrollTools {
+  width: 100%;
+  height: 16px;
+  top: auto;
+  right: auto;
+  bottom: 0;
+  left: 0;
+  overflow: hidden
+}
+.mCSB_horizontal>.mCSB_scrollTools a+.mCSB_draggerContainer {
+  margin: 0 20px
+}
+.mCSB_horizontal>.mCSB_scrollTools .mCSB_draggerRail {
+  width: 100%;
+  height: 2px;
+  margin: 7px 0;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px
+}
+.mCSB_horizontal>.mCSB_scrollTools .mCSB_dragger {
+  width: 30px;
+  height: 100%
+}
+.mCSB_horizontal>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  width: 100%;
+  height: 4px;
+  margin: 6px auto;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px
+}
+.mCSB_horizontal>.mCSB_scrollTools .mCSB_buttonLeft,.mCSB_horizontal>.mCSB_scrollTools .mCSB_buttonRight {
+  display: block;
+  position: relative;
+  width: 20px;
+  height: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  cursor: pointer;
+  float: left
+}
+.mCSB_horizontal>.mCSB_scrollTools .mCSB_buttonRight {
+  margin-left: -40px;
+  float: right
+}
+.mCustomScrollBox {
+  -ms-touch-action: none
+}
+.mCustomScrollBox>.mCSB_scrollTools {
+  opacity: .75;
+  filter: "alpha(opacity=75)";
+  -ms-filter: "alpha(opacity=75)"
+}
+.mCustomScrollBox:hover>.mCSB_scrollTools {
+  opacity: 1;
+  filter: "alpha(opacity=100)";
+  -ms-filter: "alpha(opacity=100)"
+}
+.mCSB_scrollTools .mCSB_draggerRail {
+  background: #000;
+  background: rgba(0,0,0,0.4);
+  filter: "alpha(opacity=40)";
+  -ms-filter: "alpha(opacity=40)"
+}
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  background: #fff;
+  background: rgba(255,255,255,0.75);
+  filter: "alpha(opacity=75)";
+  -ms-filter: "alpha(opacity=75)"
+}
+.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+  background: rgba(255,255,255,0.85);
+  filter: "alpha(opacity=85)";
+  -ms-filter: "alpha(opacity=85)"
+}
+.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+  background: rgba(255,255,255,0.9);
+  filter: "alpha(opacity=90)";
+  -ms-filter: "alpha(opacity=90)"
+}
+.mCSB_scrollTools .mCSB_buttonUp,.mCSB_scrollTools .mCSB_buttonDown,.mCSB_scrollTools .mCSB_buttonLeft,.mCSB_scrollTools .mCSB_buttonRight {
+  background-image: url(mCSB_buttons.png);
+  background-repeat: no-repeat;
+  opacity: .4;
+  filter: "alpha(opacity=40)";
+  -ms-filter: "alpha(opacity=40)"
+}
+.mCSB_scrollTools .mCSB_buttonUp {
+  background-position: 0 0
+}
+.mCSB_scrollTools .mCSB_buttonDown {
+  background-position: 0 -20px
+}
+.mCSB_scrollTools .mCSB_buttonLeft {
+  background-position: 0 -40px
+}
+.mCSB_scrollTools .mCSB_buttonRight {
+  background-position: 0 -56px
+}
+.mCSB_scrollTools .mCSB_buttonUp:hover,.mCSB_scrollTools .mCSB_buttonDown:hover,.mCSB_scrollTools .mCSB_buttonLeft:hover,.mCSB_scrollTools .mCSB_buttonRight:hover {
+  opacity: .75;
+  filter: "alpha(opacity=75)";
+  -ms-filter: "alpha(opacity=75)"
+}
+.mCSB_scrollTools .mCSB_buttonUp:active,.mCSB_scrollTools .mCSB_buttonDown:active,.mCSB_scrollTools .mCSB_buttonLeft:active,.mCSB_scrollTools .mCSB_buttonRight:active {
+  opacity: .9;
+  filter: "alpha(opacity=90)";
+  -ms-filter: "alpha(opacity=90)"
+}
+.mCS-dark>.mCSB_scrollTools .mCSB_draggerRail {
+  background: #000;
+  background: rgba(0,0,0,0.15)
+}
+.mCS-dark>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  background: #000;
+  background: rgba(0,0,0,0.75)
+}
+.mCS-dark>.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+  background: rgba(0,0,0,0.85)
+}
+.mCS-dark>.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,.mCS-dark>.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+  background: rgba(0,0,0,0.9)
+}
+.mCS-dark>.mCSB_scrollTools .mCSB_buttonUp {
+  background-position: -80px 0
+}
+.mCS-dark>.mCSB_scrollTools .mCSB_buttonDown {
+  background-position: -80px -20px
+}
+.mCS-dark>.mCSB_scrollTools .mCSB_buttonLeft {
+  background-position: -80px -40px
+}
+.mCS-dark>.mCSB_scrollTools .mCSB_buttonRight {
+  background-position: -80px -56px
+}
+.mCS-light-2>.mCSB_scrollTools .mCSB_draggerRail {
+  width: 4px;
+  background: #fff;
+  background: rgba(255,255,255,0.1);
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px
+}
+.mCS-light-2>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  width: 4px;
+  background: #fff;
+  background: rgba(255,255,255,0.75);
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px
+}
+.mCS-light-2.mCSB_horizontal>.mCSB_scrollTools .mCSB_draggerRail {
+  width: 100%;
+  height: 4px;
+  margin: 6px 0
+}
+.mCS-light-2.mCSB_horizontal>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  width: 100%;
+  height: 4px;
+  margin: 6px auto
+}
+.mCS-light-2>.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+  background: rgba(255,255,255,0.85)
+}
+.mCS-light-2>.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,.mCS-light-2>.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+  background: rgba(255,255,255,0.9)
+}
+.mCS-light-2>.mCSB_scrollTools .mCSB_buttonUp {
+  background-position: -32px 0
+}
+.mCS-light-2>.mCSB_scrollTools .mCSB_buttonDown {
+  background-position: -32px -20px
+}
+.mCS-light-2>.mCSB_scrollTools .mCSB_buttonLeft {
+  background-position: -40px -40px
+}
+.mCS-light-2>.mCSB_scrollTools .mCSB_buttonRight {
+  background-position: -40px -56px
+}
+.mCS-dark-2>.mCSB_scrollTools .mCSB_draggerRail {
+  width: 4px;
+  background: #000;
+  background: rgba(0,0,0,0.1);
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px
+}
+.mCS-dark-2>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  width: 4px;
+  background: #000;
+  background: rgba(0,0,0,0.75);
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px
+}
+.mCS-dark-2.mCSB_horizontal>.mCSB_scrollTools .mCSB_draggerRail {
+  width: 100%;
+  height: 4px;
+  margin: 6px 0
+}
+.mCS-dark-2.mCSB_horizontal>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  width: 100%;
+  height: 4px;
+  margin: 6px auto
+}
+.mCS-dark-2>.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+  background: rgba(0,0,0,0.85)
+}
+.mCS-dark-2>.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,.mCS-dark-2>.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+  background: rgba(0,0,0,0.9)
+}
+.mCS-dark-2>.mCSB_scrollTools .mCSB_buttonUp {
+  background-position: -112px 0
+}
+.mCS-dark-2>.mCSB_scrollTools .mCSB_buttonDown {
+  background-position: -112px -20px
+}
+.mCS-dark-2>.mCSB_scrollTools .mCSB_buttonLeft {
+  background-position: -120px -40px
+}
+.mCS-dark-2>.mCSB_scrollTools .mCSB_buttonRight {
+  background-position: -120px -56px
+}
+.mCS-light-thick>.mCSB_scrollTools .mCSB_draggerRail {
+  width: 4px;
+  background: #fff;
+  background: rgba(255,255,255,0.1);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px
+}
+.mCS-light-thick>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  width: 6px;
+  background: #fff;
+  background: rgba(255,255,255,0.75);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px
+}
+.mCS-light-thick.mCSB_horizontal>.mCSB_scrollTools .mCSB_draggerRail {
+  width: 100%;
+  height: 4px;
+  margin: 6px 0
+}
+.mCS-light-thick.mCSB_horizontal>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  width: 100%;
+  height: 6px;
+  margin: 5px auto
+}
+.mCS-light-thick>.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+  background: rgba(255,255,255,0.85)
+}
+.mCS-light-thick>.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,.mCS-light-thick>.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+  background: rgba(255,255,255,0.9)
+}
+.mCS-light-thick>.mCSB_scrollTools .mCSB_buttonUp {
+  background-position: -16px 0
+}
+.mCS-light-thick>.mCSB_scrollTools .mCSB_buttonDown {
+  background-position: -16px -20px
+}
+.mCS-light-thick>.mCSB_scrollTools .mCSB_buttonLeft {
+  background-position: -20px -40px
+}
+.mCS-light-thick>.mCSB_scrollTools .mCSB_buttonRight {
+  background-position: -20px -56px
+}
+.mCS-dark-thick>.mCSB_scrollTools .mCSB_draggerRail {
+  width: 4px;
+  background: #000;
+  background: rgba(0,0,0,0.1);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px
+}
+.mCS-dark-thick>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  width: 6px;
+  background: #000;
+  background: rgba(0,0,0,0.75);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px
+}
+.mCS-dark-thick.mCSB_horizontal>.mCSB_scrollTools .mCSB_draggerRail {
+  width: 100%;
+  height: 4px;
+  margin: 6px 0
+}
+.mCS-dark-thick.mCSB_horizontal>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  width: 100%;
+  height: 6px;
+  margin: 5px auto
+}
+.mCS-dark-thick>.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+  background: rgba(0,0,0,0.85)
+}
+.mCS-dark-thick>.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,.mCS-dark-thick>.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+  background: rgba(0,0,0,0.9)
+}
+.mCS-dark-thick>.mCSB_scrollTools .mCSB_buttonUp {
+  background-position: -96px 0
+}
+.mCS-dark-thick>.mCSB_scrollTools .mCSB_buttonDown {
+  background-position: -96px -20px
+}
+.mCS-dark-thick>.mCSB_scrollTools .mCSB_buttonLeft {
+  background-position: -100px -40px
+}
+.mCS-dark-thick>.mCSB_scrollTools .mCSB_buttonRight {
+  background-position: -100px -56px
+}
+.mCS-light-thin>.mCSB_scrollTools .mCSB_draggerRail {
+  background: #fff;
+  background: rgba(255,255,255,0.1)
+}
+.mCS-light-thin>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  width: 2px
+}
+.mCS-light-thin.mCSB_horizontal>.mCSB_scrollTools .mCSB_draggerRail {
+  width: 100%
+}
+.mCS-light-thin.mCSB_horizontal>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  width: 100%;
+  height: 2px;
+  margin: 7px auto
+}
+.mCS-dark-thin>.mCSB_scrollTools .mCSB_draggerRail {
+  background: #000;
+  background: rgba(0,0,0,0.15)
+}
+.mCS-dark-thin>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  width: 2px;
+  background: #000;
+  background: rgba(0,0,0,0.75)
+}
+.mCS-dark-thin.mCSB_horizontal>.mCSB_scrollTools .mCSB_draggerRail {
+  width: 100%
+}
+.mCS-dark-thin.mCSB_horizontal>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  width: 100%;
+  height: 2px;
+  margin: 7px auto
+}
+.mCS-dark-thin>.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+  background: rgba(0,0,0,0.85)
+}
+.mCS-dark-thin>.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,.mCS-dark-thin>.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+  background: rgba(0,0,0,0.9)
+}
+.mCS-dark-thin>.mCSB_scrollTools .mCSB_buttonUp {
+  background-position: -80px 0
+}
+.mCS-dark-thin>.mCSB_scrollTools .mCSB_buttonDown {
+  background-position: -80px -20px
+}
+.mCS-dark-thin>.mCSB_scrollTools .mCSB_buttonLeft {
+  background-position: -80px -40px
+}
+.mCS-dark-thin>.mCSB_scrollTools .mCSB_buttonRight {
+  background-position: -80px -56px
+}
+
+#expInfo {
+  margin: 20px;
+  width: 300px
+}
+#expInfo td {
+  padding: 5px 0 0 0
+}
+.ehulldescription {
+  vertical-align: top
+}
+.ehulldescription span {
+  display: block
+}
+#ehulllist {
+  padding: 0;
+  font-size: 13px
+}
+#ehulllist tr {
+  border-bottom: solid 1px #444
+}
+#ehulllist th {
+  text-align: center;
+  font-weight: normal;
+  padding: 0 0 5px 0
+}
+#ehulllist th.emainheader {
+  text-align: center;
+  font-weight: bold;
+  padding: 0 0 5px 0
+}
+#ehulllist td {
+  text-align: center;
+  padding: 8px 0 8px 0
+}
+.ehullrow:hover {
+  background-color: #444;
+  cursor: pointer
+}
+
+#PieChart {
+  background-image: url("img/ui/50percentblack.png");
+  border-radius: 10px;
+  border-color: rgba(120,120,120,0.5);
+  border-style: solid;
+  border-width: thin;
+  z-index: 5
+}
+#Scores {
+  background-color: rgba(120,120,120,0);
+  border-radius: 10px;
+  z-index: 5
+}
+dt {
+  display: block;
+  clear: left;
+  float: left;
+  width: 250px;
+  text-align: left;
+  margin: 3px 3px 3px 3px
+}
+dd {
+  float: left;
+  display: inline-block;
+  border: solid 1px #000;
+  overflow: hidden
+}
+.PlanetCount {
+  background-color: #099;
+  height: 16px;
+  text-align: right;
+  margin: 0;
+  border: solid 1px #0ff
+}
+.MilitaryScore {
+  background-color: #090;
+  border: solid 1px #0f0;
+  height: 16px;
+  margin: 1px 0 0 0;
+  text-align: right
+}
+#PlanetPie {
+  background-image: url("img/ui/50percentblack.png");
+  border-radius: 10px;
+  border-color: rgba(120,120,120,0.5);
+  border-style: solid;
+  border-width: thin;
+  z-index: 5
+}
+#OwnedPlanetPie {
+  background-image: url("img/ui/50percentblack.png");
+  border-radius: 10px;
+  border-color: rgba(120,120,120,0.5);
+  border-style: solid;
+  border-width: thin;
+  z-index: 5
+}
+#ScoreBoard {
+  background-image: url("img/ui/50percentblack.png");
+  border-radius: 10px;
+  border-color: rgba(120,120,120,0.5);
+  border-style: solid;
+  border-width: thin;
+  z-index: 5
+}
+#GameEventContainer {
+  background-image: url("img/ui/50percentblack.png");
+  border-radius: 10px;
+  border-color: rgba(120,120,120,0.5);
+  border-style: solid;
+  border-width: thin;
+  padding: 10px 10px 10px 10px;
+  z-index: 5
+}
+#PlanetBoard {
+  background-image: url("img/ui/50percentblack.png");
+  border-radius: 10px;
+  border-color: rgba(120,120,120,0.5);
+  border-style: solid;
+  border-width: thin;
+  z-index: 5
+}
+#ScoreData {
+  padding: 10px;
+  color: #fff;
+  text-align: left;
+  width: 850px;
+  background-image: url("img/ui/50percentblack.png");
+  border-radius: 10px;
+  border-color: rgba(120,120,120,0.5);
+  border-style: solid;
+  border-width: thin;
+  z-index: 5
+}
+#ScoreTeamData {
+  padding: 10px;
+  color: #fff;
+  text-align: left;
+  z-index: 5;
+  width: 850px;
+  background-image: url("img/ui/50percentblack.png");
+  border-radius: 10px;
+  border-color: rgba(120,120,120,0.5);
+  border-style: solid;
+  border-width: thin
+}
+#TeamTable {
+  margin: 10px
+}
+#TeamTable tr {
+  border-bottom: solid 1px #444
+}
+#TeamTable td {
+  padding: 10px 0 20px 0
+}
+
+#estart {
+  padding: 0 0 100px 0;
+  position: absolute
+}
+#edashmenu {
+  padding: 0;
+  margin: 0;
+  list-style-type: none
+}
+#edashmenu li {
+  cursor: pointer;
+  width: 126px;
+  display: block;
+  height: 131px;
+  font-size: 11px;
+  border: solid 1px #333;
+  color: #ccc;
+  padding: 20px;
+  margin: 10px 10px 0 0;
+  float: left;
+  text-align: center;
+  background-color: #111
+}
+#edashmenu li.elarge {
+  width: 918px;
+  text-align: left
+}
+#edashmenu li.ebigbox {
+  width: 560px;
+  height: 315px
+}
+#edashmenu li div {
+  text-align: center;
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  color: #fff
+}
+#edashmenu li h1 {
+  margin: 0;
+  padding: 0 0 10px 0;
+  font-size: 30px;
+  color: #fff
+}
+#edashmenu li b {
+  color: #fff
+}
+#edashmenu li div b {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 34px;
+  display: block;
+  margin: 0 0 5px 0
+}
+#edashmenu li span {
+  font-size: 14px;
+  display: block;
+  color: #900;
+  margin: 0 0 5px 0;
+  text-align: center
+}
+#edashmenu li:hover {
+  background-color: #333
+}
+#edashmenu li.etestimonial {
+  width: 740px;
+  text-align: left;
+  font-size: 24px;
+  line-height: 30px;
+  color: #fff
+}
+#edashmenu li.etestimonial p {
+  text-align: right;
+  font-size: 16px;
+  color: #ccc
+}
+#edashmenu blockquote {
+  display: none
+}
+#estory {
+  font-size: 14px;
+  line-height: 20px
+}
+#moon {
+  background-image: url('http://play.planets.nu/img/ui/phobos144.jpg');
+  width: 70px;
+  height: 70px;
+  box-shadow: inset 16px 0 40px 3px rgba(0,0,0,0.9),inset -3px 0 5px 2px rgba(255,255,255,0.16);
+  background-size: 144px 72px;
+  margin: 80px auto;
+  border-radius: 50%;
+  position: relative;
+  -webkit-animation-name: move,scale,rotate;
+  -webkit-animation-duration: 30s,30s,10s;
+  -webkit-animation-iteration-count: infinite,infinite,infinite;
+  -webkit-animation-timing-function: ease-in-out,linear,linear;
+  animation-name: move,scale,rotate;
+  animation-duration: 30s,30s,10s;
+  animation-iteration-count: infinite,infinite,infinite;
+  animation-timing-function: ease-in-out,linear,linear
+}
+@-webkit-keyframes move {
+  0% {
+    left: 300px;
+    top: 150px;
+    z-index: -1
+  }
+  70% {
+    left: -300px;
+    top: -150px;
+    z-index: -1
+  }
+  100% {
+    left: 300px;
+    top: 150px;
+    z-index: 100
+  }
+}
+@-webkit-keyframes scale {
+  0% {
+    transform: scale(1)
+  }
+  32% {
+    transform: scale(0.4);
+    animation-timing-function: ease-in
+  }
+  70% {
+    transform: scale(1);
+    animation-timing-function: ease-in
+  }
+  75% {
+    transform: scale(1.2);
+    animation-timing-function: ease-in-out
+  }
+  86% {
+    transform: scale(2)
+  }
+  98% {
+    transform: scale(1.2)
+  }
+  100% {
+    transform: scale(1)
+  }
+}
+@-webkit-keyframes rotate {
+  0% {
+    background-position: 0 0
+  }
+  100% {
+    background-position: 144px 0
+  }
+}
+@keyframes move {
+  0% {
+    left: 300px;
+    top: 150px;
+    z-index: -1
+  }
+  70% {
+    left: -300px;
+    top: -150px;
+    z-index: -1
+  }
+  100% {
+    left: 300px;
+    top: 150px;
+    z-index: 100
+  }
+}
+@keyframes scale {
+  0% {
+    transform: scale(1)
+  }
+  32% {
+    transform: scale(0.4);
+    animation-timing-function: ease-in
+  }
+  70% {
+    transform: scale(1);
+    animation-timing-function: ease-in
+  }
+  75% {
+    transform: scale(1.2);
+    animation-timing-function: ease-in-out
+  }
+  86% {
+    transform: scale(2)
+  }
+  98% {
+    transform: scale(1.2)
+  }
+  100% {
+    transform: scale(1)
+  }
+}
+@keyframes rotate {
+  0% {
+    background-position: 0 0
+  }
+  100% {
+    background-position: 144px 0
+  }
+}
+#esphere {
+  background-image: url('http://play.planets.nu/img/ui/europa1024.jpg');
+  box-shadow: inset 16px 0 40px 3px rgba(0,0,0,0.9),inset -3px 0 5px 2px rgba(255,255,255,0.16);
+  border-radius: 50%;
+  position: relative;
+  -webkit-animation-name: srotate;
+  -webkit-animation-duration: 100s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-name: srotate;
+  animation-duration: 100s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  width: 425px;
+  height: 425px;
+  margin: 40px 85px 40px 85px
+}
+@-webkit-keyframes srotate {
+  0% {
+    background-position: 0 0
+  }
+  100% {
+    background-position: 1024px 0
+  }
+}
+@keyframes srotate {
+  0% {
+    background-position: 0 0
+  }
+  100% {
+    background-position: 1024px 0
+  }
+}
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);@import url(http://fonts.googleapis.com/css?family=Gravitas+One);@import url(http://fonts.googleapis.com/css?family=Holtwood+One+SC);@font-face {
+  font-family: 'PlanetX';
+  src: url('http://planets.nu/_plugins/planets/Planetxv2.ttf') format('truetype')
+}
+.etestimonials {
+  font-size: 16px
+}
+.etestimonials blockquote {
+  margin: 20px 0 20px 20px;
+  text-shadow: 2px 2px 10px #111
+}
+.etestimonials p {
+  font-size: 13px;
+  color: #ccc
+}
+#eplanet1 {
+  background-image: url(http://play.planets.nu/img/planets/63.png);
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  left: -300px;
+  top: -50px
+}
+#eplanet2 {
+  background-image: url(http://play.planets.nu/img/planets/172.png);
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  left: 750px;
+  top: 400px
+}
+#estarbase {
+  background-image: url(http://play.planets.nu/img/icons/starbase120.png);
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  left: 1150px;
+  top: 350px
+}
+#eship1 {
+  background-image: url(http://play.planets.nu/img/hulls/44.png);
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  left: -450px;
+  top: 450px
+}
+#eship2 {
+  background-image: url(http://play.planets.nu/img/hulls/45.png);
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  left: -350px;
+  top: 550px
+}
+#eship3 {
+  background-image: url(http://play.planets.nu/img/hulls/42.png);
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  left: -600px;
+  top: 600px
+}
+#eship4 {
+  background-image: url(http://play.planets.nu/img/hulls/40.png);
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  left: 950px;
+  top: -250px
+}
+#eww2,#eww1 {
+  background-image: url(http://play.planets.nu/img/screenshots/warpwell.png);
+  width: 630px;
+  height: 621px;
+  position: absolute
+}
+#eww2 {
+  left: 650px;
+  top: 300px
+}
+#eww1 {
+  left: -400px;
+  top: -150px
+}
+#escreenshots {
+  float: right;
+  text-align: center;
+  cursor: pointer;
+  color: #090!important;
+  text-transform: uppercase;
+  font-size: 11px!important;
+  border: solid 2px #ccc;
+  position: relative;
+  top: -40px;
+  right: -40px;
+  background-color: black
+}
+#escreenshots:hover {
+  border: solid 2px #fff
+}
+#ebuycreditform ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0
+}
+#ebuycreditform li {
+  border: solid 1px #fff;
+  background-color: #666;
+  padding: 10px;
+  margin: 0 0 5px 0
+}
+#ebuycreditform span {
+  font-size: 12px
+}
+.estarthome {
+  background-position: center top;
+  background-repeat: no-repeat;
+  position: relative
+}
+
+#etourbox {
+  background-color: #111;
+  border: 5px solid #666;
+  padding: 20px
+}
+#etourstart {
+  background-color: #258291;
+  border-radius: 5px;
+  color: #fff!important;
+  padding: 10px;
+  text-transform: uppercase;
+  float: right
+}
+.tourbackground1 {
+  background-image: url(http://play.planets.nu/img/tour/tourscreen1.jpg)!important;
+  background-position: center 0;
+  background-repeat: no-repeat!important
+}
+.tourbackground2 {
+  background-image: url(http://play.planets.nu/img/tour/tourscreen2.jpg)!important;
+  background-position: left 0;
+  background-repeat: no-repeat!important
+}
+.tourbackground3 {
+  background-image: url(http://play.planets.nu/img/tour/tourscreen3.jpg)!important;
+  background-position: center 0;
+  background-repeat: no-repeat!important
+}
+.tourbackground4 {
+  background-image: url(http://play.planets.nu/img/tour/tourscreen4.jpg)!important;
+  background-position: center 0;
+  background-repeat: no-repeat!important
+}
+.tourbackground5 {
+  background-image: url(http://play.planets.nu/img/tour/tourscreen5.jpg)!important;
+  background-position: left 0;
+  background-repeat: no-repeat!important
+}
+.tourbackground6 {
+  background-image: url(http://play.planets.nu/img/tour/tourscreen6.jpg)!important;
+  background-position: right 0;
+  background-repeat: no-repeat!important
+}

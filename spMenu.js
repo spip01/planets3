@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name          spiper menu
+// @name          spiperMenu
 // @description   planets.nu menu for plugins
 // @include       http://play.planets.nu/*
 // @include 	    http://test.planets.nu/*

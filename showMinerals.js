@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name          mineral display
+// @name          showMinerals
 // @description   shows minerals at planets and ships in several formats.
 // @include       http://play.planets.nu/*
 // @include 	    http://test.planets.nu/*

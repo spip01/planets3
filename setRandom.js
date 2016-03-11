@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name          randomize
+// @name          randomizeFCs
 // @description   randomize names and FCs for planets.nu  
 // @description   replaces the builtin random generator to eliminate command codes
 // @description   it only replaces FCs in the format 0a0.  ship names get changed

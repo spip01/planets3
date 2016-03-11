@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name          hitText box
+// @name          hoverTextbox
 // @description   rewrites the information you get when you hover over a planet
 // @include       http://play.planets.nu/*
 // @include 	    http://test.planets.nu/*

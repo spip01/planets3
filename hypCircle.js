@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name          hyperjump display
+// @name          hypCircle
 // @description   shows a modified hyperjump ring and warp 9 circles
 // @include       http://play.planets.nu/*
 // @include 	    http://test.planets.nu/*

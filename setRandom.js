@@ -1,12 +1,14 @@
 // ==UserScript==
-// @name          spiper menu
-// @description   stsarmap menu for spiper plugins
+// @name          randomize
+// @description   randomize names and FCs for planets.nu  
+// @description   replaces the builtin random generator to eliminate command codes
+// @description   it only replaces FCs in the format 0a0.  ship names get changed
+// @description   only if they contain capital letters.
 // @include       http://play.planets.nu/*
-// @include 	    http://test.planets.nu/*
-// @include 	    http://planets.nu/*
+// @include 	  http://test.planets.nu/*
+// @include 	  http://planets.nu/*
 // @version       3.0.0
 // @namespace
-// @homepage
 // ==/UserScript==
 
 function wrapper() {

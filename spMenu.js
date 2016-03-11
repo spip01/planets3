@@ -1,12 +1,11 @@
 // ==UserScript==
 // @name          spiper menu
-// @description   stsarmap menu for spiper plugins
+// @description   planets.nu menu for plugins
 // @include       http://play.planets.nu/*
 // @include 	    http://test.planets.nu/*
 // @include 	    http://planets.nu/*
 // @version       3.0.0
 // @namespace
-// @homepage
 // ==/UserScript==
 
 function wrapper() {

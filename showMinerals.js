@@ -1,12 +1,11 @@
 // ==UserScript==
-// @name          spiper menu
-// @description   stsarmap menu for spiper plugins
+// @name          mineral display
+// @description   shows minerals at planets and ships in several formats.
 // @include       http://play.planets.nu/*
 // @include 	    http://test.planets.nu/*
 // @include 	    http://planets.nu/*
 // @version       3.0.0
 // @namespace
-// @homepage
 // ==/UserScript==
 
 function wrapper() {

@@ -1,12 +1,11 @@
 // ==UserScript==
-// @name          spiper menu
-// @description   stsarmap menu for spiper plugins
+// @name          hitText box
+// @description   rewrites the information you get when you hover over a planet
 // @include       http://play.planets.nu/*
 // @include 	    http://test.planets.nu/*
 // @include 	    http://planets.nu/*
 // @version       3.0.0
 // @namespace
-// @homepage
 // ==/UserScript==
 
 function wrapper() {

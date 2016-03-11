@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name          spiper menu
-// @description   stsarmap menu for spiper plugins
+// @name          check ready
+// @description   draw a ring around planets and ships that are not marked ready
 // @include       http://play.planets.nu/*
 // @include 	    http://test.planets.nu/*
 // @include 	    http://planets.nu/*

@@ -1,6 +1,10 @@
 // ==UserScript==
 // @name          randomizeFCs
-// @description   randomize names and FCs for planets.nu replaces the builtin random generator to eliminate command codes it only replaces FCs in the format 0a0.  ship names get changed only if they contain capital letters.
+//
+// @description   randomize names and FCs for planets.nu and replaces the builtin random generator
+// 				  to eliminate command codes it only replaces FCs in the format 0a0.
+// 				  ship names get changed only if they contain capital letters.
+//
 // @include       http://play.planets.nu/*
 // @include 	  http://test.planets.nu/*
 // @include 	  http://planets.nu/*

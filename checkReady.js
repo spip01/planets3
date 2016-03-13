@@ -1,6 +1,8 @@
 // ==UserScript==
 // @name          checkReady
-// @description   draw a ring around planets and ships that are not marked ready can't move ships marked ready
+// @description   draw a ring around planets and ships that are not marked ready 
+// 				  can't move ships marked ready
+//
 // @include       http://play.planets.nu/*
 // @include 	  http://test.planets.nu/*
 // @include 	  http://planets.nu/*

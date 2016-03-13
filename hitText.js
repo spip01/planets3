@@ -2,10 +2,10 @@
 // @name          hoverTextbox
 // @description   rewrites the information you get when you hover over a planet
 // @include       http://play.planets.nu/*
-// @include 	    http://test.planets.nu/*
-// @include 	    http://planets.nu/*
+// @include 	  http://test.planets.nu/*
+// @include 	  http://planets.nu/*
 // @version       3.0.0
-// @namespace
+// @namespace     https://greasyfork.org/en/users/32642-stephen-piper
 // ==/UserScript==
 
 function wrapper() {
@@ -208,7 +208,8 @@ function wrapper() {
 			var m = c;
 			var e = vgap.getHull(m.hullid);
 			var k = vgap.getPlayer(m.ownerid);
-			var l = vgap.getRace(k.raceid);
+			if (m.showReady && m.readystatus == 0) 
+			
 			var d = "<span>" + m.id + ": " + e.name + "</span>";
 			// var o = m.ammo + m.duranium + m.tritanium + m.molybdenum +
 			// m.supplies + m.clans;

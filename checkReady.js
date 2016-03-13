@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name          checkReady
-// @description   draw a ring around planets and ships that are not marked ready
+// @description   draw a ring around planets and ships that are not marked ready can't move ships marked ready
 // @include       http://play.planets.nu/*
-// @include 	    http://test.planets.nu/*
-// @include 	    http://planets.nu/*
+// @include 	  http://test.planets.nu/*
+// @include 	  http://planets.nu/*
 // @version       3.0.0
-// @namespace
+// @namespace     https://greasyfork.org/en/users/32642-stephen-piper
 // @homepage
 // ==/UserScript==
 
@@ -86,6 +86,16 @@ function wrapper() {
 		// }
 		// // < required neutronium
 		// }
+	};
+
+	var oldShipSelectorClick = vgapMap.prototype.shipSelectorClick;
+	vgapMap.prototype.shipSelectorClick = function(event) {
+
+		var e = this.activeShip;
+		if (e.readystatus > 0 && this.showReady)		// can't move ships marked ready
+			return;
+
+		oldShipSelectorClick.apply(this, arguments);
 	};
 
 	var oldLoadControls = vgapMap.prototype.loadControls;

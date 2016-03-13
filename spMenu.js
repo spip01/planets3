@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name          spiperMenu
-// @description   planets.nu menu for plugins
+// @description   planets.nu menu for plugins this handles all of the menu controls. The only thing child scripts need to call is vgapMap.prototype.addTool(text, class, function) if you want to hook to the global clear function use "_massClear" as your class name when you call addTool
 // @include       http://play.planets.nu/*
-// @include 	    http://test.planets.nu/*
-// @include 	    http://planets.nu/*
+// @include 	  http://test.planets.nu/*
+// @include 	  http://planets.nu/*
 // @version       3.0.0
-// @namespace
+// @namespace     https://greasyfork.org/en/users/32642-stephen-piper
 // ==/UserScript==
 
 function wrapper() {

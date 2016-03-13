@@ -94,7 +94,7 @@ function wrapper() {
 	vgapMap.prototype.shipSelectorClick = function(event) {
 
 		var e = this.activeShip;
-		if (e.readystatus > 0 && this.showReady)		// can't move ships marked ready
+		if (e.readystatus > 0)		// can't move ships marked ready
 			return;
 
 		oldShipSelectorClick.apply(this, arguments);

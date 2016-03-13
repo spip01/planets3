@@ -208,7 +208,6 @@ function wrapper() {
 			var m = c;
 			var e = vgap.getHull(m.hullid);
 			var k = vgap.getPlayer(m.ownerid);
-			if (m.showReady && m.readystatus == 0) 
 			
 			var d = "<span>" + m.id + ": " + e.name + "</span>";
 			// var o = m.ammo + m.duranium + m.tritanium + m.molybdenum +

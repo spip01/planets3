@@ -9,7 +9,7 @@
 // @include 	  http://test.planets.nu/*
 // @include 	  http://planets.nu/*
 // @version       3.0.0
-// @namespace     https://greasyfork.org/en/users/32642-stephen-piper
+// @homepage      https://greasyfork.org/en/users/32642-stephen-piper
 // ==/UserScript==
 
 function wrapper() {

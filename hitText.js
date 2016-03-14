@@ -377,14 +377,13 @@ function wrapper() {
 				}
 				d += "</table>"
 			} else {
-				// d += "<div>" + e.name + "</div>";
+				q += "<div>" + vgap.getRace(k.raceid).name + " (" + vgap.getPlayer(c.ownerid).username + ")</div>";
+				
 				d += "<table class='CleanTable'>";
 				d += "<tr><td>Heading:</td><td>&nbsp;" + gsv(m.heading)
 						+ " at Warp: " + gsv(m.warp) + "</td></tr>";
 				d += "<tr><td>Mass: </td><td>&nbsp;" + gsv(m.mass)
 						+ "</td></tr>";
-				d += "<tr><td colspan='2'>" + l.name + " (" + k.username
-						+ ")</td></tr>";
 				if (vgap.player.raceid == 7) {
 					for (var f = 0; f < vgap.messages.length; f++) {
 						var g = vgap.messages[f];

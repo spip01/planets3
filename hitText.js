@@ -80,32 +80,36 @@ function wrapper() {
 				// q += this.hitText(c, c.isPlanet).replace("&nbsp", "");
 
 				var sp = c.factories;
+				
+				
 
 				var cs = 0;
 				var nt = 0;
 				var cs20 = 0;
 				var nt20 = 0;
+				var sps = 0;
 				if (c.nativeclans > 0) {
-					sp += Math.floor(c.nativetype == 2 ? c.clans / 10 : 0); // bovinoid
-					
+					if (c.nativetype == 2) { // bovinoid
+						spn = Math.floor(c.nativeclans / 100);
+						sps = c.clans - spn;
+						sp += sps > 0 ? spn : c.clans;
+					}
 					
 					nt = hitText.prototype.nativeTaxAmount(c, c.nativetaxrate);
-					ns = nt;
-					ns /= c.race == 1 ? 2 : 1; // feds == 1
-					ns /= c.nativetype == 6 ? 2 : 1; // insect == 6
-					cs = Math.floor(nt - ns);
-//					cs = nc
-//					var ns = c.clans * (c.race == 1 ? 2 : 1); // feds == 1
-//					ns = c.nativetype == 6 ? 2 * ns : ns; // insect == 6
-//					cs = nt - ns;
-//					nt = nt > ns ? ns : nt;
+					ns = c.clans;
+					ns *= c.race == 1 ? 2 : 1; // feds == 1
+					ns *= c.nativetype == 6 ? 2 : 1; // insect == 6
+					ns = Math.floor(ns);
+					cs = ns - nt;
+					nt = cs > 0 ? nt : ns;
 
 					nt20 = hitText.prototype.nativeTaxAmount(c, 20);
-					ns20 = nt20;
-					ns20 /= c.race == 1 ? 2 : 1; // feds == 1
-					ns20 /= c.nativetype == 6 ? 2 : 1; // insect == 6
-					cs20 = Math.floor(nt20 - ns20);
-//					nt20 = nt20 > ns ? ns : nt20;
+					ns20 = c.clans;
+					ns20 *= c.race == 1 ? 2 : 1; // feds == 1
+					ns20 *= c.nativetype == 6 ? 2 : 1; // insect == 6
+					ns20 = Math.floor(ns20);
+					cs20 = ns20 - nt20;
+					nt20 = cs20 > 0 ? nt20 : ns20;
 				}
 				
 				ct = Math.round(c.clans * c.colonisttaxrate / 1000);
@@ -134,6 +138,9 @@ function wrapper() {
 							+ "+&nbsp;</td><td align='right'>" + mn + "</td>";
 					q += "<td>&nbsp;sup:</td><td align='right'>" + c.supplies
 							+ "+&nbsp;</td><td align='right'>" + sp
+							if (sps < 0)
+								q += "-&nbsp;</td><td  class='WarnText' align='right'>"
+									+ (-sps);
 							+ "</td></tr>";
 
 					q += "<tr><td>dur:</td><td align='right'>" + c.duranium
@@ -142,9 +149,9 @@ function wrapper() {
 							+ "+&nbsp;</td><td align='right'>" + md + "</td>";
 					q += "<td>&nbsp;mc:</td><td align='right'>" + c.megacredits
 							+ "+&nbsp;</td><td align='right'>" + (nt + ct);
-							if (cs > 0)
+							if (cs < 0)
 								q += "-&nbsp;</td><td  class='WarnText' align='right'>"
-									+ cs;
+									+ (-cs);
 
 							q+= "</td></tr>";
 
@@ -154,9 +161,9 @@ function wrapper() {
 							+ "+&nbsp;</td><td align='right'>" + mt + "</td>";
 
 					if (c.nativeclans > 0) {
-						q += "<td>&nbsp;20%:</td><td align='right'>" + nt20;
-						if (cs20 > 0)
-						q += "-&nbsp;</td><td  class='WarnText' align='right'>" + cs20
+						q += "<td>&nbsp;20%:</td><td>&nbsp;</td><td align='right'>" + nt20;
+						if (cs20 < 0)
+						q += "-&nbsp;</td><td  class='WarnText' align='right'>" + (-cs20)
 								;
 					}
 					q += "</td></tr>";

@@ -195,7 +195,6 @@ function wrapper() {
 						}
 					}
 					q += "</tr>";
-
 				}
 				if (c.ownerid != vgap.player.id && c.ownerid != 0) {
 					var k = vgap.getPlayer(c.ownerid);
@@ -275,13 +274,13 @@ function wrapper() {
 							}
 						} else {
 							d += "<tr>";
-							// if (m.ownerid == vgap.player.id) {
-							// d += "<td colspan='2'>" +
-							// vgap.getShipMissionShortText(m) + ((m.mission ==
-							// 6 || m.mission == 7 || m.mission == 15 ||
-							// m.mission == 20) && m.mission1target != 0 ? " " +
-							// m.mission1target : "") + "</td>";
-							// }
+							 if (m.ownerid == vgap.player.id) {
+							 d += "<td colspan='2'>" +
+							 vgap.getShipMissionShortText(m) + ((m.mission ==
+							 6 || m.mission == 7 || m.mission == 15 ||
+							 m.mission == 20) && m.mission1target != 0 ? " " +
+							 m.mission1target : "") + "</td>";
+							 }
 							var ly = Math.round(Math.sqrt(Math.pow(m.y
 									- m.targety, 2)
 									+ Math.pow(m.x - m.targetx, 2)) * 10) / 10;

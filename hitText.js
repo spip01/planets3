@@ -202,7 +202,7 @@ function wrapper() {
 					q += "<tr><td colspan='4'>" + l.name + " (" + k.username
 							+ ")</td></tr>"
 				}
-				// q += this.hitText(c, c.isPlanet).replace("&nbsp", "")
+				q += this.hitText(c, c.isPlanet).replace("&nbsp", "")
 			}
 			q += "</table>";
 
@@ -279,13 +279,16 @@ function wrapper() {
 							 vgap.getShipMissionShortText(m) + ((m.mission ==
 							 6 || m.mission == 7 || m.mission == 15 ||
 							 m.mission == 20) && m.mission1target != 0 ? " " +
-							 m.mission1target : "") + "</td>";
+							 m.mission1target : "") + "&nbsp;</td>";
 							 }
+								if (m.target != undefined)
+									d += "<td>" + m.target.name + "</td>";
+								d += "</tr>";
 							var ly = Math.round(Math.sqrt(Math.pow(m.y
 									- m.targety, 2)
 									+ Math.pow(m.x - m.targetx, 2)) * 10) / 10;
-							d += "<td>(" + m.targetx + ", " + m.targety
-									+ ")</td><td>&nbsp;" + ly + "&nbsp;ly</td>";
+							d += "<td>&nbsp;(" + m.targetx + "," + m.targety+ ")</td>";
+							d += "<td>&nbsp;" + ly + "ly</td>";
 							d += "<td>&nbsp;warp " + m.warp + "</td></tr>";
 							if (m.iscloaked) {
 								d += "<td class='GoodText'>Cloaked</td>"

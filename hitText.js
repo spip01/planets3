@@ -117,7 +117,7 @@ function wrapper() {
 	mn = hitText.prototype.miningRate(c, c.groundneutronium, c.densityneutronium);
 	md = hitText.prototype.miningRate(c, c.groundduranium, c.densityduranium);
 	mm = hitText.prototype.miningRate(c, c.groundmolybdenum, c.densitymolybdenum);
-	mt = hitText.prototype.miningRate(c, c.groundtitanium, c.densitytitanium);
+	mt = hitText.prototype.miningRate(c, c.groundtritanium, c.densitytritanium);
 
 	q += "</table><table class='CleanTable'>";
 

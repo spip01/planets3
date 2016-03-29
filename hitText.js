@@ -171,7 +171,7 @@ function wrapper() {
 	  var l = vgap.getRace(k.raceid);
 	  q += "<tr><td colspan='4'>" + l.name + " (" + k.username + ")</td></tr>"
 	}
-	// q += this.hitText(c, c.isPlanet).replace("&nbsp", "")
+	 q += this.hitText(c, c.isPlanet).replace("&nbsp", "")
       }
       q += "</table>";
 
@@ -228,13 +228,15 @@ function wrapper() {
 		+ ((m.mission == 6 || m.mission == 7 || m.mission == 15 || m.mission == 20) && m.mission1target != 0 ? " "
 		    + m.mission1target : "") + "&nbsp;</td>";
 	  }
-	  if (m.target != undefined)
-	    d += "<td>" + m.target.name + "</td>";
-	  d += "</tr>";
+	  if (m.target != undefined) {
+		  d += "<td>&nbsp;warp " + m.warp + "</td></tr><tr>";
+	  if (m.target.name != undefined) 
+	    d += "<td  colspan='2'>" + m.target.name + "</td>";
 	  var ly = Math.round(Math.sqrt(Math.pow(m.y - m.targety, 2) + Math.pow(m.x - m.targetx, 2)) * 10) / 10;
 	  d += "<td>&nbsp;(" + m.targetx + "," + m.targety + ")</td>";
 	  d += "<td>&nbsp;" + ly + "ly</td>";
-	  d += "<td>&nbsp;warp " + m.warp + "</td></tr>";
+	  }
+	  d += "</tr>";
 	  if (m.iscloaked) {
 	    d += "<td class='GoodText'>Cloaked</td>"
 	  } else {
@@ -278,7 +280,7 @@ function wrapper() {
     return q
   };
 
-  var oldShoeInfo = vgapMap.prototype.showInfo;
+  var oldShowInfo = vgapMap.prototype.showInfo;
   vgapMap.prototype.showInfo = function(a, b) {
 
     var h = Math.round(vgap.map.mapX(a));

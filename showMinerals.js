@@ -77,13 +77,13 @@ function wrapper() {
 	}
       });
 
-      vgapMap.prototype.spMenuItem("Build Starbase", "buildStarbase", function() {
-	buildStarbase = !buildStarbase;
-	if (buildStarbase) {
-	  showBars = false;
-	  showText = false;
-	}
-      });
+//      vgapMap.prototype.spMenuItem("Build Starbase", "buildStarbase", function() {
+//	buildStarbase = !buildStarbase;
+//	if (buildStarbase) {
+//	  showBars = false;
+//	  showText = false;
+//	}
+//      });
 
       vgapMap.prototype.spMenuItem("Clear", "_massClear", function() {
 	mineralTools.prototype.clearData();

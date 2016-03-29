@@ -66,14 +66,6 @@ function wrapper() {
 	if (planet.readystatus == 0 && vgap.player.id == planet.ownerid) {
 	  this.drawCircle(ctx, x, y, 11 * this.zoom, "yellow", 2);
 	}
-
-	if (execPlanets != undefined) {
-	  for (i = 0; i < execPlanets.length; ++i) {
-	    if (execPlanets[i] == planet.id) {
-	      this.drawCircle(ctx, x, y, 11 * this.zoom, "green", 3);
-	    }
-	  }
-	}
       }
     }
   };

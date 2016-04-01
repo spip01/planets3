@@ -36,7 +36,15 @@ function wrapper() {
 	m = m > ground ? ground : Math.round(m);
 	
 	return m;
-    }
+    },
+    
+    nativesupport : function(c) {
+      ns = c.clans;
+      ns *= c.race == 1 ? 2 : 1; // feds == 1
+      ns *= c.nativetype == 6 ? 2 : 1; // insect == 6
+      return ns;
+    },
+
   };
 
   var oldHitTextBox = vgapMap.prototype.hitTextBox;
@@ -96,20 +104,14 @@ function wrapper() {
 	  }
 
 	  nt = hitText.prototype.nativeTaxAmount(c, c.nativetaxrate);
-	  ns = c.clans;
-	  ns *= c.race == 1 ? 2 : 1; // feds == 1
-	  ns *= c.nativetype == 6 ? 2 : 1; // insect == 6
-	  ns = Math.floor(ns);
+	  ns = hitText.prototype.nativesupport(c);
 	  cs = ns - nt;
-	  nt = cs > 0 ? nt : ns;
+	  nt = Math.min( nt , ns);
 
 	  nt20 = hitText.prototype.nativeTaxAmount(c, 20);
-	  ns20 = c.clans;
-	  ns20 *= c.race == 1 ? 2 : 1; // feds == 1
-	  ns20 *= c.nativetype == 6 ? 2 : 1; // insect == 6
-	  ns20 = Math.floor(ns20);
+	  ns20 = hitText.prototype.nativesupport(c);
 	  cs20 = ns20 - nt20;
-	  nt20 = cs20 > 0 ? nt20 : ns20;
+	  nt20 = Math.min( nt20 , ns20);
 	}
 
 	ct = Math.round(c.clans * c.colonisttaxrate / 1000);

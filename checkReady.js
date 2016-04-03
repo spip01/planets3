@@ -21,13 +21,15 @@ function wrapper() {
 
       this.clearData();
 
-      vgapMap.prototype.spMenuItem("Check Ready", "checkReady", function() {
-	showReady = !showReady;
-      });
+      if (vgapMap.prototype.spMenuItem != undefined) {
+	vgapMap.prototype.spMenuItem("Check Ready", "checkReady", function() {
+	  showReady = !showReady;
+	});
 
-      vgapMap.prototype.spMenuItem("Clear", "_massClear", function() {
-	checkReady.prototype.clearData();
-      });
+	vgapMap.prototype.spMenuItem("Clear", "_massClear", function() {
+	  checkReady.prototype.clearData();
+	});
+      }
     },
 
     clearData : function() {
@@ -44,10 +46,10 @@ function wrapper() {
       ctx = this.ctx;
 
     // have to redraw ships because normal draw
-    // copies the planes over the ships
+    // copies the planets over the ships
     // draw ships not ready
-    for (var n = 0; n < vgap.ships.length; n++) {
-      var E = vgap.ships[n];
+    for (var n = 0; n < vgap.myships.length; n++) {
+      var E = vgap.myships[n];
       this.drawShip(E, ctx)
     }
 

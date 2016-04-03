@@ -43,7 +43,8 @@ function wrapper() {
   var showBars = false;
   var showText = false;
   var buildStarbase = false;
-
+  var buildFighters = false;
+  
   function showMinerals() {
   }
   showMinerals.prototype = {
@@ -53,7 +54,8 @@ function wrapper() {
 
       this.clearData();
 
-      for (var i = 0; i < resources.length; ++i) {
+      if (vgapMap.prototype.spMenuItem != undefined) {
+ for (var i = 0; i < resources.length; ++i) {
 	// weird declaration fits the color into the existing class
 	vgapMap.prototype.spMenuItem(resources[i].name, "showMinerals\' style=\'color:" + resources[i].color, function() {
 
@@ -61,33 +63,46 @@ function wrapper() {
 	});
       }
 
-      vgapMap.prototype.spMenuItem("Bar Graph", "showBarGraph", function() {
-	showBars = !showBars;
-	if (showBars) {
-	  showText = false;
-	  buildStarbase = false;
-	}
-      });
+// vgapMap.prototype.spMenuItem("Bar Graph", "showBarGraph", function() {
+// showBars = !showBars;
+// if (showBars) {
+// showText = false;
+// buildStarbase = false;
+// buildFighters = false;
+// }
+// });
 
       vgapMap.prototype.spMenuItem("Text", "showText", function() {
 	showText = !showText;
 	if (showText) {
 	  showBars = false;
 	  buildStarbase = false;
+	  buildFighters = false;
 	}
       });
 
-// vgapMap.prototype.spMenuItem("Build Starbase", "buildStarbase", function() {
-// buildStarbase = !buildStarbase;
-// if (buildStarbase) {
-// showBars = false;
-// showText = false;
-// }
-// });
+      vgapMap.prototype.spMenuItem("Build Starbase", "buildStarbase", function() {
+	 buildStarbase = !buildStarbase;
+	 if (buildStarbase) {
+	 showBars = false;
+	 showText = false;
+		buildFighters = false;
+	 }
+	 });
+
+      vgapMap.prototype.spMenuItem("Build Fighters", "buildFighters", function() {
+	buildFighters = !buildFighters;
+	 if (buildFighters) {
+	 showBars = false;
+	 showText = false;
+	 buildStarbase = false;
+	 }
+	 });
 
       vgapMap.prototype.spMenuItem("Clear", "_massClear", function() {
 	showMinerals.prototype.clearData();
       });
+      }
     },
 
     // display minerals
@@ -106,6 +121,7 @@ function wrapper() {
       showBars = false;
       showText = false;
       buildStarbase = false;
+      buildFighters = false;
       for (var i = 0; i < resources.length; ++i) {
 	resources[i].showRes = false;
 	resources[i].surface = 0;
@@ -155,6 +171,7 @@ function wrapper() {
 
       for (var i = 0; i < resources.length; ++i) {
 	resources[i].surface = 0;
+	resources[i].supplies = 0;
 	resources[i].ground = 0;
 	resources[i].target = 0;
 	resources[i].mined = 0;
@@ -185,6 +202,7 @@ function wrapper() {
 	  }
 	  if (r.name == "Megacredits") {
 	    r.surface = planet.megacredits + planet.supplies;
+	    r.supplies = planet.supplies;
 	    r.ground = 0;
 	    r.mined = planet.factories;
 	    
@@ -212,8 +230,10 @@ function wrapper() {
 		r.surface += ship.duranium;
 	      if (r.name == "Tritanium")
 		r.surface += ship.tritanium;
-	      if (r.name == "Megacredits")
+	      if (r.name == "Megacredits") {
 		r.surface += ship.megacredits + ship.supplies;
+		r.supplies += ship.supplies;
+	      }
 	    } 
 	    if (!p & t) {
 	      if (r.name == "Molybdenum")
@@ -234,7 +254,7 @@ function wrapper() {
 	var x1 = this.screenX(planet.x);
 	var y1 = this.screenY(planet.y);
 
-	if (buildStarbase) {
+	if (buildStarbase || buildFighters) {
 	  for (var j = 0; j < resources.length; ++j) {
 	    r = resources[j];
 	    if (r.name == "Molybdenum") {
@@ -251,10 +271,12 @@ function wrapper() {
 	    }
 	    if (r.name == "Megacredits") {
 	      mc = r.surface;
+	      sp = r.supplies;
 	      mc2 = r.mined + r.target;
 	    }
 	  }
-
+	  
+	  if (buildStarbase) {
 	  if (!vgap.getStarbase(planet.id)) {
 	    if (dur >= 120 && tri >= 302 && mol >= 430 && mc >= 900) {
 	      radius = 9 * this.zoom;
@@ -267,6 +289,14 @@ function wrapper() {
 	      radius = 9 * this.zoom;
 	      this.drawCircle(ctx, x1, y1, radius, "yellow", 6);
 	    }
+	  }
+	  } else if (buildFighters) {
+	    fighters = Math.floor(Math.min(sp/5, tri/3, mol/2));
+
+		  ctx.fillStyle = "cyan";
+		  x2 = this.screenX(planet.x + 6.5 * this.zoom);
+		  y2 = this.screenY(planet.y + 0 * this.zoom);
+		  ctx.fillText(fighters, x2, y2)
 	  }
 
 	} else {
@@ -288,8 +318,8 @@ function wrapper() {
 		var radius;
 		  f = resources[i].surface + "-" + (resources[i].surface + resources[i].mined + resources[i].target);
 		  ctx.fillStyle = color;
-		  x2 = this.screenX(planet.x + 6 * this.zoom);
-		  y2 = this.screenY(planet.y - (i - 2) * 5 * this.zoom);
+		  x2 = this.screenX(planet.x + 6.5 * this.zoom);
+		  y2 = this.screenY(planet.y - (i - 2) * 5.5 * this.zoom);
 		  ctx.fillText(f, x2, y2)
 	      } else {
 		if (resources[i].ground > 0) {

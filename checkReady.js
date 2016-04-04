@@ -66,7 +66,15 @@ function wrapper() {
     if (planet.infoturn > 0) {
       if (showReady) {
 	if (planet.readystatus == 0 && vgap.player.id == planet.ownerid) {
-	  this.drawCircle(ctx, x, y, 11 * this.zoom, "yellow", 2);
+	  this.drawCircle(ctx, x, y, 14 * this.zoom, "orange", 2);
+	}
+	if (planet.isbase) {
+	  for (var i = 0; i < vgap.mystarbases.length; ++i) {
+	    if (vgap.mystarbases[i].planetid == planet.id && vgap.mystarbases[i].readystatus == 0) {
+	      this.drawCircle(ctx, x, y, 11 * this.zoom, "red", 2);
+	      break;
+	    }
+	  }
 	}
       }
     }
@@ -79,7 +87,7 @@ function wrapper() {
     // draw ships not ready had to redraw in draw()
     // because drawplanet() wrote over them
     if (showReady && ship.readystatus == 0 && vgap.player.id == ship.ownerid) {
-      this.drawCircle(ctx, this.screenX(ship.x), this.screenY(ship.y), 14 * this.zoom, "orange", 2);
+      this.drawCircle(ctx, this.screenX(ship.x), this.screenY(ship.y), 17 * this.zoom, "yellow", 2);
     }
     // if (warnings && ship.ownerid) {
     // if (ship.dist > Math.pow(ship.warp, 2)) {

@@ -164,6 +164,8 @@ function wrapper() {
 
   var oldRenderResource = vgapMap.prototype.renderResource;
   vgapMap.prototype.renderResource = function(ctx) {
+ // replace completely, pretty sure i want to do this
+//  oldRenderResource.apply(this, arguments);
 
     for (var d = 0; d < vgap.myplanets.length; d++) {
       var planet = vgap.myplanets[d];

@@ -9,8 +9,8 @@
 // ==/UserScript==
 
 function wrapper() {
-
   function hypTools() {
+
   }
   hypTools.prototype = {
 
@@ -21,6 +21,10 @@ function wrapper() {
       this.putMultiTurnCircles = false;
       this.multiturncircles = [];
       this.warp = 81;
+      this.drawLineStart = false;
+      this.drawLineEnd = false;
+      this.lines = [];
+      this.lineStart = null;
 
       this.clearData();
 
@@ -35,13 +39,15 @@ function wrapper() {
 
 	vgapMap.prototype.spMenuItem("3 Turn Warp 9", "warpCircle", function() {
 	  hypTools.putMultiTurnCircle = true;
-	  hypTools.warp = 81;
 	});
-	// vgapMap.prototype.spMenuItem("3 Turn Warp 5", "warpCircle",
-	// function() {
-	// hypTools.putMultiTurnCircle = true;
-	// hypTools.warp = 25;
-	// });
+
+	vgapMap.prototype.spMenuItem("Draw Line", "drawLine", function() {
+	  if (hypTools.drawLineEnd) {
+	    hypTools.startlinept.pop();
+	  }
+	  hypTools.drawLineStart = true;
+	  hypTools.drawLineEnd = false;
+	});
 
 	vgapMap.prototype.spMenuItem("Clear", "_massClear", function() {
 	  hypTools.prototype.clearData();
@@ -57,34 +63,57 @@ function wrapper() {
       hypTools.putMultiTurnCircles = false;
       hypTools.multiturncircles = [];
       hypTools.warp = 81;
+      hypTools.drawLineStart = false;
+      hypTools.drawLineEnd = false;
+      hypTools.lines = [];
+      hypTools.lineStart = null;
     },
 
-    pushWarpCircles : function(a, b) {
+    addWarpCircle : function(a, b) {
       hypTools.warpcircles.push({
 	x : a,
 	y : b
       });
     },
 
-    pushMultiTurnCircles : function(a, b) {
+    addMultiTurn : function(a, b) {
       hypTools.multiturncircles.push({
 	x : a,
 	y : b
       });
     },
+
+    addLineStart : function(a, b) {
+      hypTools.linestart = {
+	x : a,
+	y : b
+      };
+    },
+
+    addLineEnd : function(a, b) {
+      hypTools.lines.push({
+	sx : hypTools.linestart.x,
+	sy : hypTools.linestart.y,
+	ex : a,
+	ey : b
+      });
+      hypTools.linestart = null;
+    },
+
   };
 
   var oldRenderMapTools = vgapMap.prototype.renderMapTools;
   vgapMap.prototype.renderMapTools = function(ctx) {
 
-    if (this.showconnections) {
-      this.renderConnections(ctx);
-    }
-
+    h = this.hypcircles;
+    this.hypcircles = [];
+    
+    oldRenderMapTools.apply(this, arguments);
+    
+    this.hypcircles = h;
+    
     for (var d = 0; d < this.hypcircles.length; d++) {
       var c = this.hypcircles[d];
-      var b = 350;
-      var e = 20;
 
       // planetary hypcircle
       for (var i = 0; i < vgap.planets.length; ++i) {
@@ -94,7 +123,7 @@ function wrapper() {
 	if (dist >= 340 && dist <= 360) {
 	  this.drawCircle(ctx, this.screenX(planet.x), this.screenY(planet.y), 12 * this.zoom, "cyan", 1);
 	} else if (dist >= 338 && dist <= 362) {
-	  this.drawCircle(ctx, this.screenX(planet.x), this.screenY(planet.y), 12 * this.zoom, "yellow", 1);
+	  this.drawCircle(ctx, this.screenX(planet.x), this.screenY(planet.y), 12 * this.zoom, "orange", 1);
 	}
       }
 
@@ -105,7 +134,7 @@ function wrapper() {
 
     for (var d = 0; d < hypTools.warpcircles.length; d++) {
       var c = hypTools.warpcircles[d];
-      this.drawCircle(ctx, this.screenX(c.x), this.screenY(c.y), 81 * this.zoom, "cyan", 1);
+      this.drawCircle(ctx, this.screenX(c.x), this.screenY(c.y), hypTools.warp * this.zoom, "cyan", 1);
     }
 
     for (var d = 0; d < hypTools.multiturncircles.length; d++) {
@@ -115,113 +144,72 @@ function wrapper() {
       this.drawCircle(ctx, this.screenX(c.x), this.screenY(c.y), 3 * hypTools.warp * this.zoom, "cyan", 1);
     }
 
-    this.drawMeasure(ctx);
+    if (hypTools.linestart != null) {
+      var l = hypTools.linestart;
+      this.drawCircle(ctx, this.screenX(l.x), this.screenY(l.y), 1 * this.zoom, "orange", 2);
+    }
 
-    this.renderResource(ctx);
+    for (var d = 0; d < hypTools.lines.length; ++d) {
+      var l = hypTools.lines[d];
+      this.drawLine(ctx, this.screenX(l.sx), this.screenY(l.sy), this.screenX(l.ex), this.screenY(l.ey), "orange", 1);
+    }
   };
 
-  var oldClick = vgapMap.prototype.Click;
+  var oldClick = vgapMap.prototype.click;
   vgapMap.prototype.click = function(event) {
-    var c = event.shiftKey;
+
+    if (this.over) {
+      a = this.over.x;
+      b = this.over.y;
+    } else {
+      a = this.x;
+      b = this.y;
+    }
 
     // snap hypcircle to closese ship or planet
     if (hypTools.putWarpCircle) {
-      if (this.over) {
-	hypTools.prototype.pushWarpCircles(this.over.x, this.over.y);
-      } else {
-	hypTools.prototype.pushWarpCircles(this.x, this.y);
-      }
+      hypTools.prototype.addWarpCircle(a, b);
+
       hypTools.putWarpCircle = false;
       $("body").css("cursor", "");
       // return
     }
 
+    if (hypTools.drawLineStart) {
+      hypTools.prototype.addLineStart(a, b);
+
+      hypTools.drawLineStart = false;
+      hypTools.drawLineEnd = true;
+      $("body").css("cursor", "");
+      // return
+    } else if (hypTools.drawLineEnd) {
+      hypTools.prototype.addLineEnd(a, b);
+
+      hypTools.drawLineStart = false;
+      hypTools.drawLineEnd = false;
+      $("body").css("cursor", "");
+      // return
+    }
+
     if (hypTools.putMultiTurnCircle) {
-      if (this.over) {
-	hypTools.prototype.pushMultiTurnCircles(this.over.x, this.over.y);
-      } else {
-	hypTools.prototype.pushMultiTurnCircles(this.x, this.y);
-      }
+      hypTools.prototype.addMultiTurn(a, b);
+
       hypTools.putMultiTurnCircle = false;
       $("body").css("cursor", "");
       // return
     }
 
     if (this.putHypCircle) {
-      if (this.over) {
-	this.hyperjump(this.over.x, this.over.y);
-      } else {
-	this.hyperjump(this.x, this.y);
-      }
+      this.hyperjump(a, b);
+
       this.putHypCircle = false;
       $("body").css("cursor", "");
       // return
     }
-    if (this.measure) {
-      this.markMeasure();
-      return
 
-      
-
-            
-
-      
-
-    }
-    if (this.over && this.activePlanet) {
-      if (this.activePlanet.targetx == this.over.x && this.activePlanet.targety == this.over.y) {
-	this.loadOver();
-	return
-
-	
-
-		
-
-	
-
-      }
-    }
-    if (this.over && this.activeShip) {
-      if (this.activeShip.readystatus == 0) {
-	var a = vgap.getDest(this.activeShip);
-	if (a.x == this.over.x && a.y == this.over.y) {
-	  this.loadOver();
-	  return
-
-	  
-
-	  	  
-
-	  
-
-	}
-      }
-    }
-    if (this.activePlanet) {
-      this.planetSelectorClick();
-      return
-
-      
-
-            
-
-      
-
-    }
-    if (this.activeShip) {
-      this.shipSelectorClick(c);
-      return
-
-      
-
-            
-
-      
-
-    }
-    if (this.over) {
-      this.loadOver()
-    }
+    oldClick.apply(this, arguments);
+    
+    this.draw();
   };
 
   var oldLoadControls = vgapMap.prototype.loadControls;

@@ -49,6 +49,8 @@ function wrapper() {
 
   var oldHitTextBox = vgapMap.prototype.hitTextBox;
   vgapMap.prototype.hitTextBox = function(c) {
+// replace completely, pretty sure i want to do this
+//     oldHitTextBox.apply(this, arguments);
 
     var q = "";
     q += "<div class='ItemSelectionBox minCorrection'>";
@@ -284,6 +286,8 @@ function wrapper() {
 
   var oldShowInfo = vgapMap.prototype.showInfo;
   vgapMap.prototype.showInfo = function(a, b) {
+ // replace completely
+//  oldShowInfo.apply(this, arguments);
 
     var h = Math.round(vgap.map.mapX(a));
     var j = Math.round(vgap.map.mapY(b));

@@ -159,7 +159,7 @@ function wrapper() {
       ns *= c.race == 1 ? 2 : 1; // feds == 1
       ns *= c.nativetype == 6 ? 2 : 1; // insect == 6
       return ns;
-    }
+    },
 
   };
 
@@ -296,7 +296,7 @@ function wrapper() {
 		  ctx.fillStyle = "cyan";
 		  x2 = this.screenX(planet.x + 6.5 * this.zoom);
 		  y2 = this.screenY(planet.y + 0 * this.zoom);
-		  ctx.fillText(fighters, x2, y2)
+		  ctx.fillText(fighters, x2, y2);
 	  }
 
 	} else {
@@ -335,7 +335,7 @@ function wrapper() {
 	  }
 	}
     }
-  };
+    };
 
   var oldLoadControls = vgapMap.prototype.loadControls;
   vgapMap.prototype.loadControls = function() {

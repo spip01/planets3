@@ -55,13 +55,12 @@ function wrapper() {
       this.clearData();
 
       if (vgapMap.prototype.spMenuItem != undefined) {
- for (var i = 0; i < resources.length; ++i) {
-	// weird declaration fits the color into the existing class
-	vgapMap.prototype.spMenuItem(resources[i].name, "showMinerals\' style=\'color:" + resources[i].color, function() {
+        for (var i = 0; i < resources.length; ++i) {
+	  // weird declaration fits the color into the existing class
+	  vgapMap.prototype.spMenuItem(resources[i].name, "showMinerals\' style=\'color:" + resources[i].color, function() {
 
 	  showMinerals.prototype.toggleRes(event.target.innerHTML);
 	});
-      }
 
 // vgapMap.prototype.spMenuItem("Bar Graph", "showBarGraph", function() {
 // showBars = !showBars;
@@ -72,36 +71,36 @@ function wrapper() {
 // }
 // });
 
-      vgapMap.prototype.spMenuItem("Text", "showText", function() {
-	showText = !showText;
-	if (showText) {
-	  showBars = false;
-	  buildStarbase = false;
-	  buildFighters = false;
-	}
-      });
+        vgapMap.prototype.spMenuItem("Text", "showText", function() {
+	  showText = !showText;
+	  if (showText) {
+	    showBars = false;
+	    buildStarbase = false;
+	    buildFighters = false;
+	  }
+        });
 
-      vgapMap.prototype.spMenuItem("Build Starbase", "buildStarbase", function() {
-	 buildStarbase = !buildStarbase;
-	 if (buildStarbase) {
-	 showBars = false;
-	 showText = false;
-		buildFighters = false;
-	 }
-	 });
+        vgapMap.prototype.spMenuItem("Build Starbase", "buildStarbase", function() {
+	  buildStarbase = !buildStarbase;
+	  if (buildStarbase) {
+	    showBars = false;
+	    showText = false;
+            buildFighters = false;
+	  }
+        });
 
-      vgapMap.prototype.spMenuItem("Build Fighters", "buildFighters", function() {
-	buildFighters = !buildFighters;
-	 if (buildFighters) {
-	 showBars = false;
-	 showText = false;
-	 buildStarbase = false;
-	 }
-	 });
+        vgapMap.prototype.spMenuItem("Build Fighters", "buildFighters", function() {
+	  buildFighters = !buildFighters;
+	  if (buildFighters) {
+	    showBars = false;
+	    showText = false;
+	    buildStarbase = false;
+	  }
+        });
 
-      vgapMap.prototype.spMenuItem("Clear", "_massClear", function() {
-	showMinerals.prototype.clearData();
-      });
+        vgapMap.prototype.spMenuItem("Clear", "_massClear", function() {
+	  showMinerals.prototype.clearData();
+        });
       }
     },
 
@@ -110,7 +109,7 @@ function wrapper() {
       vgap.map.showresources = name;
       for (var i = 0; i < resources.length; ++i) {
 	if (resources[i].name == name) {
-	  var v = !resources[i].showRes;
+	  v = !resources[i].showRes;
 	  resources[i].showRes = v;
 	}
       }
@@ -148,10 +147,10 @@ function wrapper() {
     },
     
     miningRate (p, ground, density) {
-	m = vgap.miningRate(p, density);
-	m = m > ground ? ground : Math.round(m);
+      m = vgap.miningRate(p, density);
+      m = m > ground ? ground : Math.round(m);
 	
-	return m;
+      return m;
     },
     
     nativesupport : function(c) {
@@ -159,8 +158,7 @@ function wrapper() {
       ns *= c.race == 1 ? 2 : 1; // feds == 1
       ns *= c.nativetype == 6 ? 2 : 1; // insect == 6
       return ns;
-    },
-
+    }
   };
 
   var oldRenderResource = vgapMap.prototype.renderResource;
@@ -177,82 +175,81 @@ function wrapper() {
 	resources[i].mined = 0;
       }
 
+      for (var i = 0; i < resources.length; ++i) {
+	r = resources[i];
+	if (r.name == "Molybdenum") {
+	  r.surface = planet.molybdenum;
+	  r.ground = planet.groundmolybdenum;
+	  r.mined = showMinerals.prototype.miningRate (planet, planet.groundmolybdenum, planet.densitymolybdenum);
+	  // console.log(planet.id+"p "+r.surface);
+	}
+	if (r.name == "Neutronium") {
+	  r.surface = planet.neutronium;
+	  r.ground = planet.groundneutronium;
+	  r.mined = showMinerals.prototype.miningRate (planet, planet.groundneutronium, planet.densityneutronium);
+	}
+	if (r.name == "Duranium") {
+	  r.surface = planet.duranium;
+	  r.ground = planet.groundduranium;
+	  r.mined = showMinerals.prototype.miningRate (planet, planet.groundduranium, planet.densityduranium);
+	}
+	if (r.name == "Tritanium") {
+	  r.surface = planet.tritanium;
+	  r.ground = planet.groundtritanium;
+	  r.mined = showMinerals.prototype.miningRate (planet, planet.groundtritanium, planet.densitytritanium);
+	}
+	if (r.name == "Megacredits") {
+	  r.surface = planet.megacredits + planet.supplies;
+	  r.supplies = planet.supplies;
+	  r.ground = 0;
+	  r.mined = planet.factories;
+	    
+	  nt = showMinerals.prototype.nativeTaxAmount(planet, planet.nativetaxrate);
+	  ns = showMinerals.prototype.nativesupport(planet);
+	  r.mined += Math.min( nt , ns);
+
+	}
+      }
+
+      for (var k = 0; k < vgap.myships.length; ++k) {
+	var ship = vgap.myships[k];
+	t = Math.dist(ship.targetx, ship.targety, planet.x, planet.y) <= 3;
+	p = ship.x == planet.x && ship.y == planet.y;
+	      
 	for (var i = 0; i < resources.length; ++i) {
 	  r = resources[i];
-		if (r.name == "Molybdenum") {
-	    r.surface = planet.molybdenum;
-	    r.ground = planet.groundmolybdenum;
-	    r.mined = showMinerals.prototype.miningRate (planet, planet.groundmolybdenum, planet.densitymolybdenum);
-	    // console.log(planet.id+"p "+r.surface);
-	  }
-	  if (r.name == "Neutronium") {
-	    r.surface = planet.neutronium;
-	    r.ground = planet.groundneutronium;
-	    r.mined = showMinerals.prototype.miningRate (planet, planet.groundneutronium, planet.densityneutronium);
-	  }
-	  if (r.name == "Duranium") {
-	    r.surface = planet.duranium;
-	    r.ground = planet.groundduranium;
-	    r.mined = showMinerals.prototype.miningRate (planet, planet.groundduranium, planet.densityduranium);
-	  }
-	  if (r.name == "Tritanium") {
-	    r.surface = planet.tritanium;
-	    r.ground = planet.groundtritanium;
-	    r.mined = showMinerals.prototype.miningRate (planet, planet.groundtritanium, planet.densitytritanium);
-	  }
-	  if (r.name == "Megacredits") {
-	    r.surface = planet.megacredits + planet.supplies;
-	    r.supplies = planet.supplies;
-	    r.ground = 0;
-	    r.mined = planet.factories;
-	    
-		  nt = showMinerals.prototype.nativeTaxAmount(planet, planet.nativetaxrate);
-		  ns = showMinerals.prototype.nativesupport(planet);
-		  r.mined += Math.min( nt , ns);
-
-	  }
-	}
-
-	for (var k = 0; k < vgap.myships.length; ++k) {
-	  var ship = vgap.myships[k];
-	      t = Math.dist(ship.targetx, ship.targety, planet.x, planet.y) <= 3;
-	      p = ship.x == planet.x && ship.y == planet.y;
-	      
-	    for (var i = 0; i < resources.length; ++i) {
-	      r = resources[i];
 	      
 	  if (p && t) {
-	      if (r.name == "Molybdenum")
-		r.surface += ship.molybdenum;
-	      if (r.name == "Neutronium")
-		r.surface += ship.neutronium;
-	      if (r.name == "Duranium")
-		r.surface += ship.duranium;
-	      if (r.name == "Tritanium")
-		r.surface += ship.tritanium;
-	      if (r.name == "Megacredits") {
-		r.surface += ship.megacredits + ship.supplies;
-		r.supplies += ship.supplies;
-	      }
-	    } 
-	    if (!p & t) {
-	      if (r.name == "Molybdenum")
-		r.target += ship.molybdenum;
-	      if (r.name == "Neutronium")
-		r.target += ship.neutronium;
-	      if (r.name == "Duranium")
-		r.target += ship.duranium;
-	      if (r.name == "Tritanium")
-		r.target += ship.tritanium;
-	      if (r.name == "Megacredits")
-		r.target += ship.megacredits + ship.supplies;
-
+	    if (r.name == "Molybdenum")
+	      r.surface += ship.molybdenum;
+	    if (r.name == "Neutronium")
+	      r.surface += ship.neutronium;
+	    if (r.name == "Duranium")
+	      r.surface += ship.duranium;
+	    if (r.name == "Tritanium")
+	      r.surface += ship.tritanium;
+	    if (r.name == "Megacredits") {
+	      r.surface += ship.megacredits + ship.supplies;
+	      r.supplies += ship.supplies;
 	    }
+	  } 
+	  if (!p & t) {
+            if (r.name == "Molybdenum")
+     	      r.target += ship.molybdenum;
+	    if (r.name == "Neutronium")
+	      r.target += ship.neutronium;
+	    if (r.name == "Duranium")
+	      r.target += ship.duranium;
+	    if (r.name == "Tritanium")
+	      r.target += ship.tritanium;
+	    if (r.name == "Megacredits")
+	      r.target += ship.megacredits + ship.supplies;
 	  }
 	}
+      }
 
-	var x1 = this.screenX(planet.x);
-	var y1 = this.screenY(planet.y);
+      var x1 = this.screenX(planet.x);
+      var y1 = this.screenY(planet.y);
 
 	if (buildStarbase || buildFighters) {
 	  for (var j = 0; j < resources.length; ++j) {
@@ -277,26 +274,26 @@ function wrapper() {
 	  }
 	  
 	  if (buildStarbase) {
-	  if (!vgap.getStarbase(planet.id)) {
-	    if (dur >= 120 && tri >= 302 && mol >= 430 && mc >= 900) {
-	      radius = 9 * this.zoom;
-	      this.drawCircle(ctx, x1, y1, radius, "green", 6);
+	    if (!vgap.getStarbase(planet.id)) {
+	      if (dur >= 120 && tri >= 302 && mol >= 430 && mc >= 900) {
+	        radius = 9 * this.zoom;
+	        this.drawCircle(ctx, x1, y1, radius, "green", 6);
+	      }
 	    }
-	  }
 
-	  if (!vgap.getStarbase(planet.id)) {
-	    if (dur2 >= 120 && tri2 >= 302 && mol2 >= 430 && mc2 >= 900) {
-	      radius = 9 * this.zoom;
-	      this.drawCircle(ctx, x1, y1, radius, "yellow", 6);
+	    if (!vgap.getStarbase(planet.id)) {
+	      if (dur2 >= 120 && tri2 >= 302 && mol2 >= 430 && mc2 >= 900) {
+	        radius = 9 * this.zoom;
+	        this.drawCircle(ctx, x1, y1, radius, "yellow", 6);
+	      }
 	    }
-	  }
 	  } else if (buildFighters) {
 	    fighters = Math.floor(Math.min(sp/5, tri/3, mol/2));
 
-		  ctx.fillStyle = "cyan";
-		  x2 = this.screenX(planet.x + 6.5 * this.zoom);
-		  y2 = this.screenY(planet.y + 0 * this.zoom);
-		  ctx.fillText(fighters, x2, y2);
+	    ctx.fillStyle = "cyan";
+	    x2 = this.screenX(planet.x + 6.5 * this.zoom);
+	    y2 = this.screenY(planet.y + 0 * this.zoom);
+  	    ctx.fillText(fighters, x2, y2);
 	  }
 
 	} else {
@@ -334,9 +331,10 @@ function wrapper() {
 	    }
 	  }
 	}
+      }
     }
-    };
-
+  };
+  
   var oldLoadControls = vgapMap.prototype.loadControls;
   vgapMap.prototype.loadControls = function() {
     oldLoadControls.apply(this, arguments);

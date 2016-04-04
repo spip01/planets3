@@ -8,13 +8,14 @@
     "include_globs": ["http://planets.nu/*" ,"http://play.planets.nu/*"
 //      ,"http://test.planets.nu/*"
     ],
-    "js": ["spMenu.js"
-      ,"hypCircle.js"
-      ,"checkReady.js"
-      ,"showMinerals.js"
-      ,"setRandom.js"
-      ,"hitText.js"
-//      ,"history.js"
+    "js": [
+      "spMenu.js",
+      "checkReady.js",
+      "hypCircle.js",
+      "showMinerals.js",
+      "setRandom.js",
+      "hitText.js"
+//      "history.js"
     ],
 
     "run_at": "document_idle"

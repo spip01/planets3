@@ -59,8 +59,9 @@ function wrapper() {
 	  // weird declaration fits the color into the existing class
 	  vgapMap.prototype.spMenuItem(resources[i].name, "showMinerals\' style=\'color:" + resources[i].color, function() {
 
-	  showMinerals.prototype.toggleRes(event.target.innerHTML);
-	});
+	    showMinerals.prototype.toggleRes(event.target.innerHTML);
+	  });
+        }
 
 // vgapMap.prototype.spMenuItem("Bar Graph", "showBarGraph", function() {
 // showBars = !showBars;
@@ -251,86 +252,84 @@ function wrapper() {
       var x1 = this.screenX(planet.x);
       var y1 = this.screenY(planet.y);
 
-	if (buildStarbase || buildFighters) {
-	  for (var j = 0; j < resources.length; ++j) {
-	    r = resources[j];
-	    if (r.name == "Molybdenum") {
-	      mol = r.surface;
-	      mol2 = r.mined + r.target;
-	    }
-	    if (r.name == "Duranium") {
-	      dur = r.surface;
-	      dur2 = r.mined + r.target;
-	    }
-	    if (r.name == "Tritanium") {
-	      tri = r.surface;
-	      tri2 = r.mined + r.target;
-	    }
-	    if (r.name == "Megacredits") {
-	      mc = r.surface;
-	      sp = r.supplies;
-	      mc2 = r.mined + r.target;
-	    }
+      if (buildStarbase || buildFighters) {
+	for (var j = 0; j < resources.length; ++j) {
+	  r = resources[j];
+	  if (r.name == "Molybdenum") {
+	    mol = r.surface;
+	    mol2 = r.mined + r.target;
 	  }
-	  
-	  if (buildStarbase) {
-	    if (!vgap.getStarbase(planet.id)) {
-	      if (dur >= 120 && tri >= 302 && mol >= 430 && mc >= 900) {
-	        radius = 9 * this.zoom;
-	        this.drawCircle(ctx, x1, y1, radius, "green", 6);
-	      }
-	    }
-
-	    if (!vgap.getStarbase(planet.id)) {
-	      if (dur2 >= 120 && tri2 >= 302 && mol2 >= 430 && mc2 >= 900) {
-	        radius = 9 * this.zoom;
-	        this.drawCircle(ctx, x1, y1, radius, "yellow", 6);
-	      }
-	    }
-	  } else if (buildFighters) {
-	    fighters = Math.floor(Math.min(sp/5, tri/3, mol/2));
-
-	    ctx.fillStyle = "cyan";
-	    x2 = this.screenX(planet.x + 6.5 * this.zoom);
-	    y2 = this.screenY(planet.y + 0 * this.zoom);
-  	    ctx.fillText(fighters, x2, y2);
+	  if (r.name == "Duranium") {
+	    dur = r.surface;
+	    dur2 = r.mined + r.target;
 	  }
-
-	} else {
-
-	  for (var i = 0; i < resources.length; ++i) {
-	    if (resources[i].showRes == true) {
-	      var color = resources[i].color;
-
-	      if (showBars) {
-		x1 = this.screenX(planet.x + (4 + i * 4) * this.zoom);
-		y1 = this.screenY(planet.y);
-		// var x2 = this.screenX(planet.x + (6 + i) *
-		// this.zoom);
-		var y2 = this.screenY(planet.y + Math.sqrt(resources[i].surface) * this.zoom);
-
-		this.drawLine(ctx, x1, y1, x1, y2, color, 4);
-		this.drawCircle(ctx, x1, y1, 0, color, 1); // why
-	      } else if (showText) {
-		var radius;
-		  f = resources[i].surface + "-" + (resources[i].surface + resources[i].mined + resources[i].target);
-		  ctx.fillStyle = color;
-		  x2 = this.screenX(planet.x + 6.5 * this.zoom);
-		  y2 = this.screenY(planet.y - (i - 2) * 5.5 * this.zoom);
-		  ctx.fillText(f, x2, y2)
-	      } else {
-		if (resources[i].ground > 0) {
-		  radius = Math.sqrt(resources[i].ground) * this.zoom;
-		  this.drawCircle(ctx, x1, y1, radius, color, 1);
-		}
-		if (resources[i].surface > 0) {
-		  radius = Math.sqrt(resources[i].surface) * this.zoom;
-		  this.drawCircle(ctx, x1, y1, radius, color, 2);
-		}
-	      }
-	    }
+	  if (r.name == "Tritanium") {
+	    tri = r.surface;
+	    tri2 = r.mined + r.target;
+	  }
+	  if (r.name == "Megacredits") {
+	    mc = r.surface;
+	    sp = r.supplies;
+	    mc2 = r.mined + r.target;
 	  }
 	}
+	  
+	if (buildStarbase) {
+	  if (!vgap.getStarbase(planet.id)) {
+	    if (dur >= 120 && tri >= 302 && mol >= 430 && mc >= 900) {
+	      radius = 9 * this.zoom;
+	      this.drawCircle(ctx, x1, y1, radius, "green", 6);
+	    }
+	  }
+
+	  if (!vgap.getStarbase(planet.id)) {
+	    if (dur2 >= 120 && tri2 >= 302 && mol2 >= 430 && mc2 >= 900) {
+	      radius = 9 * this.zoom;
+	      this.drawCircle(ctx, x1, y1, radius, "yellow", 6);
+	    }
+	  }
+	} else if (buildFighters) {
+	  fighters = Math.floor(Math.min(sp/5, tri/3, mol/2));
+
+	  ctx.fillStyle = "cyan";
+	  x2 = this.screenX(planet.x + 6.5 * this.zoom);
+	  y2 = this.screenY(planet.y + 0 * this.zoom);
+  	  ctx.fillText(fighters, x2, y2);
+	}
+
+      } else {
+
+	for (var i = 0; i < resources.length; ++i) {
+	  if (resources[i].showRes == true) {
+	    var color = resources[i].color;
+
+	    if (showBars) {
+	      x1 = this.screenX(planet.x + (4 + i * 4) * this.zoom);
+	      y1 = this.screenY(planet.y);
+	      // var x2 = this.screenX(planet.x + (6 + i) * this.zoom);
+	      var y2 = this.screenY(planet.y + Math.sqrt(resources[i].surface) * this.zoom);
+
+	      this.drawLine(ctx, x1, y1, x1, y2, color, 4);
+	      this.drawCircle(ctx, x1, y1, 0, color, 1); // why
+	    } else if (showText) {
+	        var radius;
+		f = resources[i].surface + "-" + (resources[i].surface + resources[i].mined + resources[i].target);
+		ctx.fillStyle = color;
+	        x2 = this.screenX(planet.x + 6.5 * this.zoom);
+	        y2 = this.screenY(planet.y - (i - 2) * 5.5 * this.zoom);
+	        ctx.fillText(f, x2, y2)
+	    } else {
+	      if (resources[i].ground > 0) {
+	        radius = Math.sqrt(resources[i].ground) * this.zoom;
+	        this.drawCircle(ctx, x1, y1, radius, color, 1);
+	      }
+	      if (resources[i].surface > 0) {
+	        radius = Math.sqrt(resources[i].surface) * this.zoom;
+	        this.drawCircle(ctx, x1, y1, radius, color, 2);
+   	      }
+            }
+          }
+        }
       }
     }
   };

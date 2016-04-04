@@ -50,7 +50,7 @@ function wrapper() {
   var oldHitTextBox = vgapMap.prototype.hitTextBox;
   vgapMap.prototype.hitTextBox = function(c) {
 // replace completely, pretty sure i want to do this
-//     oldHitTextBox.apply(this, arguments);
+// oldHitTextBox.apply(this, arguments);
 
     var q = "";
     q += "<div class='ItemSelectionBox minCorrection'>";
@@ -194,30 +194,33 @@ function wrapper() {
 
 	d += "<table class='CleanTable'>";
 
-	if (m.duranium == 0 && m.tritanium == 0 && m.molybdenum == 0) {
-	  d += "<tr><td>neu:</td><td>&nbsp;" + gsv(m.neutronium) + "/" + e.fueltank + " </td>";
-	  d += "    <td>&nbsp;clns:</td><td>&nbsp;&nbsp;" + gsv(m.clans) + "</td></tr>";
-	  d += "    <td>sup:</td><td>&nbsp;" + gsv(m.supplies) + "</td>";
-	  d += "    <td>&nbsp;mc:</td><td>&nbsp;&nbsp;" + gsv(m.megacredits) + "</td></tr>";
-	} else {
-	  d += "<tr><td>neu:</td><td>&nbsp;" + gsv(m.neutronium) + "/" + e.fueltank + " </td>";
-	  d += "    <td>&nbsp;clns:</td><td>&nbsp;&nbsp;" + gsv(m.clans) + "</td></tr>";
-	  d += "<tr><td>dur:</td><td>&nbsp;" + gsv(m.duranium) + "</td>";
-	  d += "    <td>&nbsp;sup:</td><td>&nbsp;&nbsp;" + gsv(m.supplies) + "</td></tr>";
-	  d += "<tr><td>tri:</td><td>&nbsp;" + gsv(m.tritanium) + "</td>";
-	  d += "    <td>&nbsp;mc:</td><td>&nbsp;&nbsp;" + gsv(m.megacredits) + "</td></tr>";
-	  d += "<tr><td>mol:</td><td>&nbsp;" + gsv(m.molybdenum) + "</td>";
+	d += "<tr><td>neu:</td><td>&nbsp;" + gsv(m.neutronium) + "/" + e.fueltank + " </td>";
+	d += "<td>&nbsp;fc:</td><td>&nbsp;&nbsp;" + m.friendlycode + "</td></tr>";
+
+	cl = "<td>clns:</td><td>&nbsp;&nbsp;" + gsv(m.clans) + "</td>";
+        cs = "<td>&nbsp;sup:</td><td>&nbsp;&nbsp;" + gsv(m.supplies) + "</td>";
+	cm = "<td>mc:</td><td>&nbsp;&nbsp;" + gsv(m.megacredits) + "</td>";
+      
+	if (m.duranium != 0 || m.tritanium != 0 || m.molybdenum != 0) {
+	  d += "<tr><td>dur:</td><td>&nbsp;" + gsv(m.duranium) + "</td>&nbsp;&nbsp;"+ cl + "</tr>";
+	  d += "<tr><td>tri:</td><td>&nbsp;" + gsv(m.tritanium) + "</td>"+ cs + "</tr>";
+	  d += "<tr><td>mol:</td><td>&nbsp;" + gsv(m.molybdenum) + "</td>&nbsp;&nbsp;"+ cm + "</tr>";
 	}
+	
+	if (m.supplies != 0 || m.megacredits != 0)
+	  d += "<tr>" + cs + cm + "</tr>";
+	   
+	if (m.clans != 0)
+	  d += "<tr>" + cl + "</tr>";
+	
+	
 	if (m.torps > 0 || m.bays > 0) {
-	  d += "</tr><td>fc:</td><td>" + m.friendlycode + "</td>";
 	  var a = "fghtr";
 	  if (m.torps > 0) {
 	    a = "torp"
 	  }
 	  d += "<td>" + a + ":</td><td>&nbsp;&nbsp;" + gsv(m.ammo) + "</td>";
-	} else {
-	  d += "<td>&nbsp;&nbsp;fc:</td><td>&nbsp;&nbsp;" + m.friendlycode + "</td>";
-	}
+	} 
 	d += "</tr>";
 
 	if (c.ownerid != vgap.player.id) {
@@ -287,7 +290,7 @@ function wrapper() {
   var oldShowInfo = vgapMap.prototype.showInfo;
   vgapMap.prototype.showInfo = function(a, b) {
  // replace completely
-//  oldShowInfo.apply(this, arguments);
+// oldShowInfo.apply(this, arguments);
 
     var h = Math.round(vgap.map.mapX(a));
     var j = Math.round(vgap.map.mapY(b));

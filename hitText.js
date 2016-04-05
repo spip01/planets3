@@ -205,24 +205,27 @@ function wrapper() {
 	  d += "<tr><td>dur:</td><td>&nbsp;" + gsv(m.duranium) + "</td>&nbsp;&nbsp;"+ cl + "</tr>";
 	  d += "<tr><td>tri:</td><td>&nbsp;" + gsv(m.tritanium) + "</td>"+ cs + "</tr>";
 	  d += "<tr><td>mol:</td><td>&nbsp;" + gsv(m.molybdenum) + "</td>&nbsp;&nbsp;"+ cm + "</tr>";
+	
+	} else {
+
+	  if (m.supplies != 0 || m.megacredits != 0)
+	    d += "<tr>" + cs + cm + "</tr>";
+	   
+	  if (m.clans != 0)
+	    d += "<tr>" + cl + "</tr>";
 	}
 	
-	if (m.supplies != 0 || m.megacredits != 0)
-	  d += "<tr>" + cs + cm + "</tr>";
-	   
-	if (m.clans != 0)
-	  d += "<tr>" + cl + "</tr>";
-	
-	
-	if (m.torps > 0 || m.bays > 0) {
-	  var a = "fghtr";
-	  if (m.torps > 0) {
-	    a = "torp"
-	  }
-	  d += "<td>" + a + ":</td><td>&nbsp;&nbsp;" + gsv(m.ammo) + "</td>";
-	} 
-	d += "</tr>";
+	a = null
+	if (m.bays > 0) 
+	  a = "fghtr:";
+	  
+	if (m.torps > 0) 
+	  a = "torp:</td><td>&nbsp;&nbsp"+m.torpedoid+"/";
+	  
+	if (a != null)
+	  d += "<tr><td>" + a + "</td><td>&nbsp;&nbsp;" + gsv(m.ammo) + "</td></tr>";
 
+	
 	if (c.ownerid != vgap.player.id) {
 	  if (m.iscloaked) {
 	    d += "<tr><td colspan='2' class='GoodText'>Cloaked</td></tr>"

@@ -259,20 +259,20 @@ function wrapper() {
 	  r = resources[j];
 	  if (r.name == "Molybdenum") {
 	    mol = r.surface;
-	    mol2 = r.mined + r.target;
+	    mol2 = mol + r.mined + r.target;
 	  }
 	  if (r.name == "Duranium") {
 	    dur = r.surface;
-	    dur2 = r.mined + r.target;
+	    dur2 = dur + r.mined + r.target;
 	  }
 	  if (r.name == "Tritanium") {
 	    tri = r.surface;
-	    tri2 = r.mined + r.target;
+	    tri2 = tri + r.mined + r.target;
 	  }
 	  if (r.name == "Megacredits") {
 	    mc = r.surface;
 	    sp = r.supplies;
-	    mc2 = r.mined + r.target;
+	    mc2 = mc + r.mined + r.target;
 	  }
 	}
 	  

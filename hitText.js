@@ -195,36 +195,40 @@ function wrapper() {
 	d += "<table class='CleanTable'>";
 
 	d += "<tr><td>neu:</td><td>&nbsp;" + gsv(m.neutronium) + "/" + e.fueltank + " </td>";
-	d += "<td>&nbsp;fc:</td><td>&nbsp;&nbsp;" + m.friendlycode + "</td></tr>";
+	d += "<td>&nbsp;fc:&nbsp;&nbsp;" + m.friendlycode + "</td></tr>";
 
-	cl = "<td>clns:</td><td>&nbsp;&nbsp;" + gsv(m.clans) + "</td>";
-        cs = "<td>&nbsp;sup:</td><td>&nbsp;&nbsp;" + gsv(m.supplies) + "</td>";
-	cm = "<td>mc:</td><td>&nbsp;&nbsp;" + gsv(m.megacredits) + "</td>";
+
+	cl = "";
+	if (m.clans != 0)
+	  cl = "<td>clns:</td><td>&nbsp;" + gsv(m.clans) + "</td>";
+        cs = "<td>sup:</td><td>&nbsp;" + gsv(m.supplies) + "</td>";
+	mc = "<td>mc:</td><td>&nbsp;" + gsv(m.megacredits) + "</td>";
       
 	if (m.duranium != 0 || m.tritanium != 0 || m.molybdenum != 0) {
-	  d += "<tr><td>dur:</td><td>&nbsp;" + gsv(m.duranium) + "</td>&nbsp;&nbsp;"+ cl + "</tr>";
-	  d += "<tr><td>tri:</td><td>&nbsp;" + gsv(m.tritanium) + "</td>"+ cs + "</tr>";
-	  d += "<tr><td>mol:</td><td>&nbsp;" + gsv(m.molybdenum) + "</td>&nbsp;&nbsp;"+ cm + "</tr>";
+	  d += "<tr><td>dur:</td><td>&nbsp;" + gsv(m.duranium) + "</td>"+ cs + "</tr>";
+	  d += "<tr><td>tri:</td><td>&nbsp;" + gsv(m.tritanium) + "</td>"+ mc + "</tr>";
+	  d += "<tr><td>mol:</td><td>&nbsp;" + gsv(m.molybdenum) + "</td>"+ cl + "</tr>";
 	
 	} else {
 
 	  if (m.supplies != 0 || m.megacredits != 0)
-	    d += "<tr>" + cs + cm + "</tr>";
-	   
-	  if (m.clans != 0)
+	    d += "<tr>" + cs + mc + "</tr>";
+	  
+	  if (m.clans != 0 && cl != "")
 	    d += "<tr>" + cl + "</tr>";
 	}
-	
-	a = null
-	if (m.bays > 0) 
-	  a = "fghtr:";
-	  
-	if (m.torps > 0) 
-	  a = "torp:</td><td>&nbsp;&nbsp"+m.torpedoid+"/";
-	  
-	if (a != null)
-	  d += "<tr><td>" + a + "</td><td>&nbsp;&nbsp;" + gsv(m.ammo) + "</td></tr>";
 
+	en = "";
+	if (m.enemy > 0)
+	  en = "<td>" + vgap.getRace(m.enemy).shortname + "</td>";
+	
+	if (m.bays > 0) {
+	  d += "<tr><td>fghtr:</td><td>&nbsp" + gsv(m.ammo) + "</td>" + en + "</tr>";
+	}
+	  
+	if (m.torps > 0) { 
+	  d += "<tr><td>torp:</td><td>&nbsp"+ m.torpedoid+"/" + gsv(m.ammo) + "</td>" + en + "</tr>";
+	}
 	
 	if (c.ownerid != vgap.player.id) {
 	  if (m.iscloaked) {

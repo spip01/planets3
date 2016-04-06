@@ -40,6 +40,7 @@ function wrapper() {
     surface : 0,
     ground : 0
   } ];
+
   var showBars = false;
   var showText = false;
   var buildStarbase = false;
@@ -63,23 +64,23 @@ function wrapper() {
 	  });
         }
 
-// vgapMap.prototype.spMenuItem("Bar Graph", "showBarGraph", function() {
-// showBars = !showBars;
-// if (showBars) {
-// showText = false;
-// buildStarbase = false;
-// buildFighters = false;
-// }
-// });
-
-        vgapMap.prototype.spMenuItem("Text", "showText", function() {
+ vgapMap.prototype.spMenuItem("Text", "showText", function() {
 	  showText = !showText;
 	  if (showText) {
 	    showBars = false;
 	    buildStarbase = false;
 	    buildFighters = false;
 	  }
-        });
+ });
+
+//vgapMap.prototype.spMenuItem("Bar Graph", "showBarGraph", function() {
+//showBars = !showBars;
+//if (showBars) {
+//showText = false;
+//buildStarbase = false;
+//buildFighters = false;
+//}
+//});
 
         vgapMap.prototype.spMenuItem("Build Starbase", "buildStarbase", function() {
 	  buildStarbase = !buildStarbase;
@@ -91,7 +92,7 @@ function wrapper() {
         });
 
         vgapMap.prototype.spMenuItem("Build Fighters", "buildFighters", function() {
-	  buildFighters = !buildFighters;
+          buildFighters = !buildFighters;
 	  if (buildFighters) {
 	    showBars = false;
 	    showText = false;
@@ -165,7 +166,7 @@ function wrapper() {
   var oldRenderResource = vgapMap.prototype.renderResource;
   vgapMap.prototype.renderResource = function(ctx) {
  // replace completely, pretty sure i want to do this
-//  oldRenderResource.apply(this, arguments);
+// oldRenderResource.apply(this, arguments);
 
     for (var d = 0; d < vgap.myplanets.length; d++) {
       var planet = vgap.myplanets[d];
@@ -295,7 +296,7 @@ function wrapper() {
 
 	  ctx.fillStyle = "cyan";
 	  x2 = this.screenX(planet.x + 6.5 * this.zoom);
-	  y2 = this.screenY(planet.y + 0 * this.zoom);
+	  y2 = this.screenY(planet.y + 1 * this.zoom);
   	  ctx.fillText(fighters, x2, y2);
 	}
 
@@ -313,7 +314,8 @@ function wrapper() {
 
 	      this.drawLine(ctx, x1, y1, x1, y2, color, 4);
 	      this.drawCircle(ctx, x1, y1, 0, color, 1); // why
-	    } else if (showText) {
+	    } else
+              if (showText) {
 	        var radius;
 		f = resources[i].surface + "-" + (resources[i].surface + resources[i].mined + resources[i].target);
 		ctx.fillStyle = color;

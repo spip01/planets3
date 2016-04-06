@@ -87,7 +87,7 @@ function wrapper() {
     // draw ships not ready had to redraw in draw()
     // because drawplanet() wrote over them
     if (showReady && ship.readystatus == 0 && vgap.player.id == ship.ownerid) {
-      this.drawCircle(ctx, this.screenX(ship.x), this.screenY(ship.y), 15 * this.zoom, "yellow", 2);
+      this.drawCircle(ctx, this.screenX(ship.x), this.screenY(ship.y), 16 * this.zoom, "yellow", 2);
     }
     // if (warnings && ship.ownerid) {
     // if (ship.dist > Math.pow(ship.warp, 2)) {

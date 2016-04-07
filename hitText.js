@@ -8,6 +8,18 @@
 // @homepage      https://greasyfork.org/en/users/32642-stephen-piper
 // ==/UserScript==
 
+//1 Humanoid - Any starbase that is built around a humanoid planet will have tech 10 hull technology automatically.
+//7 Amphibian - Any starbase that is built around a amphibian planet will have tech 10 beam technology automatically.
+//8 Ghipsoldal - Any starbase that is built around a ghipsoldal planet will have tech 10 engine technology automatically.
+//9 Siliconoid - Any starbase that is built around a siliconoid planet will have tech 10 torpedo technology automatically.
+
+
+//2 Bovinoid - Bovinoids are very valuable. Every 10000 Bovinoids will produce 1 supply unit per turn.
+//3 Reptilian - If there Reptilians living on a planet then your mining rate will be doubled.
+//4 Avian - Are quick to forgive you for overtaxing them. They will allow you to slightly overtax them without growing unhappy.
+//5 Amorphous - The only bad natives. The Amorphous lifeforms eat 500 colonists (5 clans) per turn.
+//6 Insectoid - Insectoids produce twice the normal amount of credits per turn per percentage as other native races.
+
 function wrapper() {
   function hitText() {
   }
@@ -23,26 +35,26 @@ function wrapper() {
 	var nt = (c.nativeclans / 100) * (ntr / 10) * (c.nativegovernment / 5);
 
 	nt = c.nativetype == 5 ? 0 : nt; // amorphous == 5
-	nt = c.nativetype == 6 ? 2 * nt : nt; // insect == 6
-	nt = c.race == 1 ? 2 * nt : nt; // feds == 1
+	nt *= c.race == 1 ? 2 : 1; // feds == 1
+        nt *= c.nativetype == 6 ? 2 : 1; // insect == 6
 
 	nt = Math.round(nt);
       }
       return nt;
     },
     
+    nativesupportedtax : function(c) {
+      ns = c.clans;
+      ns *= c.race == 1 ? 2 : 1; // feds == 1
+      ns *= c.nativetype == 6 ? 2 : 1; // insect == 6
+      return ns;
+    },
+   
     miningRate (p, ground, density) {
 	m = vgap.miningRate(p, density);
 	m = m > ground ? ground : Math.round(m);
 	
 	return m;
-    },
-    
-    nativesupport : function(c) {
-      ns = c.clans;
-      ns *= c.race == 1 ? 2 : 1; // feds == 1
-      ns *= c.nativetype == 6 ? 2 : 1; // insect == 6
-      return ns;
     },
 
   };
@@ -106,12 +118,12 @@ function wrapper() {
 	  }
 
 	  nt = hitText.prototype.nativeTaxAmount(c, c.nativetaxrate);
-	  ns = hitText.prototype.nativesupport(c);
+	  ns = hitText.prototype.nativesupportedtax(c);
 	  cs = ns - nt;
 	  nt = Math.min( nt , ns);
 
 	  nt20 = hitText.prototype.nativeTaxAmount(c, 20);
-	  ns20 = hitText.prototype.nativesupport(c);
+	  ns20 = hitText.prototype.nativesupportedtax(c);
 	  cs20 = ns20 - nt20;
 	  nt20 = Math.min( nt20 , ns20);
 	}

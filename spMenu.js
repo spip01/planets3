@@ -93,6 +93,12 @@ function wrapper() {
 	}
       };
 
+      this.addTool("Read Only", "readOnly", function() {
+	vgap.readOnly = true;
+	vgap.indicator.text("Read Only");
+	vgap.indicateOn();
+      });
+
       this.addTool("Clear All", "clearAll", function() {
 	for (i = 0; i < clearList.length; ++i)
 	  clearList[i]();

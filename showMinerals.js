@@ -74,14 +74,14 @@ function wrapper() {
 	      vgap.map.draw();
 });
 
-//vgapMap.prototype.spMenuItem("Bar Graph", "showBarGraph", function() {
-//showBars = !showBars;
-//if (showBars) {
-//showText = false;
-//buildStarbase = false;
-//buildFighters = false;
-//}
-//});
+// vgapMap.prototype.spMenuItem("Bar Graph", "showBarGraph", function() {
+// showBars = !showBars;
+// if (showBars) {
+// showText = false;
+// buildStarbase = false;
+// buildFighters = false;
+// }
+// });
 
         vgapMap.prototype.spMenuItem("Build Starbase", "buildStarbase", function() {
 	  buildStarbase = !buildStarbase;
@@ -125,7 +125,7 @@ function wrapper() {
     },
     
     clearRes : function() {
-//      vgap.map.showresources = false;
+// vgap.map.showresources = false;
       for (var i = 0; i < resources.length; ++i) {
 	resources[i].showRes = false;
 	}
@@ -325,16 +325,17 @@ if (buildStarbase || buildFighters) {
 	  if (resources[i].showRes == true) {
 	    var color = resources[i].color;
 
-//	    if (showBars) {
-//	      x1 = this.screenX(planet.x + (4 + i * 4) * this.zoom);
-//	      y1 = this.screenY(planet.y);
-//	      // var x2 = this.screenX(planet.x + (6 + i) * this.zoom);
-//	      var y2 = this.screenY(planet.y + Math.sqrt(resources[i].surface) * this.zoom);
+// if (showBars) {
+// x1 = this.screenX(planet.x + (4 + i * 4) * this.zoom);
+// y1 = this.screenY(planet.y);
+// // var x2 = this.screenX(planet.x + (6 + i) * this.zoom);
+// var y2 = this.screenY(planet.y + Math.sqrt(resources[i].surface) *
+// this.zoom);
 //
-//	      this.drawLine(ctx, x1, y1, x1, y2, color, 4);
-//	      this.drawCircle(ctx, x1, y1, 0, color, 1); // why
+// this.drawLine(ctx, x1, y1, x1, y2, color, 4);
+// this.drawCircle(ctx, x1, y1, 0, color, 1); // why
 //	      
-//	    } else
+// } else
               if (showText) {
 	        var radius;
 		f = resources[i].surface + "-" + (resources[i].surface + resources[i].mined + resources[i].target);

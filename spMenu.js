@@ -106,7 +106,6 @@ function wrapper() {
       this.addTool("Clear All", "clearAll", function() {
 	for (i = 0; i < clearList.length; ++i)
 	  clearList[i]();
-	spTools.prototype.clearData();
       });
     },
 

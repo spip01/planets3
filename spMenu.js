@@ -86,6 +86,10 @@ function wrapper() {
 	$("#spControls").css("cursor:default");
       });
 
+      $("#spToolsMenu").mousedown(function() {
+	spTools.prototype.toggleMenu();
+      });
+
       // text, class, function
       vgapMap.prototype = {
 	spMenuItem : function(c, a, b) {
@@ -134,24 +138,16 @@ function wrapper() {
       if (showMenu) {
 	showMenu = false;
 	$("#spTools").hide();
-	$("#spToolsMenu").mousedown(function() {
-	  $("#spTools").show();
-	});
       } else {
 	showMenu = true;
 	$("#spTools").show();
-	$("#spToolsMenu").mousedown(function() {
-	  $("#spTools").hide();
-	});
       }
     },
 
     clearControls : function() {
       showMenu = false;
+      $("#spControls").hide();
       $("#spTools").hide();
-      $("#spToolsMenu").mousedown(function() {
-	$("#spTools").show();
-      });
 
       this.clearData();
     },
@@ -163,7 +159,29 @@ function wrapper() {
 
   };
 
-  // easy to hook in child setup here
+  var oldShowMap = vgaPlanets.prototype.showMap;
+  vgaPlanets.prototype.showMap = function() {
+    oldShowMap.apply(this, arguments);
+
+    $("#spControls").show();
+  };
+
+  var oldShowDashboard = vgaPlanets.prototype.showDashboard;
+  vgaPlanets.prototype.showDashboard = function() {
+    oldShowDashboard.apply(this, arguments);
+
+    $("#spControls").hide();
+  };
+
+  var oldLoad = vgapMap.prototype.load;
+  vgapMap.prototype.load = function() {
+    oldLoad.apply(this, arguments);
+
+    $("#MapTip").remove();
+    vgap.map.setZoom(1);
+    vgap.map.centerMap(1860, 2646);
+  };
+
   var oldLoadControls = vgapMap.prototype.loadControls;
   vgapMap.prototype.loadControls = function() {
     oldLoadControls.apply(this, arguments);
@@ -171,17 +189,6 @@ function wrapper() {
     spTools.prototype.loadControls();
   };
 
-  var oldShowMap = vgaPlanets.prototype.showMap;
-  vgaPlanets.prototype.showMap = function() {
-    oldShowMap.apply(this, arguments);
-    $("#MapTip").remove();
-
-    $("#spControls").show();
-    showMenu = false;
-    $("#spToolsMenu").mousedown(function() {
-      spTools.prototype.toggleMenu();
-    });
-  };
 };
 
 var script = document.createElement("script");

@@ -90,6 +90,7 @@ function wrapper() {
 	    showText = false;
             buildFighters = false;
 
+	      vgap.map.draw();
        });
 
         vgapMap.prototype.spMenuItem("Build Fighters", "buildFighters", function() {
@@ -98,6 +99,7 @@ function wrapper() {
 	    showBars = false;
 	    showText = false;
 	    buildStarbase = false;
+	      vgap.map.draw();
 
 	  });
 
@@ -109,7 +111,7 @@ function wrapper() {
 
     // display minerals
     toggleRes : function(name) {
-      vgap.map.showresources = name;
+      vgap.map.showresources = true;
       for (var i = 0; i < resources.length; ++i) {
 	if (resources[i].name == name) {
 	  v = !resources[i].showRes;
@@ -125,7 +127,7 @@ function wrapper() {
     },
     
     clearRes : function() {
-// vgap.map.showresources = false;
+ vgap.map.showresources = true;
       for (var i = 0; i < resources.length; ++i) {
 	resources[i].showRes = false;
 	}
@@ -314,7 +316,7 @@ if (buildStarbase || buildFighters) {
 	  fighters = Math.floor(Math.min(sp/5, tri/3, mol/2));
 	  if (fighters > 0) {
 	  ctx.fillStyle = "orange";
-	  x2 = this.screenX(planet.x + 7 * this.zoom);
+	  x2 = this.screenX(planet.x + 7.5 * this.zoom);
 	  y2 = this.screenY(planet.y + 1 * this.zoom);
   	  ctx.fillText(fighters, x2, y2);
 	
@@ -341,7 +343,7 @@ if (buildStarbase || buildFighters) {
 		f = resources[i].surface + "-" + (resources[i].surface + resources[i].mined + resources[i].target);
 		ctx.fillStyle = color;
 	        x2 = this.screenX(planet.x + 6.5 * this.zoom);
-	        y2 = this.screenY(planet.y - (i - 2) * 5.5 * this.zoom);
+	        y2 = this.screenY(planet.y - (i - 2) * 6 * 1.5);
 	        ctx.fillText(f, x2, y2)
 	    } else {
 	      if (resources[i].ground > 0) {

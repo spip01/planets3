@@ -24,6 +24,7 @@ function wrapper() {
       if (vgapMap.prototype.spMenuItem != undefined) {
 	vgapMap.prototype.spMenuItem("Check Ready", "checkReady", function() {
 	  showReady = !showReady;
+	  vgap.map.draw();
 	});
 
 	vgapMap.prototype.spMenuItem("Clear", "_massClear", function() {

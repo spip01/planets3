@@ -21,8 +21,8 @@ function wrapper() {
       this.putMultiTurnCircles = false;
       this.multiturncircles = [];
       this.warp = 81;
-      this.drawLineStart = false;
-      this.drawLineEnd = false;
+      this.addlinestart = false;
+      this.addlineend = false;
       this.lines = [];
       this.lineStart = null;
 
@@ -31,22 +31,30 @@ function wrapper() {
       if (vgapMap.prototype.spMenuItem != undefined) {
 	vgapMap.prototype.spMenuItem("Hyp Circle", "hypCircle", function() {
 	  vgap.map.putHypCircle = true;
+	   $("body").css("cursor", "crosshair");
 	});
 
 	vgapMap.prototype.spMenuItem("Warp Circle", "warpCircle", function() {
 	  hypTools.putWarpCircle = true;
+	   $("body").css("cursor", "crosshair");
 	});
 
 	vgapMap.prototype.spMenuItem("3 Turn Warp 9", "warpCircle", function() {
 	  hypTools.putMultiTurnCircle = true;
+	   $("body").css("cursor", "crosshair");
 	});
 
-	vgapMap.prototype.spMenuItem("Draw Line", "drawLine", function() {
-	  if (hypTools.drawLineEnd) {
+	vgapMap.prototype.spMenuItem("Add Line", "addLine", function() {
+	  if (hypTools.addlineend) {
 	    hypTools.startlinept.pop();
 	  }
-	  hypTools.drawLineStart = true;
-	  hypTools.drawLineEnd = false;
+	  hypTools.addlinestart = true;
+	  hypTools.addlineend = false;
+	});
+
+	vgapMap.prototype.spMenuItem("Delete Line", "deleteLine", function() {
+	  hypTools.deleteline = true;
+	   $("body").css("cursor", "crosshair");
 	});
 
 	vgapMap.prototype.spMenuItem("Clear", "_massClear", function() {
@@ -63,8 +71,8 @@ function wrapper() {
       hypTools.putMultiTurnCircles = false;
       hypTools.multiturncircles = [];
       hypTools.warp = 81;
-      hypTools.drawLineStart = false;
-      hypTools.drawLineEnd = false;
+      hypTools.addlinestart = false;
+      hypTools.addlineend = false;
       hypTools.lines = [];
       hypTools.lineStart = null;
     },
@@ -74,6 +82,7 @@ function wrapper() {
 	x : a,
 	y : b
       });
+      $("body").css("cursor", "");
     },
 
     addMultiTurn : function(a, b) {
@@ -81,25 +90,98 @@ function wrapper() {
 	x : a,
 	y : b
       });
-    },
+      $("body").css("cursor", "");
+   },
 
     addLineStart : function(a, b) {
       hypTools.linestart = {
 	x : a,
 	y : b
       };
-    },
+      
+      $("body").css("cursor", "crosshair");
+   },
 
-    addLineEnd : function(a, b) {
-      hypTools.lines.push({
-	sx : hypTools.linestart.x,
-	sy : hypTools.linestart.y,
-	ex : a,
-	ey : b
-      });
-      hypTools.linestart = null;
-    },
+   addLineEnd : function(a, b) {
+     hypTools.lines.push({
+       sx : hypTools.linestart.x,
+       sy : hypTools.linestart.y,
+       ex : a,
+       ey : b
+     });
+     hypTools.linestart = null;
 
+     hypTools.prototype.writeLines();
+
+     $("body").css("cursor", "");
+   },
+
+    writeLines : function () {
+      var p = vgap.myplanets[0];
+      if (p.note == null)
+	p.note = vgap.addNote(p, 1);
+
+      p.note.body = "{\"lines\" :" + JSON.stringify(hypTools.lines) + "}";
+console.log(p.note.body);
+      
+      $("body").css("cursor", "");
+    },
+    
+    deleteLine : function(a, b) {
+      d = 9999;
+      
+      for (i = 0; i<hypTools.lines.length; ++i){
+	l = hypTools.lines[i];
+	if (l != null) {
+	  s = Math.min(Math.dist(l.sx, l.sy, a, b), Math.dist(l.ex, l.ey, a, b));
+	  
+	  if(d > s) {
+	    d = s;
+	    id = i;
+	  }
+	}
+      }
+	  
+      if (id != undefined) {
+	delete hypTools.lines[id];
+	hypTools.prototype.writeLines();
+      }
+    },
+      
+    parsenotes : function() {
+      for (var f = 0; f < vgap.myplanets.length; f++) {
+	var l = vgap.myplanets[f];
+	if (l.note != undefined && l.note.body != "") {
+	  try {
+	    var jn = JSON.parse(l.note.body
+		// , function(h, k) {console.log(h+" "+k)}
+	    );
+	  } catch (e) {
+	    console.log("parse error " + l.id + " " + l.note.body);
+	    continue;
+	  }
+
+	  if (jn.lines != undefined) {
+	    l = jn.lines;
+
+	    for (f = 0; f < l.length; f++) {
+	      p = l[f];
+	      if (p != null) {
+	
+		console.log(p);
+
+		hypTools.lines.push({
+		  sx : p.sx,
+		  sy : p.sy,
+		  ex : p.ex,
+		  ey : p.ey
+		});
+	      }
+	    }
+	  }
+	}
+      }
+    },
   };
 
   var oldRenderMapTools = vgapMap.prototype.renderMapTools;
@@ -107,11 +189,11 @@ function wrapper() {
 
     h = this.hypcircles;
     this.hypcircles = [];
-    
+
     oldRenderMapTools.apply(this, arguments);
-    
+
     this.hypcircles = h;
-    
+
     for (var d = 0; d < this.hypcircles.length; d++) {
       var c = this.hypcircles[d];
 
@@ -144,14 +226,15 @@ function wrapper() {
       this.drawCircle(ctx, this.screenX(c.x), this.screenY(c.y), 3 * hypTools.warp * this.zoom, "cyan", 1);
     }
 
-    if (hypTools.linestart != null) {
+    if (hypTools.linestart) {
       var l = hypTools.linestart;
       this.drawCircle(ctx, this.screenX(l.x), this.screenY(l.y), 1 * this.zoom, "orange", 2);
     }
 
     for (var d = 0; d < hypTools.lines.length; ++d) {
       var l = hypTools.lines[d];
-      this.drawLine(ctx, this.screenX(l.sx), this.screenY(l.sy), this.screenX(l.ex), this.screenY(l.ey), "orange", 1);
+      if (l != null)
+	this.drawLine(ctx, this.screenX(l.sx), this.screenY(l.sy), this.screenX(l.ex), this.screenY(l.ey), "orange", 1);
     }
   };
 
@@ -166,29 +249,33 @@ function wrapper() {
       b = this.y;
     }
 
-    // snap hypcircle to closese ship or planet
+    // snap hypcircle to closest ship or planet
     if (hypTools.putWarpCircle) {
       hypTools.prototype.addWarpCircle(a, b);
 
       hypTools.putWarpCircle = false;
       $("body").css("cursor", "");
-      // return
     }
 
-    if (hypTools.drawLineStart) {
+    if (hypTools.addlinestart) {
       hypTools.prototype.addLineStart(a, b);
 
-      hypTools.drawLineStart = false;
-      hypTools.drawLineEnd = true;
-      $("body").css("cursor", "");
+      hypTools.addlinestart = false;
+      hypTools.addlineend = true;
+      $("body").css("cursor", "crosshair");
       // return
-    } else if (hypTools.drawLineEnd) {
+    } else if (hypTools.addlineend) {
       hypTools.prototype.addLineEnd(a, b);
 
-      hypTools.drawLineStart = false;
-      hypTools.drawLineEnd = false;
+      hypTools.addlinestart = false;
+      hypTools.addlineend = false;
       $("body").css("cursor", "");
-      // return
+    }
+
+    if (hypTools.deleteline) {
+      hypTools.prototype.deleteLine(a, b);
+      
+      $("body").css("cursor", "");
     }
 
     if (hypTools.putMultiTurnCircle) {
@@ -196,7 +283,6 @@ function wrapper() {
 
       hypTools.putMultiTurnCircle = false;
       $("body").css("cursor", "");
-      // return
     }
 
     if (this.putHypCircle) {
@@ -204,14 +290,20 @@ function wrapper() {
 
       this.putHypCircle = false;
       $("body").css("cursor", "");
-      // return
     }
 
     oldClick.apply(this, arguments);
-    
+
     this.draw();
   };
-
+  
+  var oldLoad = vgapMap.prototype.load;
+  vgapMap.prototype.load = function() {
+    oldLoad.apply(this, arguments);
+    
+    hypTools.prototype.parsenotes();
+  };
+  
   var oldLoadControls = vgapMap.prototype.loadControls;
   vgapMap.prototype.loadControls = function() {
     oldLoadControls.apply(this, arguments);

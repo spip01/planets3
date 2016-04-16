@@ -74,7 +74,10 @@ function wrapper() {
 
       q += "<table class='CleanTable'>";
 
-      q += "<tr><td colspan='2'>" + c.id + ":" + c.name + "</td>";
+      if (c.ownerid == vgap.player.id && c.readystatus == 0) 
+	q += "<tr><td colspan='2' class='WarnText'>" + c.id + ":" + c.name + "</td>";
+      else
+	q += "<tr><td colspan='2'>" + c.id + ":" + c.name + "</td>";
 
       if (c.clans > 0) {
 	q += "<td align='right' colspan='2'>&nbsp;" + c.clans + "</td>";
@@ -164,23 +167,25 @@ function wrapper() {
 	  q += "</td></tr>";
 
 	  q += "<tr><td>mol:</td><td align='right'>" + c.molybdenum + "/&nbsp;</td><td align='right'>" + c.groundmolybdenum
-	      + "+&nbsp;</td><td align='right'>" + mm + "</td>";
+	      + "+&nbsp;</td><td align='right'>" + mm + "</td></tr>";
 
 	  var n = vgap.getStarbase(c.id);
-	  if (n != null && vgap.accountsettings.hoverstarbasestatus
+	  if (n != null // && vgap.accountsettings.hoverstarbasestatus
 	      && (c.ownerid == vgap.player.id || vgap.fullallied(c.ownerid))) {
 
-	    q += "<td>&nbsp;fgtr:</td><td>" + n.fighters + "</td>";
+// q += "<td>&nbsp;fgtr:</td><td>" + n.fighters + "</td>";
 
 	    if (n.starbasetype != 2) {
-	      q += "</tr><tr><td colspan='3'>H-" + n.hulltechlevel + " E-" + n.enginetechlevel + " B-" + n.beamtechlevel
-		  + " T-" + n.torptechlevel + "</td>";
-	      if (n.isbuilding) {
-		q += "<td colspan='4'>Bld:&nbsp;" + vgap.getHull(n.buildhullid).name + "</td>"
-	      }
+// q += "</tr><tr>";
+// q+="<td colspan='3'>H-" + n.hulltechlevel + " E-" + n.enginetechlevel + " B-"
+// + n.beamtechlevel
+// + " T-" + n.torptechlevel + "</td>";
+	      if (n.isbuilding) 
+		q += "<tr><td colspan='6'>bld:&nbsp;" + vgap.getHull(n.buildhullid).name + "</td></tr>";
+	      else
+		q += "<tr><td colspan='6' class='WarnText'>SB Not Building</td></tr>";
 	    }
 	  }
-	  q += "</tr>";
 	}
 	if (c.ownerid != vgap.player.id && c.ownerid != 0) {
 	  var k = vgap.getPlayer(c.ownerid);
@@ -200,15 +205,17 @@ function wrapper() {
       var e = vgap.getHull(m.hullid);
       var k = vgap.getPlayer(m.ownerid);
 
-      var d = "<span>" + m.id + ": " + e.name + "</span>";
+      var d = "<table class='CleanTable'>";
+
+      if (m.ownerid == vgap.player.id && m.readystatus == 0) 
+	d += "<tr><td colspan='4' class='WarnText'>" + m.id + ":" + e.name + "</td></tr>";
+      else
+	d += "<tr><td colspan='4' >" + m.id + ":" + e.name + "</td></tr>";
 
       if (m.ownerid == vgap.player.id || vgap.fullallied(m.ownerid)) {
 
-	d += "<table class='CleanTable'>";
-
 	d += "<tr><td>neu:</td><td>&nbsp;" + gsv(m.neutronium) + "/" + e.fueltank + " </td>";
-	d += "<td>&nbsp;fc:&nbsp;&nbsp;" + m.friendlycode + "</td></tr>";
-
+	d += "<td>&nbsp;fc:</td><td>&nbsp;" + m.friendlycode + "</td></tr>";
 
 	cl = "";
 	if (m.clans != 0)
@@ -230,51 +237,92 @@ function wrapper() {
 	    d += "<tr>" + cl + "</tr>";
 	}
 
-	en = "";
-	if (m.enemy > 0)
-	  en = "<td>" + vgap.getRace(m.enemy).shortname + "</td>";
-	
+	if (m.bays > 0 || m.torps > 0 || m.beams > 0) {
+	  d += "<tr>";
 	if (m.bays > 0) {
-	  d += "<tr><td>fghtr:</td><td>&nbsp" + gsv(m.ammo) + "</td>" + en + "</tr>";
+	  d += "<td>fgtr:</td><td>&nbsp" + gsv(m.ammo) + "</td>";
 	}
 	  
 	if (m.torps > 0) { 
-	  d += "<tr><td>torp:</td><td>&nbsp"+ m.torpedoid+"/" + gsv(m.ammo) + "</td>" + en + "</tr>";
+	  d += "<td>torp:</td><td>&nbsp" + gsv(m.ammo) + " @ " + m.torpedoid + "</td>";
 	}
 	
-	if (c.ownerid != vgap.player.id) {
-	  if (m.iscloaked) {
-	    d += "<tr><td colspan='2' class='GoodText'>Cloaked</td></tr>"
-	  }
-	} else {
-	  d += "<tr>";
-	  if (m.ownerid == vgap.player.id) {
-	    d += "<td colspan='2'>"
-		+ vgap.getShipMissionShortText(m)
-		+ ((m.mission == 6 || m.mission == 7 || m.mission == 15 || m.mission == 20) && m.mission1target != 0 ? " "
-		    + m.mission1target : "") + "&nbsp;</td>";
-	  }
-	  if (m.target != undefined) {
-		  d += "<td>&nbsp;warp " + m.warp + "</td></tr><tr>";
-	  if (m.target.name != undefined) 
-	    d += "<td  colspan='2'>" + m.target.name + "</td>";
-	  var ly = Math.round(Math.sqrt(Math.pow(m.y - m.targety, 2) + Math.pow(m.x - m.targetx, 2)) * 10) / 10;
-	  d += "<td>&nbsp;(" + m.targetx + "," + m.targety + ")</td>";
-	  d += "<td>&nbsp;" + ly + "ly</td>";
-	  }
-	  d += "</tr>";
-	  if (m.iscloaked) {
-	    d += "<td class='GoodText'>Cloaked</td>"
-	  } else {
+	if (m.beams > 0) { 
+	  d += "<td>beam:</td><td>&nbsp" + m.beams + " @ " + m.beamid + "</td>";
+	}
+	d += "</tr>";
+	}
+	
+	if (c.ownerid == vgap.player.id) {
+
+	  // if (c.ownerid != vgap.player.id) {
+	  // if (m.iscloaked) {
+	  // d += "<tr><td colspan='2' class='GoodText'>Cloaked</td></tr>"
+	  // }
+	  // } else {
+	  // d += "<tr>";
+	  
+	
+	  e = "<tr>";
+// if (m.mission != 0 && m.mission != 4) {
+	    e += "<td colspan='2'>";
+	    e += vgap.getShipMissionShortText(m);
+	    e += ((m.mission == 6 || m.mission == 7 || m.mission == 15 || m.mission == 20) && m.mission1target != 0 ? "&nbsp;"
+		+ m.mission1target : "");
+	    e += "</td>";
+//	}
+	
+    	if (m.enemy > 0) {
+    	  s = vgap.getRace(m.enemy).shortname;
+    	  s = s.replace(/^The (.+)/, "$1");
+    
+    	  e += "<td colspan='5' class='WarnText'>" + s + "</td>";
+    	}
+    	e += "</tr>";
+	    if (m.x != m.targetx && m.y != m.targety) {
+	      t = Math.round(Math.dist(m.x, m.y, m.targetx, m.targety) * 10) / 10;
+	      e += "</tr><tr>";
+	      
+	      if (m.target != null && m.target.name != null) 
+		e += "<td colspan='3'>" + m.target.id + ":&nbsp;" + m.target.name + "</td>";
+	      else
+		e += "<td colspan='3'>(" + m.targetx + "," + m.targety + ")</td>";
+	      // var t = Math.round(Math.dist(m.x, m.y, m.targetx, m.targety));
+	      
+	      trn = Math.ceil(t / (m.warp * m.warp + .4));		
+	      if (m.friendlycode == "HYP") {
+		if (t >= 340 && t <= 360 && m.warp > 0) {
+			e += "<td>";
+		trn = 1; 
+		}
+		else
+		  e += "<td class='BadText'>";
+	      }
+
+	      else if (trn > 1)
+		e += "<td class='WarnText'>";
+	      else 
+		e += "<td>";
+				
+	      e += "&nbsp;" + trn + "&nbsp;trns</td>";
+	    }
+
+	    if (e != "<tr>")
+	      d += e + "</tr>";
+	  // d += "</tr>";
+	  
+// if (m.iscloaked) {
+// d += "<td class='GoodText'>Cloaked</td>"
+// } else {
 	    if (m.damage > 0) {
 	      d += "<td>dam:</td><td class='BadText'>&nbsp;" + m.damage + "</td>"
 	    } else {
 	      d += "<td/></td>"
 	    }
-	  }
-	  d += "</tr>"
-	}
-	if (c.ownerid != vgap.player.id && vgap.accountsettings.hoverallyplayer) {
+// }
+	    d += "</tr>"
+      }
+      if (c.ownerid != vgap.player.id && vgap.accountsettings.hoverallyplayer) {
 	  d += "<tr><td colspan='4'>" + l.name + " (" + k.username + ")</td></tr>"
 	}
 

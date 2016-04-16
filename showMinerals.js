@@ -258,23 +258,28 @@ function wrapper() {
 	      
 	  if (r.name == "Molybdenum") {
 	    var mol = r.surface;
+	    var molm = r.mined;
 	    var mol2 = mol + r.mined + r.target;
           }
 	  if (r.name == "Neutronium") {
 	    var neu = r.surface;
+	    var neym = r.mined;
 	    var neu2 = neu + r.mined + r.target;
 	  }
 	  if (r.name == "Duranium") {
 	    var dur = r.surface;
+	    var durm = r.mined;
 	    var dur2 = dur + r.mined + r.target;
 	  }
 	  if (r.name == "Tritanium") {
 	    var tri = r.surface;
+	    var trim = r.mined;
 	    var tri2 = tri + r.mined + r.target;
 	  }
 	  if (r.name == "Megacredits") {
 	    var mc = r.surface;
 	    var sp = r.supplies;
+	    var mcm = r.mined;
 	    var mc2 = mc + r.mined + r.target;
 	  }
 	}
@@ -282,10 +287,10 @@ function wrapper() {
 	if (checkStarbase) {
 	  if (!planet.isbase) {
 	    if (dur >= 120 && tri >= 302 && mol >= 430 && mc >= 900) {
-	      this.drawCircle(ctx, x1, y1, 9 * this.zoom, "lightgreen", 4);
+	      this.drawCircle(ctx, x1, y1, 9 * this.zoom, "lightgreen", 2);
 	    }
 	    else if (dur2 >= 120 && tri2 >= 302 && mol2 >= 430 && mc2 >= 900) {
-	      this.drawCircle(ctx, x1, y1, 9 * this.zoom, "yellow", 4);
+	      this.drawCircle(ctx, x1, y1, 12 * this.zoom, "yellow", 2);
 	    }
 	      
 	  }
@@ -293,25 +298,74 @@ function wrapper() {
 	  fighters = Math.floor(Math.min(sp/5, tri/3, mol/2));
 	  if (fighters > 0) {
 	    ctx.fillStyle = "orange";
-	    x2 = this.screenX(planet.x + 7.5 * this.zoom);
-	    y2 = this.screenY(planet.y + 1 * this.zoom);
+	    x2 = this.screenX(planet.x + 7.5 * 1.5);
+	    y2 = this.screenY(planet.y + 1 * 1.5);
 	    ctx.fillText(fighters, x2, y2);
 	
 	  }	
 	} else if (checkShip) {
 	  if (planet.isbase) {
 	    if (dur >= 398 && tri >= 194 && mol >= 457 && mc >= 2837) {
-	      this.drawCircle(ctx, x1, y1, 9 * this.zoom, "lightgreen", 4);
+	      this.drawCircle(ctx, x1, y1, 9 * this.zoom, "lightgreen", 2);
+	      
+		    if (dur2 >= 796 && tri2 >= 388 && mol2 >= 914 && mc2 >= 5674) {
+		      this.drawCircle(ctx, x1, y1, 15 * this.zoom, "orange", 2);
+		    }
+		    else {
+			      if (dur2 < 796) {
+				
+				f = dur2 - 796;
+				ctx.fillStyle = "cyan";
+			        x2 = this.screenX(planet.x + 7.5 * 1.5);
+			        y2 = this.screenY(planet.y - (1 - 2) * 6 * 1.5);
+			        ctx.fillText(f, x2, y2);
+
+			        // this.drawCircle(ctx, x1, y1, 9 * this.zoom, "cyan", 2);
+			      }
+			      if (tri2 < 388) {
+				
+				f = tri2 - 388;
+				ctx.fillStyle = "orange";
+			        x2 = this.screenX(planet.x + 7.5 * 1.5);
+			        y2 = this.screenY(planet.y - (2 - 2) * 6 * 1.5);
+			        ctx.fillText(f, x2, y2);
+
+			        // this.drawCircle(ctx, x1, y1, 12 * this.zoom, "orange", 2);
+			      }
+			      if (mol2 < 914) {
+				
+				f = mol2 - 914;
+				ctx.fillStyle = "violet";
+			        x2 = this.screenX(planet.x + 7.5 * 1.5);
+			        y2 = this.screenY(planet.y - (3 - 2) * 6 * 1.5);
+			        ctx.fillText(f, x2, y2);
+
+			        // this.drawCircle(ctx, x1, y1, 15 * this.zoom, "violet", 2);
+			      }
+			      if (mc2 < 5674) {
+				
+				f = mc2 - 5674;
+				ctx.fillStyle = "lightgreen";
+			        x2 = this.screenX(planet.x + 7.5 * 1.5);
+			        y2 = this.screenY(planet.y - (4 - 2) * 6 * 1.5);
+			        ctx.fillText(f, x2, y2);
+
+			        // this.drawCircle(ctx, x1, y1, 18 * this.zoom, "lightgreen",
+				// 2);
+			      }
 	    }
+	    }  
+	      
+	    
 	    else if (dur2 >= 398 && tri2 >= 194 && mol2 >= 457 && mc2 >= 2837) {
-	      this.drawCircle(ctx, x1, y1, 9 * this.zoom, "yellow", 4);
+	      this.drawCircle(ctx, x1, y1, 12 * this.zoom, "yellow", 2);
 	    }
-	    else { 
+	    else
 	      if (dur2 < 398) {
 		
 		f = dur2 - 398;
 		ctx.fillStyle = "cyan";
-	        x2 = this.screenX(planet.x + 6.5 * this.zoom);
+	        x2 = this.screenX(planet.x + 7.5 * 1.5);
 	        y2 = this.screenY(planet.y - (1 - 2) * 6 * 1.5);
 	        ctx.fillText(f, x2, y2);
 
@@ -321,7 +375,7 @@ function wrapper() {
 		
 		f = tri2 - 194;
 		ctx.fillStyle = "orange";
-	        x2 = this.screenX(planet.x + 6.5 * this.zoom);
+	        x2 = this.screenX(planet.x + 7.5 * 1.5);
 	        y2 = this.screenY(planet.y - (2 - 2) * 6 * 1.5);
 	        ctx.fillText(f, x2, y2);
 
@@ -331,7 +385,7 @@ function wrapper() {
 		
 		f = mol2 - 457;
 		ctx.fillStyle = "violet";
-	        x2 = this.screenX(planet.x + 6.5 * this.zoom);
+	        x2 = this.screenX(planet.x + 7.5 * 1.5);
 	        y2 = this.screenY(planet.y - (3 - 2) * 6 * 1.5);
 	        ctx.fillText(f, x2, y2);
 
@@ -341,14 +395,13 @@ function wrapper() {
 		
 		f = mc2 - 2837;
 		ctx.fillStyle = "lightgreen";
-	        x2 = this.screenX(planet.x + 6.5 * this.zoom);
+	        x2 = this.screenX(planet.x + 7.5 * 1.5);
 	        y2 = this.screenY(planet.y - (4 - 2) * 6 * 1.5);
 	        ctx.fillText(f, x2, y2);
 
 	        // this.drawCircle(ctx, x1, y1, 18 * this.zoom, "lightgreen",
 		// 2);
 	      }
-	    }
 	  }
 	}
       }
@@ -360,9 +413,9 @@ function wrapper() {
 	    var radius;
 
 	    if (showText) {
-	      f = resources[i].surface + "+" + (resources[i].surface + resources[i].mined + resources[i].target);
+	      f = resources[i].surface + "-" + (resources[i].surface + resources[i].mined + resources[i].target);
 	      ctx.fillStyle = color;
-	      x2 = this.screenX(planet.x + 6.5 * this.zoom);
+	      x2 = this.screenX(planet.x + 7.5 * 1.5);
 	      y2 = this.screenY(planet.y - (i - 2) * 6 * 1.5);
 	      ctx.fillText(f, x2, y2);
 	    } else {

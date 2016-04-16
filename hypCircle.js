@@ -44,18 +44,18 @@ function wrapper() {
 	   $("body").css("cursor", "crosshair");
 	});
 
-	vgapMap.prototype.spMenuItem("Add Line", "addLine", function() {
-	  if (hypTools.addlineend) {
-	    hypTools.startlinept.pop();
-	  }
-	  hypTools.addlinestart = true;
-	  hypTools.addlineend = false;
-	});
-
-	vgapMap.prototype.spMenuItem("Delete Line", "deleteLine", function() {
-	  hypTools.deleteline = true;
-	   $("body").css("cursor", "crosshair");
-	});
+//	vgapMap.prototype.spMenuItem("Add Line", "addLine", function() {
+//	  if (hypTools.addlineend) {
+//	    hypTools.startlinept.pop();
+//	  }
+//	  hypTools.addlinestart = true;
+//	  hypTools.addlineend = false;
+//	});
+//
+//	vgapMap.prototype.spMenuItem("Delete Line", "deleteLine", function() {
+//	  hypTools.deleteline = true;
+//	   $("body").css("cursor", "crosshair");
+//	});
 
 	vgapMap.prototype.spMenuItem("Clear", "_massClear", function() {
 	  hypTools.prototype.clearData();

@@ -240,15 +240,15 @@ function wrapper() {
 	if (m.bays > 0 || m.torps > 0 || m.beams > 0) {
 	  d += "<tr>";
 	if (m.bays > 0) {
-	  d += "<td>fgtr:</td><td>&nbsp" + gsv(m.ammo) + "</td>";
+	  d += "<td>fgtr:</td><td>&nbsp;" + gsv(m.ammo) + "</td>";
 	}
 	  
 	if (m.torps > 0) { 
-	  d += "<td>torp:</td><td>&nbsp" + gsv(m.ammo) + " @ " + m.torpedoid + "</td>";
+	  d += "<td>torp:</td><td>&nbsp;" + gsv(m.ammo) + "</td><td>tech:&nbsp;" + m.torpedoid + "</td>";
 	}
 	
 	if (m.beams > 0) { 
-	  d += "<td>beam:</td><td>&nbsp" + m.beams + " @ " + m.beamid + "</td>";
+	  d += "<td>beam:</td><td>&nbsp;" + m.beams + "</td><td>tech:&nbsp;" + m.beamid + "</td>";
 	}
 	d += "</tr>";
 	}
@@ -265,7 +265,7 @@ function wrapper() {
 	
 	  e = "<tr>";
 // if (m.mission != 0 && m.mission != 4) {
-	    e += "<td colspan='2'>";
+	    e += "<td colspan='3'>";
 	    e += vgap.getShipMissionShortText(m);
 	    e += ((m.mission == 6 || m.mission == 7 || m.mission == 15 || m.mission == 20) && m.mission1target != 0 ? "&nbsp;"
 		+ m.mission1target : "");

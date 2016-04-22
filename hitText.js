@@ -110,8 +110,8 @@ function wrapper() {
 
 	var cs = 0;
 	var nt = 0;
-	var cs20 = 0;
-	var nt20 = 0;
+	var cs10= 0;
+	var nt10 = 0;
 	var sps = 0;
 	if (c.nativeclans > 0) {
 	  if (c.nativetype == 2) { // bovinoid
@@ -125,10 +125,10 @@ function wrapper() {
 	  cs = ns - nt;
 	  nt = Math.min( nt , ns);
 
-	  nt20 = hitText.prototype.nativeTaxAmount(c, 20);
-	  ns20 = hitText.prototype.nativesupportedtax(c);
-	  cs20 = ns20 - nt20;
-	  nt20 = Math.min( nt20 , ns20);
+	  nt10 = hitText.prototype.nativeTaxAmount(c, 10);
+	  ns10 = hitText.prototype.nativesupportedtax(c);
+	  cs10 = ns10 - nt10;
+	  nt10 = Math.min( nt10 , ns10);
 	}
 
 	ct = Math.round(c.clans * c.colonisttaxrate / 1000);
@@ -160,26 +160,23 @@ function wrapper() {
 	      + "+&nbsp;</td><td align='right'>" + mt + "</td>";
 
 	  if (c.nativeclans > 0) {
-	    q += "<td>&nbsp;20%:</td><td>&nbsp;</td><td align='right'>" + nt20;
-	    if (cs20 < 0)
-	      q += "-&nbsp;</td><td  class='WarnText' align='right'>" + (-cs20);
+	    q += "<td>&nbsp;10%:</td><td>&nbsp;</td><td align='right'>" + nt10;
+	    if (cs10 < 0)
+	      q += "-&nbsp;</td><td  class='WarnText' align='right'>" + (-cs10);
 	  }
 	  q += "</td></tr>";
 
 	  q += "<tr><td>mol:</td><td align='right'>" + c.molybdenum + "/&nbsp;</td><td align='right'>" + c.groundmolybdenum
-	      + "+&nbsp;</td><td align='right'>" + mm + "</td></tr>";
+	      + "+&nbsp;</td><td align='right'>" + mm + "</td>";
+
+	    q += "<td colspan='2'>&nbsp;mine/fact:</td><td align='right' colspan=2>&nbsp;" + c.mines + " / " + c.factories + "<td>";
+	  q += "</tr>";
 
 	  var n = vgap.getStarbase(c.id);
-	  if (n != null // && vgap.accountsettings.hoverstarbasestatus
+	  if (n != null
 	      && (c.ownerid == vgap.player.id || vgap.fullallied(c.ownerid))) {
 
-// q += "<td>&nbsp;fgtr:</td><td>" + n.fighters + "</td>";
-
 	    if (n.starbasetype != 2) {
-// q += "</tr><tr>";
-// q+="<td colspan='3'>H-" + n.hulltechlevel + " E-" + n.enginetechlevel + " B-"
-// + n.beamtechlevel
-// + " T-" + n.torptechlevel + "</td>";
 	      if (n.isbuilding) 
 		q += "<tr><td colspan='6'>bld:&nbsp;" + vgap.getHull(n.buildhullid).name + "</td></tr>";
 	      else
@@ -244,28 +241,24 @@ function wrapper() {
 	}
 	  
 	if (m.torps > 0) { 
-	  d += "<td>torp:</td><td>&nbsp;" + gsv(m.ammo) + "</td><td>tech:&nbsp;" + m.torpedoid + "</td>";
+	  d += "<td colspan='2'>torp/tech:&nbsp;" + gsv(m.ammo) + "/" + m.torpedoid + "</td>";
 	}
 	
 	if (m.beams > 0) { 
-	  d += "<td>beam:</td><td>&nbsp;" + m.beams + "</td><td>tech:&nbsp;" + m.beamid + "</td>";
+	  d += "<td colspan='2'>&nbsp;beam/tech:&nbsp;" + m.beams + "/" + m.beamid + "</td>";
 	}
 	d += "</tr>";
 	}
 	
 	if (c.ownerid == vgap.player.id) {
 
-	  // if (c.ownerid != vgap.player.id) {
-	  // if (m.iscloaked) {
-	  // d += "<tr><td colspan='2' class='GoodText'>Cloaked</td></tr>"
-	  // }
-	  // } else {
-	  // d += "<tr>";
-	  
-	
 	  e = "<tr>";
 // if (m.mission != 0 && m.mission != 4) {
+	  if (m.mission == 9)
+	    e+= "<td colspan='3' class='GoodText'>";
+	  else
 	    e += "<td colspan='3'>";
+	  
 	    e += vgap.getShipMissionShortText(m);
 	    e += ((m.mission == 6 || m.mission == 7 || m.mission == 15 || m.mission == 20) && m.mission1target != 0 ? "&nbsp;"
 		+ m.mission1target : "");
@@ -309,11 +302,7 @@ function wrapper() {
 
 	    if (e != "<tr>")
 	      d += e + "</tr>";
-	  // d += "</tr>";
-	  
-// if (m.iscloaked) {
-// d += "<td class='GoodText'>Cloaked</td>"
-// } else {
+
 	    if (m.damage > 0) {
 	      d += "<td>dam:</td><td class='BadText'>&nbsp;" + m.damage + "</td>"
 	    } else {

@@ -12,6 +12,7 @@
 
 function wrapper() {
   var showReady = false;
+  var showHull = null;
 
   function checkReady() {
   }
@@ -27,6 +28,24 @@ function wrapper() {
 	  vgap.map.draw();
 	});
 
+	vgapMap.prototype.spMenuItem("Show Falcons", "checkReady", function() {
+	  if (showHull == null)
+	    showHull = 87;
+	  else 
+	    showHull = null;
+	    
+	  vgap.map.draw();
+	});
+
+	vgapMap.prototype.spMenuItem("Show Rush", "checkReady", function() {
+	  if (showHull == null)
+	    showHull = 94;
+	  else 
+	    showHull = null;
+		    
+	  vgap.map.draw();
+	});
+
 	vgapMap.prototype.spMenuItem("Clear", "_massClear", function() {
 	  checkReady.prototype.clearData();
 	});
@@ -35,6 +54,7 @@ function wrapper() {
 
     clearData : function() {
       showReady = false;
+      showHull = null;
     },
 
   };
@@ -90,6 +110,10 @@ function wrapper() {
     if (showReady && ship.readystatus == 0 && vgap.player.id == ship.ownerid) {
       this.drawCircle(ctx, this.screenX(ship.x), this.screenY(ship.y), 16 * this.zoom, "yellow", 2);
     }
+    
+    if (showHull != null && showHull == ship.hullid) 
+      this.drawCircle(ctx, this.screenX(ship.x), this.screenY(ship.y), 13 * this.zoom, "lightgreen", 2);
+    
     // if (warnings && ship.ownerid) {
     // if (ship.dist > Math.pow(ship.warp, 2)) {
     // this.drawCircle(ctx, this.screenX(ship.x), this.screenY(ship.y), 14 *

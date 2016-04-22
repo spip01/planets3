@@ -49,7 +49,7 @@ function wrapper() {
 	  });
         }
 
-        vgapMap.prototype.spMenuItem("Text", "showText", function() {
+        vgapMap.prototype.spMenuItem("Text", "showMinerals", function() {
 	  showText = !showText;
 
 	    checkStarbase = false;
@@ -58,7 +58,7 @@ function wrapper() {
 	      vgap.map.draw();
         });
 
-        vgapMap.prototype.spMenuItem("Check Starbase", "checkStarbase", function() {
+        vgapMap.prototype.spMenuItem("Check Starbase", "showMinerals", function() {
 	  checkStarbase = !checkStarbase;
           showMinerals.prototype.clearRes();
 	    showText = false;
@@ -67,7 +67,7 @@ function wrapper() {
 	      vgap.map.draw();
        });
 
-        vgapMap.prototype.spMenuItem("Check Ship", "checkShip", function() {
+        vgapMap.prototype.spMenuItem("Check Ship", "showMinerals", function() {
           checkShip = !checkShip;
           showMinerals.prototype.clearRes();
 	    showText = false;
@@ -77,7 +77,7 @@ function wrapper() {
 
 	  });
         
-        vgapMap.prototype.spMenuItem("Check Fighters", "checkFighters", function() {
+        vgapMap.prototype.spMenuItem("Check Fighters", "showMinerals", function() {
           checkFighters = !checkFighters;
           showMinerals.prototype.clearRes();
 	    showText = false;
@@ -314,7 +314,13 @@ function wrapper() {
 	  }	
 	} else if (checkShip) {
 	  if (planet.isbase) {
-	    x2 = this.screenX(planet.x + 8 * 1.5);
+	    for (var i = 0; i < vgap.mystarbases.length; ++i) {
+	      if (vgap.mystarbases[i].planetid == planet.id) {
+		sb = vgap.mystarbases[i];
+	      }
+	    }
+		  
+	    x2 = this.screenX(planet.x + 12 * 1.5);
 //debugger;
 	    var cmp = {dur:398, tri:194, mol:457, mc:2837};
 	    var checkdur = dur - cmp.dur;
@@ -322,65 +328,47 @@ function wrapper() {
 	    var checkmol = mol - cmp.mol;
 	    var checkmc = mc - cmp.mc;
 	    
-	    if ( checkdur > 0 && checktri > 0 && checkmol > 0 && checkmc > 0) {
-	      this.drawCircle(ctx, x1, y1, 12 * this.zoom, "lightgreen", 2);
-	      
-	      cmp = {dur:796, tri:388, mol:914, mc:5674};
-	      checkdur = dur2 - cmp.dur;
-	      checktri = tri2 - cmp.tri;
-	      checkmol = mol2 - cmp.mol;
-	      checkmc = mc2 - cmp.mc;
-
-	      if ( checkdur > 0 && checktri > 0 && checkmol > 0 && checkmc > 0) {
-		this.drawCircle(ctx, x1, y1, 15 * this.zoom, "orange", 2);
-	    
-		cmp = {dur:1194, tri:582, mol:1317, mc:8511};
-		checkdur = dur2 + durm - cmp.dur;
-		checktri = tri2 + trim - cmp.tri;
-		checkmol = mol2 + molm - cmp.mol;
-		checkmc = mc2 + mcm - cmp.mc;
-		
-		if ( checkdur > 0 && checktri > 0 && checkmol > 0 && checkmc > 0) {
-		  this.drawCircle(ctx, x1, y1, 18 * this.zoom, "red", 2);
-		} 
-	      }
-	    } else {
-	      checkdur = dur2 - cmp.dur;
-	      checktri = tri2 - cmp.tri;
-	      checkmol = mol2 - cmp.mol;
-	      checkmc = mc2 - cmp.mc;
-	      
-	      if ( checkdur > 0 && checktri > 0 && checkmol > 0 && checkmc > 0) {
-		this.drawCircle(ctx, x1, y1, 12 * this.zoom, "orange", 2);
-		
-		cmp = {dur:796, tri:388, mol:914, mc:5674};
-		checkdur = dur2 + durm - cmp.dur;
-		checktri = tri2 + trim - cmp.tri;
-		checkmol = mol2 + molm - cmp.mol;
-		checkmc = mc2 + mcm - cmp.mc;
+	    if ( checkdur >= 0 && checktri >= 0 && checkmol >= 0 && checkmc >= 0 || sb.isbuilding) {
+	      if (sb.isbuilding)
+		this.drawCircle(ctx, x1, y1, 12 * this.zoom, "green", 2);
+	      else {
+		var cmp = {dur:cmp.dur * 2, tri:cmp.tri * 2, mol:cmp.mol * 2, mc:cmp.mc * 2};
+		this.drawCircle(ctx, x1, y1, 12 * this.zoom, "blue", 2);
 	      }
 	    }
+	    else
+		this.drawCircle(ctx, x1, y1, 12 * this.zoom, "red", 2);
+
+	    checkdur = dur2 - cmp.dur;
+	    checktri = tri2 - cmp.tri;
+	    checkmol = mol2 - cmp.mol;
+	    checkmc = mc2 - cmp.mc;
+	      
+	    if ( checkdur >= 0 && checktri >= 0 && checkmol >= 0 && checkmc >= 0) 
+	      this.drawCircle(ctx, x1, y1, 16 * this.zoom, "cyan", 2);
+	    else 
+	      this.drawCircle(ctx, x1, y1, 16 * this.zoom, "orange", 2);
 	    
-	    if (checkdur < 0) {
+//	    if (checkdur < 0) {
 	      ctx.fillStyle = "cyan";
 	      y2 = this.screenY(planet.y - (1 - 2) * 6 * 1.5);
 	      ctx.fillText(checkdur, x2, y2);
-	    }
-	    if (checktri < 0) {
+//	    }
+//	    if (checktri < 0) {
 	      ctx.fillStyle = "orange";
 	      y2 = this.screenY(planet.y - (2 - 2) * 6 * 1.5);
 	      ctx.fillText(checktri, x2, y2);
-	    }
-	    if (checkmol < 0) {
+//	    }
+//	    if (checkmol < 0) {
 	      ctx.fillStyle = "violet";
 	      y2 = this.screenY(planet.y - (3 - 2) * 6 * 1.5);
 	      ctx.fillText(checkmol, x2, y2);
-	    }
-	    if (checkmc < 0) {
+//	    }
+//	    if (checkmc < 0) {
 	      ctx.fillStyle = "lightgreen";
 	      y2 = this.screenY(planet.y - (4 - 2) * 6 * 1.5);
 	      ctx.fillText(checkmc, x2, y2);
-	    }
+//	    }
 	  }
 	}  
      }

@@ -97,7 +97,7 @@ function wrapper() {
 	}
       };
 
-      this.addTool("Read Only", "readOnly", function() {
+      this.addTool("Read Only", "spTools", function() {
 	vgap.readOnly = true;
 	vgap.indicator.text("Read Only");
 	vgap.indicateOn();

@@ -29,17 +29,17 @@ function wrapper() {
       this.clearData();
 
       if (vgapMap.prototype.spMenuItem != undefined) {
-	vgapMap.prototype.spMenuItem("Hyp Circle", "hypCircle", function() {
+	vgapMap.prototype.spMenuItem("Hyp Circle", "hypTools", function() {
 	  vgap.map.putHypCircle = true;
 	   $("body").css("cursor", "crosshair");
 	});
 
-	vgapMap.prototype.spMenuItem("Warp Circle", "warpCircle", function() {
+	vgapMap.prototype.spMenuItem("Warp Circle", "hypTools", function() {
 	  hypTools.putWarpCircle = true;
 	   $("body").css("cursor", "crosshair");
 	});
 
-	vgapMap.prototype.spMenuItem("3 Turn Warp 9", "warpCircle", function() {
+	vgapMap.prototype.spMenuItem("3 Turn Warp 9", "hypTools", function() {
 	  hypTools.putMultiTurnCircle = true;
 	   $("body").css("cursor", "crosshair");
 	});

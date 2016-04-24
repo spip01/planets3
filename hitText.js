@@ -81,7 +81,14 @@ function wrapper() {
 
       if (c.clans > 0) {
 	q += "<td align='right' colspan='2'>&nbsp;" + c.clans + "</td>";
-	q += "<td align='right'>&nbsp;" + c.friendlycode + "</td><td align='right'>&nbsp;" + c.temp + "</td>";
+	q += "<td align='right'>&nbsp;" + c.friendlycode + "</td>";
+	
+	if (c.temp > 84 || c.temp < 15)
+	  q += "<td align='right' class='WarnText'>";
+	else
+	  q += "<td align='right'>";
+	  
+	  q += "&nbsp;" + c.temp + "</td>";
       }
       q += "</tr>";
 
@@ -143,16 +150,16 @@ function wrapper() {
 	if (c.groundneutronium > 0) {
 	  q += "<tr><td>neu:</td><td align='right'>" + c.neutronium + "/&nbsp;</td><td align='right'>" + c.groundneutronium
 	      + "+&nbsp;</td><td align='right'>" + mn + "</td>";
-	  q += "<td>&nbsp;sup:</td><td align='right'>" + c.supplies + "+&nbsp;</td><td align='right'>" + sp
+	  q += "<td>&nbsp;sup:</td><td align='right'>" + c.supplies + "+&nbsp;</td><td align='right'>" + sp + "-&nbsp;";
 	  if (sps < 0)
-	    q += "-&nbsp;</td><td  class='WarnText' align='right'>" + (-sps);
-	  +"</td></tr>";
+	    q += "</td><td  class='WarnText' align='right'>" + (-sps);
+	  q += "</td></tr>";
 
 	  q += "<tr><td>dur:</td><td align='right'>" + c.duranium + "/&nbsp;</td><td align='right'>" + c.groundduranium
 	      + "+&nbsp;</td><td align='right'>" + md + "</td>";
-	  q += "<td>&nbsp;mc:</td><td align='right'>" + c.megacredits + "+&nbsp;</td><td align='right'>" + (nt + ct);
+	  q += "<td>&nbsp;mc:</td><td align='right'>" + c.megacredits + "+&nbsp;</td><td align='right'>" + (nt + ct) + "-&nbsp;";
 	  if (cs < 0)
-	    q += "-&nbsp;</td><td  class='WarnText' align='right'>" + (-cs);
+	    q += "</td><td  class='WarnText' align='right'>" + (-cs);
 
 	  q += "</td></tr>";
 
@@ -160,16 +167,16 @@ function wrapper() {
 	      + "+&nbsp;</td><td align='right'>" + mt + "</td>";
 
 	  if (c.nativeclans > 0) {
-	    q += "<td>&nbsp;10%:</td><td>&nbsp;</td><td align='right'>" + nt10;
+	    q += "<td>&nbsp;10%:</td><td>&nbsp;</td><td align='right'>" + nt10 + "-&nbsp;";
 	    if (cs10 < 0)
-	      q += "-&nbsp;</td><td  class='WarnText' align='right'>" + (-cs10);
+	      q += "</td><td  class='WarnText' align='right'>" + (-cs10);
 	  }
 	  q += "</td></tr>";
 
 	  q += "<tr><td>mol:</td><td align='right'>" + c.molybdenum + "/&nbsp;</td><td align='right'>" + c.groundmolybdenum
 	      + "+&nbsp;</td><td align='right'>" + mm + "</td>";
 
-	    q += "<td colspan='2'>&nbsp;mine/fact:</td><td align='right' colspan=2>&nbsp;" + c.mines + " / " + c.factories + "<td>";
+	    q += "<td>&nbsp;m/f/d:</td><td colspan=2>&nbsp;" + c.mines + " / " + c.factories + " / " + c.defense + "<td>";
 	  q += "</tr>";
 
 	  var n = vgap.getStarbase(c.id);

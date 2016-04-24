@@ -12,6 +12,7 @@
 
 function wrapper() {
   var showReady = false;
+  var showChunnel = false;
   var showHull = null;
 
   function checkReady() {
@@ -29,20 +30,17 @@ function wrapper() {
 	});
 
 	vgapMap.prototype.spMenuItem("Show Falcons", "checkReady", function() {
-	  if (showHull == null)
-	    showHull = 87;
-	  else 
-	    showHull = null;
-	    
+	  showHull = showHull != 87 ? 87 : null;
 	  vgap.map.draw();
 	});
 
 	vgapMap.prototype.spMenuItem("Show Rush", "checkReady", function() {
-	  if (showHull == null)
-	    showHull = 94;
-	  else 
-	    showHull = null;
-		    
+	  showHull = showHull != 94 ? 94 : null;
+	  vgap.map.draw();
+	});
+
+	vgapMap.prototype.spMenuItem("Show Chunnel", "checkReady", function() {
+	  showChunnel = !showChunnel;
 	  vgap.map.draw();
 	});
 
@@ -55,9 +53,25 @@ function wrapper() {
     clearData : function() {
       showReady = false;
       showHull = null;
+      showChunnel = false;
     },
 
-  };
+    // 1054 B41b Explorer - chunnel target
+    // 1055 B222b Destroyer - chunnel to B200 or other target
+    // 56   Firecloud - chunnel between 2 Fireclouds
+    // 51   B200 Probe
+    isChunnelling: function(a) {
+      if ( a.ownerid == vgap.player.id && vgap.canInitiateChunnel(a)) {
+	var b = vgap.getChunnelTarget(a);
+	if (b != null  && vgap.isValidChunnelTarget(a, b)) {
+	  return b
+	}
+      }
+      return null;
+    },
+ };
+  
+
 
   var oldDraw = vgapMap.prototype.draw;
   vgapMap.prototype.draw = function(fast, ctx, skipUserContent, secondCanvas) {
@@ -113,6 +127,15 @@ function wrapper() {
     
     if (showHull != null && showHull == ship.hullid) 
       this.drawCircle(ctx, this.screenX(ship.x), this.screenY(ship.y), 13 * this.zoom, "lightgreen", 2);
+    
+    if (showChunnel) {
+      if ((d = checkReady.prototype.isChunnelling(ship)) != null) {
+      	ctx.strokeStyle="cyan";
+	ctx.beginPath(this.screenX(ship.x), this.screenY(ship.y));
+	ctx.lineto(this.screenX(d.x), this.screenY(d.y));
+	ctx.stroke();
+      }
+    }
     
     // if (warnings && ship.ownerid) {
     // if (ship.dist > Math.pow(ship.warp, 2)) {

@@ -218,7 +218,11 @@ function wrapper() {
 	      
 	for (var i = 0; i < resources.length; ++i) {
 	  r = resources[i];
-	      
+	  
+	  // 104 neutronic refinery - alchemy supplies + minerals to fuel 1+1:1
+	  // 105 merlin - alchemy supplies to minerals 3:1
+	  // 97 aries - alchemy minerals to fuel 1:1
+	  
 	  if (p && t) {
 	    if (r.name == "Molybdenum")
 	      r.surface += ship.molybdenum;
@@ -235,23 +239,18 @@ function wrapper() {
 	  } 
 	  if (!p & t) {
             if (r.name == "Molybdenum") {
-// r.surface -= ship.molybedenum;
      	      r.target += ship.molybdenum;
             }
 	    if (r.name == "Neutronium") {
-// r.surface -= ship.neutronium;
 	      r.target += ship.neutronium;
 	    }
 	    if (r.name == "Duranium") {
-// r.surface -= ship.duranium;
 	      r.target += ship.duranium;
 	    } 
 	    if (r.name == "Tritanium") {
-// r.surface -= ship.tritanium;
 	      r.target += ship.tritanium;
 	    } 
 	    if (r.name == "Megacredits") {
-// r.surface -= ship.megacredits + ship.supplies;
 	      r.target += ship.megacredits + ship.supplies;
 	    }
 	  }

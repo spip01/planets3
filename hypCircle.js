@@ -93,95 +93,96 @@ function wrapper() {
       $("body").css("cursor", "");
    },
 
-    addLineStart : function(a, b) {
-      hypTools.linestart = {
-	x : a,
-	y : b
-      };
-      
-      $("body").css("cursor", "crosshair");
-   },
-
-   addLineEnd : function(a, b) {
-     hypTools.lines.push({
-       sx : hypTools.linestart.x,
-       sy : hypTools.linestart.y,
-       ex : a,
-       ey : b
-     });
-     hypTools.linestart = null;
-
-     hypTools.prototype.writeLines();
-
-     $("body").css("cursor", "");
-   },
-
-    writeLines : function () {
-      var p = vgap.myplanets[0];
-      if (p.note == null)
-	p.note = vgap.addNote(p, 1);
-
-      p.note.body = "{\"lines\" :" + JSON.stringify(hypTools.lines) + "}";
-console.log(p.note.body);
-      
-      $("body").css("cursor", "");
-    },
-    
-    deleteLine : function(a, b) {
-      d = 9999;
-      
-      for (i = 0; i<hypTools.lines.length; ++i){
-	l = hypTools.lines[i];
-	if (l != null) {
-	  s = Math.min(Math.dist(l.sx, l.sy, a, b), Math.dist(l.ex, l.ey, a, b));
-	  
-	  if(d > s) {
-	    d = s;
-	    id = i;
-	  }
-	}
-      }
-	  
-      if (id != undefined) {
-	delete hypTools.lines[id];
-	hypTools.prototype.writeLines();
-      }
-    },
-      
-    parsenotes : function() {
-      for (var f = 0; f < vgap.myplanets.length; f++) {
-	var l = vgap.myplanets[f];
-	if (l.note != undefined && l.note.body != "") {
-	  try {
-	    var jn = JSON.parse(l.note.body
-		// , function(h, k) {console.log(h+" "+k)}
-	    );
-	  } catch (e) {
-	    console.log("parse error " + l.id + " " + l.note.body);
-	    continue;
-	  }
-
-	  if (jn.lines != undefined) {
-	    l = jn.lines;
-
-	    for (f = 0; f < l.length; f++) {
-	      p = l[f];
-	      if (p != null) {
-	
-		console.log(p);
-
-		hypTools.lines.push({
-		  sx : p.sx,
-		  sy : p.sy,
-		  ex : p.ex,
-		  ey : p.ey
-		});
-	      }
-	    }
-	  }
-	}
-      }
-    },
+//    addLineStart : function(a, b) {
+//      hypTools.linestart = {
+//	x : a,
+//	y : b
+//      };
+//      
+//      $("body").css("cursor", "crosshair");
+//   },
+//
+//   addLineEnd : function(a, b) {
+//     hypTools.lines.push({
+//       sx : hypTools.linestart.x,
+//       sy : hypTools.linestart.y,
+//       ex : a,
+//       ey : b
+//     });
+//     hypTools.linestart = null;
+//
+//     hypTools.prototype.writeLines();
+//
+//     $("body").css("cursor", "");
+//   },
+//
+//    writeLines : function () {
+//      var p = vgap.myplanets[0];
+//      if (p.note == null)
+//	p.note = vgap.addNote(p, 1);
+//
+//      p.note.body = "{\"lines\" :" + JSON.stringify(hypTools.lines) + "}";
+////console.log(p.note.body);
+//      
+//      $("body").css("cursor", "");
+//    },
+//    
+//    deleteLine : function(a, b) {
+//      d = 9999;
+//      
+//      for (i = 0; i<hypTools.lines.length; ++i){
+//	l = hypTools.lines[i];
+//	if (l != null) {
+//	  s = Math.min(Math.dist(l.sx, l.sy, a, b), Math.dist(l.ex, l.ey, a, b));
+//	  
+//	  if(d > s) {
+//	    d = s;
+//	    id = i;
+//	  }
+//	}
+//      }
+//	  
+//      if (id != undefined) {
+//	delete hypTools.lines[id];
+//	hypTools.prototype.writeLines();
+//      }
+//    },
+//      
+//    parsenotes : function() {
+//      for (var f = 0; f < vgap.myplanets.length; f++) {
+//	var l = vgap.myplanets[f];
+//	if (l.note != undefined && l.note.body != "") {
+//	  try {
+//	    var jn = JSON.parse(l.note.body
+//		// , function(h, k) {console.log(h+" "+k)}
+//	    );
+//	  } catch (e) {
+//	    console.log("parse error " + l.id + " " + l.note.body);
+//	    continue;
+//	  }
+//
+//	  if (jn.lines != undefined) {
+//	    l = jn.lines;
+//
+//	    for (f = 0; f < l.length; f++) {
+//	      p = l[f];
+//	      if (p != null) {
+//	
+//		console.log(p);
+//
+//		hypTools.lines.push({
+//		  sx : p.sx,
+//		  sy : p.sy,
+//		  ex : p.ex,
+//		  ey : p.ey
+//		});
+//	      }
+//	    }
+//	  }
+//	}
+//      }
+//    },
+ 
   };
 
   var oldRenderMapTools = vgapMap.prototype.renderMapTools;
@@ -297,12 +298,12 @@ console.log(p.note.body);
     this.draw();
   };
   
-  var oldLoad = vgapMap.prototype.load;
-  vgapMap.prototype.load = function() {
-    oldLoad.apply(this, arguments);
-    
-    hypTools.prototype.parsenotes();
-  };
+//  var oldLoad = vgapMap.prototype.load;
+//  vgapMap.prototype.load = function() {
+//    oldLoad.apply(this, arguments);
+//    
+//    hypTools.prototype.parsenotes();
+//  };
   
   var oldLoadControls = vgapMap.prototype.loadControls;
   vgapMap.prototype.loadControls = function() {

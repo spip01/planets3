@@ -12,9 +12,11 @@
 
 function wrapper() {
   var showReady = false;
+  var showBldg = false;
   var showChunnel = false;
   var showHull = null;
-
+  var showShips = false;
+  
   function checkReady() {
   }
   checkReady.prototype = {
@@ -29,6 +31,11 @@ function wrapper() {
 	  vgap.map.draw();
 	});
 
+	vgapMap.prototype.spMenuItem("Show Buildings", "checkReady", function() {
+	  showBldg = !showBldg;
+	  vgap.map.draw();
+	});
+
 	vgapMap.prototype.spMenuItem("Show Falcons", "checkReady", function() {
 	  showHull = showHull != 87 ? 87 : null;
 	  vgap.map.draw();
@@ -36,6 +43,11 @@ function wrapper() {
 
 	vgapMap.prototype.spMenuItem("Show Rush", "checkReady", function() {
 	  showHull = showHull != 94 ? 94 : null;
+	  vgap.map.draw();
+	});
+
+	vgapMap.prototype.spMenuItem("Show Ships", "checkReady", function() {
+	  showShips = !showShips;
 	  vgap.map.draw();
 	});
 
@@ -52,8 +64,10 @@ function wrapper() {
 
     clearData : function() {
       showReady = false;
+      showBldg = false;
       showHull = null;
       showChunnel = false;
+      showShips = false;
     },
 
     // 1054 B41b Explorer - chunnel target
@@ -98,9 +112,16 @@ function wrapper() {
     var y = this.screenY(planet.y);
 
     // draw planets not ready
-    if (planet.infoturn > 0) {
-      if (showReady) {
-	if (planet.readystatus == 0 && vgap.player.id == planet.ownerid) {
+    if (planet.infoturn > 0 && vgap.player.id == planet.ownerid) {
+      if (showBldg) {
+	ctx.fillStyle = "orange";
+	x2 = this.screenX(planet.x + 7.5 * 1.5);
+	y2 = this.screenY(planet.y);
+	    
+	ctx.fillText("m:"+planet.mines + " f:"+ planet.factories + " d:"+ planet.defense, x2, y2);
+      }
+      else if (showReady) {
+	if (planet.readystatus == 0) {
 	  this.drawCircle(ctx, x, y, 13 * this.zoom, "orange", 2);
 	}
 	if (planet.isbase) {
@@ -113,7 +134,26 @@ function wrapper() {
 	}
       }
     }
-  };
+    
+    if (showShips) {
+      line = 0;
+      for (var k = 0; k < vgap.ships.length; ++k) {
+	var ship = vgap.ships[k];
+	t = Math.dist(ship.x, ship.y, planet.x, planet.y);
+	
+	if (t <= 3) {
+	  if (vgap.player.id == ship.ownerid) 
+	    ctx.fillStyle = "yellow";
+	  else
+	    ctx.fillStyle = "red";
+	  ++line;
+	  x2 = this.screenX(planet.x + 8 * 1.5);
+	  y2 = this.screenY(planet.y - (line - 2) * 6 * 1.5);
+	  ctx.fillText(ship.id+":"+vgap.getHull(ship.hullid).name, x2, y2);
+	}
+      }
+    }
+ };
 
   var oldDrawShip = vgapMap.prototype.drawShip;
   vgapMap.prototype.drawShip = function(ship, ctx) {

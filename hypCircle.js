@@ -20,7 +20,6 @@ function wrapper() {
       this.warpcircles = [];
       this.putMultiTurnCircles = false;
       this.multiturncircles = [];
-      this.warp = 81;
       this.addlinestart = false;
       this.addlineend = false;
       this.lines = [];
@@ -70,25 +69,26 @@ function wrapper() {
       hypTools.warpcircles = [];
       hypTools.putMultiTurnCircles = false;
       hypTools.multiturncircles = [];
-      hypTools.warp = 81;
       hypTools.addlinestart = false;
       hypTools.addlineend = false;
       hypTools.lines = [];
       hypTools.lineStart = null;
     },
 
-    addWarpCircle : function(a, b) {
+    addWarpCircle : function(a, b, c) {
       hypTools.warpcircles.push({
 	x : a,
-	y : b
+	y : b,
+	w : c
       });
       $("body").css("cursor", "");
     },
 
-    addMultiTurn : function(a, b) {
+    addMultiTurn : function(a, b, w) {
       hypTools.multiturncircles.push({
 	x : a,
-	y : b
+	y : b,
+	w : c
       });
       $("body").css("cursor", "");
    },
@@ -217,14 +217,14 @@ function wrapper() {
 
     for (var d = 0; d < hypTools.warpcircles.length; d++) {
       var c = hypTools.warpcircles[d];
-      this.drawCircle(ctx, this.screenX(c.x), this.screenY(c.y), hypTools.warp * this.zoom, "cyan", 1);
+      this.drawCircle(ctx, this.screenX(c.x), this.screenY(c.y), c.w * this.zoom, "cyan", 1);
     }
 
     for (var d = 0; d < hypTools.multiturncircles.length; d++) {
       var c = hypTools.multiturncircles[d];
-      this.drawCircle(ctx, this.screenX(c.x), this.screenY(c.y), 1 * hypTools.warp * this.zoom, "cyan", 1);
-      this.drawCircle(ctx, this.screenX(c.x), this.screenY(c.y), 2 * hypTools.warp * this.zoom, "cyan", 1);
-      this.drawCircle(ctx, this.screenX(c.x), this.screenY(c.y), 3 * hypTools.warp * this.zoom, "cyan", 1);
+      this.drawCircle(ctx, this.screenX(c.x), this.screenY(c.y), 1 * c.w * this.zoom, "cyan", 1);
+      this.drawCircle(ctx, this.screenX(c.x), this.screenY(c.y), 2 * c.w * this.zoom, "cyan", 1);
+      this.drawCircle(ctx, this.screenX(c.x), this.screenY(c.y), 3 * c.w * this.zoom, "cyan", 1);
     }
 
     if (hypTools.linestart) {
@@ -250,37 +250,45 @@ function wrapper() {
       b = this.y;
     }
 
+    if (vgap.shipScreen.ship != undefined) {
+      s = vgap.shipScreen.ship;
+      w = s.engineid * s.engineid + .4;
+    }
+    else {
+      w = 81.4;
+    }
+  
     // snap hypcircle to closest ship or planet
     if (hypTools.putWarpCircle) {
-      hypTools.prototype.addWarpCircle(a, b);
+      hypTools.prototype.addWarpCircle(a, b, w);
 
       hypTools.putWarpCircle = false;
       $("body").css("cursor", "");
     }
 
-    if (hypTools.addlinestart) {
-      hypTools.prototype.addLineStart(a, b);
-
-      hypTools.addlinestart = false;
-      hypTools.addlineend = true;
-      $("body").css("cursor", "crosshair");
-      // return
-    } else if (hypTools.addlineend) {
-      hypTools.prototype.addLineEnd(a, b);
-
-      hypTools.addlinestart = false;
-      hypTools.addlineend = false;
-      $("body").css("cursor", "");
-    }
-
-    if (hypTools.deleteline) {
-      hypTools.prototype.deleteLine(a, b);
-      
-      $("body").css("cursor", "");
-    }
+//    if (hypTools.addlinestart) {
+//      hypTools.prototype.addLineStart(a, b);
+//
+//      hypTools.addlinestart = false;
+//      hypTools.addlineend = true;
+//      $("body").css("cursor", "crosshair");
+//      // return
+//    } else if (hypTools.addlineend) {
+//      hypTools.prototype.addLineEnd(a, b);
+//
+//      hypTools.addlinestart = false;
+//      hypTools.addlineend = false;
+//      $("body").css("cursor", "");
+//    }
+//
+//    if (hypTools.deleteline) {
+//      hypTools.prototype.deleteLine(a, b);
+//      
+//      $("body").css("cursor", "");
+//    }
 
     if (hypTools.putMultiTurnCircle) {
-      hypTools.prototype.addMultiTurn(a, b);
+      hypTools.prototype.addMultiTurn(a, b, w);
 
       hypTools.putMultiTurnCircle = false;
       $("body").css("cursor", "");

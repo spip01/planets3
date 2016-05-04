@@ -219,9 +219,9 @@ function wrapper() {
 	for (var i = 0; i < resources.length; ++i) {
 	  r = resources[i];
 	  
-	  // 104 neutronic refinery - alchemy supplies + minerals to fuel 1+1:1
-	  // 105 merlin - alchemy supplies to minerals 3:1
-	  // 97 aries - alchemy minerals to fuel 1:1
+	  // 104 neutronic refinery - supplies + minerals to fuel 1+1:1
+	  // 105 merlin - supplies to minerals 3:1
+	  // 97 aries - minerals to fuel 1:1
 	  
 	  if (p && t) {
 	    if (r.name == "Molybdenum")
@@ -321,7 +321,35 @@ function wrapper() {
 		  
 	    x2 = this.screenX(planet.x + 12 * 1.5);
 //debugger;
-	    var cmp = {dur:398, tri:194, mol:457, mc:2837};
+//	    var cmp = {dur:398, tri:194, mol:457, mc:2837}; // rush
+	    
+	    var ship = vgap.shipScreen.ship;
+	    var hull = vgap.getHull(ship.hullid);
+	    
+	    var cmp = {dur:hull.duranium, tri:hull.tritanium, mol:hull.molybdenum, mc:hull.cost};
+	    
+	    if (ship.beams > 0) {
+	      var b = vgap.beams[ship.beamid - 1];
+	      cmp.dur += b.duranium * ship.beams;
+	      cmp.tri += b.tritanium * ship.beams;
+	      cmp.mol += b.molybdenum * ship.beams;
+	      cmp.mc += b.cost * ship.beams;
+	    }
+	    
+	    if (ship.torps > 0) {
+	      b = vgap.torpedos[ship.torpedoid - 1];
+	      cmp.dur += b.duranium * ship.torps;
+	      cmp.tri += b.tritanium * ship.torps;
+	      cmp.mol += b.molybdenum * ship.torps;
+	      cmp.mc += b.cost * ship.torps;
+	    }
+	    
+	    b = vgap.engines[ship.engineid - 1];
+	    cmp.dur += b.duranium * hull.engines;
+	    cmp.tri += b.tritanium * hull.engines;
+	    cmp.mol += b.molybdenum * hull.engines;
+	    cmp.mc += b.cost * hull.engines;
+
 	    var checkdur = dur - cmp.dur;
 	    var checktri = tri - cmp.tri;
 	    var checkmol = mol - cmp.mol;

@@ -295,10 +295,10 @@ function wrapper() {
 	if (checkStarbase) {
 	  if (!planet.isbase) {
 	    if (dur >= 120 && tri >= 302 && mol >= 430 && mc >= 900) {
-	      this.drawCircle(ctx, x1, y1, 9 * this.zoom, "lightgreen", 2);
+	      this.drawCircle(ctx, x1, y1, 12 * this.zoom, "crimson", 3);
 	    }
 	    else if (dur2 >= 120 && tri2 >= 302 && mol2 >= 430 && mc2 >= 900) {
-	      this.drawCircle(ctx, x1, y1, 12 * this.zoom, "yellow", 2);
+	      this.drawCircle(ctx, x1, y1, 12 * this.zoom, "yellow", 3);
 	    }
 	      
 	  }
@@ -320,8 +320,8 @@ function wrapper() {
 	    }
 		  
 	    x2 = this.screenX(planet.x + 12 * 1.5);
-//debugger;
-//	    var cmp = {dur:398, tri:194, mol:457, mc:2837}; // rush
+// debugger;
+// var cmp = {dur:398, tri:194, mol:457, mc:2837}; // rush
 	    
 	    var ship = vgap.shipScreen.ship;
 	    var hull = vgap.getHull(ship.hullid);
@@ -357,10 +357,10 @@ function wrapper() {
 	    
 	    if ( checkdur >= 0 && checktri >= 0 && checkmol >= 0 && checkmc >= 0 || sb.isbuilding) {
 	      if (sb.isbuilding)
-		this.drawCircle(ctx, x1, y1, 12 * this.zoom, "green", 2);
+		this.drawCircle(ctx, x1, y1, 12 * this.zoom, "blue", 2);
 	      else {
 		var cmp = {dur:cmp.dur * 2, tri:cmp.tri * 2, mol:cmp.mol * 2, mc:cmp.mc * 2};
-		this.drawCircle(ctx, x1, y1, 12 * this.zoom, "blue", 2);
+		this.drawCircle(ctx, x1, y1, 12 * this.zoom, "green", 2);
 	      }
 	    }
 	    else
@@ -376,26 +376,26 @@ function wrapper() {
 	    else 
 	      this.drawCircle(ctx, x1, y1, 16 * this.zoom, "orange", 2);
 	    
-//	    if (checkdur < 0) {
+// if (checkdur < 0) {
 	      ctx.fillStyle = "cyan";
 	      y2 = this.screenY(planet.y - (1 - 2) * 6 * 1.5);
 	      ctx.fillText(checkdur, x2, y2);
-//	    }
-//	    if (checktri < 0) {
+// }
+// if (checktri < 0) {
 	      ctx.fillStyle = "orange";
 	      y2 = this.screenY(planet.y - (2 - 2) * 6 * 1.5);
 	      ctx.fillText(checktri, x2, y2);
-//	    }
-//	    if (checkmol < 0) {
+// }
+// if (checkmol < 0) {
 	      ctx.fillStyle = "violet";
 	      y2 = this.screenY(planet.y - (3 - 2) * 6 * 1.5);
 	      ctx.fillText(checkmol, x2, y2);
-//	    }
-//	    if (checkmc < 0) {
+// }
+// if (checkmc < 0) {
 	      ctx.fillStyle = "lightgreen";
 	      y2 = this.screenY(planet.y - (4 - 2) * 6 * 1.5);
 	      ctx.fillText(checkmc, x2, y2);
-//	    }
+// }
 	  }
 	}  
      }
@@ -407,7 +407,7 @@ function wrapper() {
 	    var radius;
 
 	    if (showText) {
-	      f = resources[i].surface + "-" + (resources[i].surface + resources[i].mined + resources[i].target);
+	      f = resources[i].surface + "+" + (resources[i].mined + resources[i].target);
 	      ctx.fillStyle = color;
 	      x2 = this.screenX(planet.x + 7.5 * 1.5);
 	      y2 = this.screenY(planet.y - (i - 2) * 6 * 1.5);

@@ -39,7 +39,7 @@ function wrapper() {
 	"right" : "260px",
 	"color" : "rgb(255,255,255)",
 	"z-index" : "0",
-	"width" : "90px",
+	"width" : "100px",
 	"background-color" : "rgb(51,51,51)",
 	"border-bottom-left-radius" : "10px",
 	"border-bottom-right-radius" : "10px",
@@ -49,7 +49,7 @@ function wrapper() {
 
       s = {
 	"display" : "block",
-	"width" : "80px",
+	"width" : "90px",
 	"text-align" : "center",
 	"font-size" : "11px",
 	"list-style" : "none",
@@ -64,7 +64,7 @@ function wrapper() {
 	"display" : "block",
 	"padding" : "0",
 	"line-height" : " 38px",
-	"width" : "70px",
+	"width" : "80px",
 	"background-color" : "rgb(51,51,51)",
 	"cursor" : "default",
       };

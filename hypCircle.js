@@ -38,7 +38,7 @@ function wrapper() {
 	   $("body").css("cursor", "crosshair");
 	});
 
-	vgapMap.prototype.spMenuItem("3 Turn Warp 9", "hypTools", function() {
+	vgapMap.prototype.spMenuItem("Warp Circle x 3", "hypTools", function() {
 	  hypTools.putMultiTurnCircle = true;
 	   $("body").css("cursor", "crosshair");
 	});
@@ -84,7 +84,7 @@ function wrapper() {
       $("body").css("cursor", "");
     },
 
-    addMultiTurn : function(a, b, w) {
+    addMultiTurn : function(a, b, c) {
       hypTools.multiturncircles.push({
 	x : a,
 	y : b,
@@ -217,6 +217,17 @@ function wrapper() {
 
     for (var d = 0; d < hypTools.warpcircles.length; d++) {
       var c = hypTools.warpcircles[d];
+      
+      // planetary hypcircle
+      for (var i = 0; i < vgap.planets.length; ++i) {
+	var planet = vgap.planets[i];
+	var dist = Math.dist(c.x, c.y, planet.x, planet.y);
+
+	if (dist >= c.w && dist <= c.w+3) {
+	  this.drawCircle(ctx, this.screenX(planet.x), this.screenY(planet.y), 12 * this.zoom, "blue", 1);
+	}
+      }
+
       this.drawCircle(ctx, this.screenX(c.x), this.screenY(c.y), c.w * this.zoom, "cyan", 1);
     }
 
@@ -227,16 +238,16 @@ function wrapper() {
       this.drawCircle(ctx, this.screenX(c.x), this.screenY(c.y), 3 * c.w * this.zoom, "cyan", 1);
     }
 
-    if (hypTools.linestart) {
-      var l = hypTools.linestart;
-      this.drawCircle(ctx, this.screenX(l.x), this.screenY(l.y), 1 * this.zoom, "orange", 2);
-    }
-
-    for (var d = 0; d < hypTools.lines.length; ++d) {
-      var l = hypTools.lines[d];
-      if (l != null)
-	this.drawLine(ctx, this.screenX(l.sx), this.screenY(l.sy), this.screenX(l.ex), this.screenY(l.ey), "orange", 1);
-    }
+//    if (hypTools.linestart) {
+//      var l = hypTools.linestart;
+//      this.drawCircle(ctx, this.screenX(l.x), this.screenY(l.y), 1 * this.zoom, "orange", 2);
+//    }
+//
+//    for (var d = 0; d < hypTools.lines.length; ++d) {
+//      var l = hypTools.lines[d];
+//      if (l != null)
+//	this.drawLine(ctx, this.screenX(l.sx), this.screenY(l.sy), this.screenX(l.ex), this.screenY(l.ey), "orange", 1);
+//    }
   };
 
   var oldClick = vgapMap.prototype.click;

@@ -214,7 +214,11 @@ function wrapper() {
       for (var k = 0; k < vgap.myships.length; ++k) {
 	var ship = vgap.myships[k];
 	t = Math.dist(ship.targetx, ship.targety, planet.x, planet.y) <= 3;
+	if (!t)
+	  continue;
+	
 	p = ship.x == planet.x && ship.y == planet.y;
+	var hull = vgap.getHull(ship.hullid);
 	      
 	for (var i = 0; i < resources.length; ++i) {
 	  r = resources[i];
@@ -223,7 +227,7 @@ function wrapper() {
 	  // 105 merlin - supplies to minerals 3:1
 	  // 97 aries - minerals to fuel 1:1
 	  
-	  if (p && t) {
+	  if (p) {
 	    if (r.name == "Molybdenum")
 	      r.surface += ship.molybdenum;
 	    if (r.name == "Neutronium")
@@ -237,7 +241,7 @@ function wrapper() {
 	      r.supplies += ship.supplies;
 	    }
 	  } 
-	  if (!p & t) {
+	  else {
             if (r.name == "Molybdenum") {
      	      r.target += ship.molybdenum;
             }

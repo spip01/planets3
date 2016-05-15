@@ -30,7 +30,7 @@ function wrapper() {
   var checkStarbase = false;
   var checkFighters = false;
   var checkShip = false;
-  var selectedShip = null;
+  var selectedBuild = null;
   
   function showMinerals() {
   }
@@ -51,26 +51,26 @@ function wrapper() {
         }
 
         vgapMap.prototype.spMenuItem("Text", "showMinerals", function() {
-	  showText = !showText;
+          showText = !showText;
 
-	    checkStarbase = false;
-	    checkFighters = false;
-	    checkShip = false;
-	      vgap.map.draw();
+          checkStarbase = false;
+          checkFighters = false;
+          checkShip = false;
+          vgap.map.draw();
         });
 
         vgapMap.prototype.spMenuItem("Check Starbase", "showMinerals", function() {
 	  checkStarbase = !checkStarbase;
           showMinerals.prototype.clearRes();
-	    showText = false;
-            checkFighters = false;
-            checkShip = false;
-	      vgap.map.draw();
+          showText = false;
+          checkFighters = false;
+          checkShip = false;
+          vgap.map.draw();
        });
 
         vgapMap.prototype.spMenuItem("Check Ship", "showMinerals", function() {
-	  selectedShip = vgap.shipScreen.ship;
-	  if (selectedShip != undefined) {
+	  if (vgap.shipScreen.ship != undefined) {
+	    selectedBuild = vgap.shipScreen.ship;
 	    checkShip = !checkShip;
 	    showMinerals.prototype.clearRes();
 	    showText = false;
@@ -123,7 +123,7 @@ function wrapper() {
       checkStarbase = false;
       checkFighters = false;
       checkShip = false;
-      selectedShip = null;
+      selectedBuild = null;
      for (var i = 0; i < resources.length; ++i) {
 	resources[i].showRes = false;
 	resources[i].surface = 0;
@@ -267,7 +267,7 @@ function wrapper() {
       var x1 = this.screenX(planet.x);
       var y1 = this.screenY(planet.y);
       
-      if (checkStarbase || checkFighters || checkShip && selectedShip != null) {
+      if (checkStarbase || checkFighters || checkShip && selectedBuild != null) {
 	for (var i = 0; i < resources.length; ++i) {
 	  r = resources[i];
 	      
@@ -330,7 +330,7 @@ function wrapper() {
 // debugger;
 // var cmp = {dur:398, tri:194, mol:457, mc:2837}; // rush
 	    
-	    var ship = selectedShip;
+	    var ship = selectedBuild;
 	    var hull = vgap.getHull(ship.hullid);
 	    
 	    var cmp = {dur:hull.duranium, tri:hull.tritanium, mol:hull.molybdenum, mc:hull.cost};

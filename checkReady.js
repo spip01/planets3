@@ -15,6 +15,7 @@ function wrapper() {
   var showBldg = false;
   var showChunnel = false;
   var showHull = false;
+  var selectedShip = null;
   var showShips = false;
   var showNatives = false;
   
@@ -53,9 +54,12 @@ function wrapper() {
 //	});
 
 	vgapMap.prototype.spMenuItem("Show Ships", "checkReady", function() {
-	  showHull = !showHull;
-//	  showShips = !showShips;
-	  vgap.map.draw();
+	  if (vgap.shipScreen.ship != undefined) {
+	    showHull = !showHull;
+	    selectedShip = vgap.shipScreen.ship;
+//	    showShips = !showShips;
+	    vgap.map.draw();
+	  }
 	});
 
 	vgapMap.prototype.spMenuItem("Show Chunnel", "checkReady", function() {
@@ -75,6 +79,7 @@ function wrapper() {
       showHull = false;
       showChunnel = false;
       showShips = false;
+      selectedShip = null;
       showNatives = false;
     },
 
@@ -222,7 +227,7 @@ function wrapper() {
 //      }
 	
 
-    if (showHull && vgap.shipScreen.ship != undefined && ship.hullid == vgap.shipScreen.ship.hullid) 
+    if (showHull && selectedShip != null && selectedShip.hullid == ship.hullid) 
       this.drawCircle(ctx, this.screenX(ship.x), this.screenY(ship.y), 13 * this.zoom, "lightgreen", 2);
     
     if (showChunnel) {

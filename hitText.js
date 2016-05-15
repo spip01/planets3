@@ -287,6 +287,9 @@ function wrapper() {
 		e += "<td colspan='3'>" + m.target.id + ":&nbsp;" + m.target.name + "</td>";
 	      else
 		e += "<td colspan='3'>(" + m.targetx + "," + m.targety + ")</td>";
+	      
+	      e += "<td>&nbsp;" + t + "ly</td>";
+	      
 	      // var t = Math.round(Math.dist(m.x, m.y, m.targetx, m.targety));
 	      
 	      trn = Math.ceil(t / (m.warp * m.warp + .4));		

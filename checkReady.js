@@ -18,6 +18,7 @@ function wrapper() {
   var selectedShip = null;
   var showShips = false;
   var showNatives = false;
+  var displayLine = 0;
   
   function checkReady() {
   }
@@ -43,23 +44,17 @@ function wrapper() {
 	  vgap.map.draw();
 	});
 
-//	vgapMap.prototype.spMenuItem("Show Falcons", "checkReady", function() {
-//	  showHull = showHull != 87 ? 87 : null;
-//	  vgap.map.draw();
-//	});
-//
-//	vgapMap.prototype.spMenuItem("Show Rush", "checkReady", function() {
-//	  showHull = showHull != 94 ? 94 : null;
-//	  vgap.map.draw();
-//	});
-
 	vgapMap.prototype.spMenuItem("Show Ships", "checkReady", function() {
 	  if (vgap.shipScreen.ship != undefined) {
 	    showHull = !showHull;
 	    selectedShip = vgap.shipScreen.ship;
-//	    showShips = !showShips;
 	    vgap.map.draw();
 	  }
+	});
+
+	vgapMap.prototype.spMenuItem("All Ships", "checkReady", function() {
+	    showShips = !showShips;
+	    vgap.map.draw();
 	});
 
 	vgapMap.prototype.spMenuItem("Show Chunnel", "checkReady", function() {
@@ -81,12 +76,14 @@ function wrapper() {
       showShips = false;
       selectedShip = null;
       showNatives = false;
+      displayLine = 0;
     },
 
     // 1054 B41b Explorer - chunnel target
     // 1055 B222b Destroyer - chunnel to B200 or other target
     // 56   Firecloud - chunnel between 2 Fireclouds
     // 51   B200 Probe
+    
     isChunnelling: function(a) {
       if ( a.ownerid == vgap.player.id && vgap.canInitiateChunnel(a)) {
 	var b = vgap.getChunnelTarget(a);
@@ -124,7 +121,6 @@ function wrapper() {
 };
   
 
-
   var oldDraw = vgapMap.prototype.draw;
   vgapMap.prototype.draw = function(fast, ctx, skipUserContent, secondCanvas) {
     oldDraw.apply(this, arguments);
@@ -135,9 +131,11 @@ function wrapper() {
     // have to redraw ships because normal draw
     // copies the planets over the ships
     // draw ships not ready
-    for (var n = 0; n < vgap.myships.length; n++) {
-      var E = vgap.myships[n];
-      this.drawShip(E, ctx)
+    getSurfaceMin = -1;
+    
+    for (var k = 0; k < vgap.ships.length; ++k) {
+      var ship = vgap.ships[k];
+      this.drawShip(ship, ctx)
     }
 
   };
@@ -148,31 +146,29 @@ function wrapper() {
 
     var x = this.screenX(planet.x);
     var y = this.screenY(planet.y);
+	x2 = this.screenX(planet.x + 7.5 * 1.5);
+	y2 = this.screenY(planet.y - (-1) * 6 * 1.5);
+	    
 
     // draw planets not ready
     if (planet.infoturn > 0) {
       if (showBldg && vgap.player.id == planet.ownerid) {
-	ctx.fillStyle = "orange";
-	x2 = this.screenX(planet.x + 7.5 * 1.5);
-	y2 = this.screenY(planet.y - (2 - 2) * 6 * 1.5);
-	    
+	ctx.fillStyle = "lightgreen";
 	ctx.fillText("m:"+planet.mines + " f:"+ planet.factories + " d:"+ planet.defense, x2, y2);
       }
       if (showNatives && planet.nativeclans > 0) {
 	if (planet.nativehappypoints < 70)
 	  ctx.fillStyle = "red";
 	else
-	  ctx.fillStyle = "orange";
+	  ctx.fillStyle = "lightgreen";
 	
-	x2 = this.screenX(planet.x + 7.5 * 1.5);
-	y2 = this.screenY(planet.y - (1 - 2) * 6 * 1.5);
-	    
 	nt = checkReady.prototype.nativeTaxAmount(planet, planet.nativetaxrate);
 	ns = checkReady.prototype.nativetaxsupport(planet);
 	t = Math.min(nt , ns);
 	  
 	ctx.fillText(planet.nativeracename+" $"+t, x2, y2);
      }
+      
      if (showReady && vgap.player.id == planet.ownerid) {
 	if (planet.readystatus == 0) {
 	  this.drawCircle(ctx, x, y, 13 * this.zoom, "orange", 2);
@@ -186,29 +182,11 @@ function wrapper() {
 	  }
 	}
       }
-    }
 //    if (ship.hullid == 104) {
 //      
 //    }
     
-//    if (showShips) {
-//      line = 0;
-//      for (var k = 0; k < vgap.ships.length; ++k) {
-//	var ship = vgap.ships[k];
-//	t = Math.dist(ship.x, ship.y, planet.x, planet.y);
-//	  
-//	if (t <= 3) {
-//	  if (vgap.player.id == ship.ownerid) 
-//	    ctx.fillStyle = "yellow";
-//	  else
-//	    ctx.fillStyle = "red";
-//	  ++line;
-//	  x2 = this.screenX(planet.x + 8 * 1.5);
-//	  y2 = this.screenY(planet.y - (line - 2) * 6 * 1.5);
-//	  ctx.fillText(ship.id+":"+vgap.getHull(ship.hullid).name, x2, y2);
-//	}
-//      }
-//    }
+    }
  };
 
   var oldDrawShip = vgapMap.prototype.drawShip;
@@ -238,8 +216,18 @@ function wrapper() {
 	ctx.stroke();
       }
     }
-    
-    // if (warnings && ship.ownerid) {
+    	
+    if (showShips) {
+      if (vgap.player.id == ship.ownerid) 
+	ctx.fillStyle = "lightgreen";
+      else
+	ctx.fillStyle = "red";
+      x2 = this.screenX(ship.x + 8 * 1.5);
+      y2 = this.screenY(ship.y - displayLine++ * 6 * 1.5);
+      ctx.fillText(ship.id+":"+vgap.getHull(ship.hullid).name, x2, y2);
+    }
+  
+   // if (warnings && ship.ownerid) {
     // if (ship.dist > Math.pow(ship.warp, 2)) {
     // this.drawCircle(ctx, this.screenX(ship.x), this.screenY(ship.y), 14 *
     // this.zoom, "red", 2);

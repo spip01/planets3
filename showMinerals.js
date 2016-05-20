@@ -206,16 +206,15 @@ function wrapper() {
 //     debugger;
      if (r.show == true) {
        var color = r.color;
+       var x1 = vgap.map.screenX(p.x);
+       var y1 = vgap.map.screenY(p.y);
+
        
        if (showText) {
 	 f = r.surface + "+" + (r.mined + r.target);
 	 ctx.fillStyle = color;
-	 x2 = vgap.map.screenX(p.x + 7.5 * 1.5);
-	 y2 = vgap.map.screenY(p.y - (r.line) * 6 * 1.5);
-	 ctx.fillText(f, x2, y2);
+	 ctx.fillText(f, x1, y1);
        } else {
-	 var x1 = vgap.map.screenX(p.x);
-	 var y1 = vgap.map.screenY(p.y);
 	      
 	 if (r.ground > 0) {
 	   radius = Math.sqrt(r.ground) * vgap.map.zoom;

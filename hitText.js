@@ -243,17 +243,18 @@ function wrapper() {
 
 	if (m.bays > 0 || m.torps > 0 || m.beams > 0) {
 	  d += "<tr>";
+	  if (m.beams > 0) { 
+	    d += "<td colspan='2'>beam/tech:&nbsp;" + m.beams + "/" + m.beamid + "</td>";
+	  }
+	  
 	if (m.bays > 0) {
-	  d += "<td>fgtr:</td><td>&nbsp;" + gsv(m.ammo) + "</td>";
+	  d += "<td colspan='2'>fgtr:&nbsp;" + gsv(m.ammo) + "</td>";
 	}
 	  
 	if (m.torps > 0) { 
 	  d += "<td colspan='2'>torp/tech:&nbsp;" + gsv(m.ammo) + "/" + m.torpedoid + "</td>";
 	}
 	
-	if (m.beams > 0) { 
-	  d += "<td colspan='2'>&nbsp;beam/tech:&nbsp;" + m.beams + "/" + m.beamid + "</td>";
-	}
 	d += "</tr>";
 	}
 	

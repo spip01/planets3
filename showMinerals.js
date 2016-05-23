@@ -206,16 +206,25 @@ function wrapper() {
 //     debugger;
      if (r.show == true) {
        var color = r.color;
-       var x1 = vgap.map.screenX(p.x);
-       var y1 = vgap.map.screenY(p.y);
-
        
        if (showText) {
-	 f = r.surface + "+" + (r.mined + r.target);
-	 ctx.fillStyle = color;
-	 ctx.fillText(f, x1, y1);
+	 x2 = vgap.map.screenX(p.x + 7.5 * 1.5);
+	 y2 = vgap.map.screenY(p.y - r.line * 6 * 1.5);
+	 
+	 f = "";
+	 if (r.surface > 0)
+	   f = r.surface + " ";
+	 if (r.ground > 0)
+	   f += "+ " + (r.mined + r.target);
+	 
+	 if (f != "") {
+	   ctx.fillStyle = color;
+	   ctx.fillText(f, x2, y2);
+	 }
        } else {
-	      
+	 var x1 = vgap.map.screenX(p.x);
+	 var y1 = vgap.map.screenY(p.y);
+
 	 if (r.ground > 0) {
 	   radius = Math.sqrt(r.ground) * vgap.map.zoom;
 	   vgap.map.drawCircle(ctx, x1, y1, radius, color, 1);

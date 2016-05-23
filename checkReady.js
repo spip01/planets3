@@ -30,35 +30,47 @@ function wrapper() {
 
       if (vgapMap.prototype.spMenuItem != undefined) {
 	vgapMap.prototype.spMenuItem("Check Ready", "checkReady", function() {
-	  showReady = !showReady;
+	  state = !showReady;
+	  checkReady.prototype.clearShow();
+	  showReady = state;
 	  vgap.map.draw();
 	});
 
 	vgapMap.prototype.spMenuItem("Show Buildings", "checkReady", function() {
-	  showBldg = !showBldg;
+	  state = !showBldg;
+	  checkReady.prototype.clearShow();
+	  showBldg = state;
 	  vgap.map.draw();
 	});
 
 	vgapMap.prototype.spMenuItem("Show Natives", "checkReady", function() {
-	  showNatives = !showNatives;
+	  state = !showNatives;
+	  checkReady.prototype.clearShow();
+	  showNatives = state;
 	  vgap.map.draw();
 	});
 
-	vgapMap.prototype.spMenuItem("Show Ships", "checkReady", function() {
+	vgapMap.prototype.spMenuItem("Show Ship", "checkReady", function() {
 	  if (vgap.shipScreen.ship != undefined) {
-	    showHull = !showHull;
+	    state = !showHull;
+	    checkReady.prototype.clearShow();
+	    showHull = state;
 	    selectedShip = vgap.shipScreen.ship;
 	    vgap.map.draw();
 	  }
 	});
 
-	vgapMap.prototype.spMenuItem("All Ships", "checkReady", function() {
-	    showShips = !showShips;
-	    vgap.map.draw();
-	});
+//	vgapMap.prototype.spMenuItem("All Ships", "checkReady", function() {
+//	    state = !showShips;
+//	    checkReady.prototype.clearShow();
+//	    showShips = state;
+//	    vgap.map.draw();
+//	});
 
 	vgapMap.prototype.spMenuItem("Show Chunnel", "checkReady", function() {
 	  showChunnel = !showChunnel;
+	  checkReady.prototype.clearShow();
+	  showChunnel = state;
 	  vgap.map.draw();
 	});
 
@@ -68,14 +80,18 @@ function wrapper() {
       }
     },
 
-    clearData : function() {
+    clearShow : function() {
       showReady = false;
       showBldg = false;
       showHull = false;
       showChunnel = false;
       showShips = false;
-      selectedShip = null;
       showNatives = false;
+    },
+    
+    clearData : function() {
+      this.clearShow();
+      selectedShip = null;
       displayLine = 0;
     },
 
@@ -131,7 +147,7 @@ function wrapper() {
     // have to redraw ships because normal draw
     // copies the planets over the ships
     // draw ships not ready
-    getSurfaceMin = -1;
+    displayLine = -1;
     
     for (var k = 0; k < vgap.ships.length; ++k) {
       var ship = vgap.ships[k];
@@ -222,7 +238,7 @@ function wrapper() {
 	ctx.fillStyle = "lightgreen";
       else
 	ctx.fillStyle = "red";
-      x2 = this.screenX(ship.x + 8 * 1.5);
+      x2 = this.screenX(ship.x + 7.5 * 1.5);
       y2 = this.screenY(ship.y - displayLine++ * 6 * 1.5);
       ctx.fillText(ship.id+":"+vgap.getHull(ship.hullid).name, x2, y2);
     }

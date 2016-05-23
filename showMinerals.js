@@ -90,43 +90,39 @@ function wrapper() {
 
 
         vgapMap.prototype.spMenuItem("Text", "showMinerals", function() {
+          vgap.map.showresources = true;
           showText = !showText;
           checkStarbase = false;
           checkFighters = false;
           checkShip = false;
+
           vgap.map.draw();
         });
 
         vgapMap.prototype.spMenuItem("Starbase Build", "showMinerals", function() {
-	  checkStarbase = !checkStarbase;
-          showMinerals.prototype.clearAllRes();
+          vgap.map.showresources = true;
+          state = !checkStarbase;
           showMinerals.prototype.clearShow();
-          showText = false;
-          checkFighters = false;
-          checkShip = false;
+          checkStarbase = state;
           vgap.map.draw();
        });
 
         vgapMap.prototype.spMenuItem("Ship Build", "showMinerals", function() {
 	  if (vgap.shipScreen.ship != undefined) {
+	    vgap.map.showresources = true;
 	    selectedBuild = vgap.shipScreen.ship;
-	    checkShip = !checkShip;
-	    showMinerals.prototype.clearAllRes();
+	    state = !checkShip;
 	    showMinerals.prototype.clearShow();
-	    showText = false;
-	    checkStarbase = false;
-	    checkFighters = false;
+	    checkShip = state;
 	    vgap.map.draw();
 	  }
         });
         
         vgapMap.prototype.spMenuItem("Fighters Build", "showMinerals", function() {
-          checkFighters = !checkFighters;
-          showMinerals.prototype.clearAllRes();
+          vgap.map.showresources = true;
+          state = !checkFighters;
           showMinerals.prototype.clearShow();
-          showText = false;
-          checkStarbase = false;
-          checkShip = false;
+          checkFighters = state;
           vgap.map.draw();
         });
 
@@ -157,19 +153,16 @@ function wrapper() {
       if (res.sup.show)
 	res.sup.line = line++;
       
-      checkFighters = false;
       checkStarbase = false;
+      checkFighters = false;
       checkShip = false;
-      
+
       vgap.map.draw();
     },
     
     clearData : function() {
       vgap.map.showresources = false;
       showText = true;
-      checkStarbase = false;
-      checkFighters = false;
-      checkShip = false;
       selectedBuild = null;
 //      debugger;
       this.clearAllRes();
@@ -186,13 +179,16 @@ function wrapper() {
     },
     
     clearShow : function() {
-      res.neu.show = false;
-      res.dur.show = false;
-      res.tri.show = false;
-      res.mol.show = false;
-      res.mc.show  = false;
-      res.sup.show = false;
-    },
+//      res.neu.show = false;
+//      res.dur.show = false;
+//      res.tri.show = false;
+//      res.mol.show = false;
+//      res.mc.show  = false;
+//      res.sup.show = false;
+      checkStarbase = false;
+      checkFighters = false;
+      checkShip = false;
+   },
    
    clearRes : function(r) {
      r.surface = 0;
@@ -300,7 +296,7 @@ function wrapper() {
     // oldRenderResource.apply(this, arguments);
 
     sh = {};
-    
+
     for (var d = 0; d < vgap.planets.length; d++) {
       var planet = vgap.planets[d];
 

@@ -27,23 +27,23 @@ function wrapper() {
 
       this.clearData();
 
-      if (vgapMap.prototype.spMenuItem != undefined) {
-	vgapMap.prototype.spMenuItem("Hyp Circle", "hypTools", function() {
+//      if (vgapMap.prototype.spMenuItem != undefined) {
+      vgaPlanets.prototype.spMenuItem("Hyp Circle", "hypTools", function() {
 	  vgap.map.putHypCircle = true;
 	   $("body").css("cursor", "crosshair");
 	});
 
-	vgapMap.prototype.spMenuItem("Warp Circle", "hypTools", function() {
+      vgaPlanets.prototype.spMenuItem("Warp Circle", "hypTools", function() {
 	  hypTools.putWarpCircle = true;
 	   $("body").css("cursor", "crosshair");
 	});
 
-	vgapMap.prototype.spMenuItem("Warp Circle x 3", "hypTools", function() {
+      vgaPlanets.prototype.spMenuItem("Warp Circle x 3", "hypTools", function() {
 	  hypTools.putMultiTurnCircle = true;
 	   $("body").css("cursor", "crosshair");
 	});
 
-//	vgapMap.prototype.spMenuItem("Add Line", "addLine", function() {
+//	vgaPlanets.prototype.spMenuItem("Add Line", "addLine", function() {
 //	  if (hypTools.addlineend) {
 //	    hypTools.startlinept.pop();
 //	  }
@@ -51,15 +51,15 @@ function wrapper() {
 //	  hypTools.addlineend = false;
 //	});
 //
-//	vgapMap.prototype.spMenuItem("Delete Line", "deleteLine", function() {
+//	vgaPlanets.prototype.spMenuItem("Delete Line", "deleteLine", function() {
 //	  hypTools.deleteline = true;
 //	   $("body").css("cursor", "crosshair");
 //	});
 
-	vgapMap.prototype.spMenuItem("Clear", "_massClear", function() {
+      vgaPlanets.prototype.spMenuItem("Clear", "_massClear", function() {
 	  hypTools.prototype.clearData();
 	});
-      }
+//      }
     },
 
     clearData : function() {

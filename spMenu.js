@@ -29,6 +29,7 @@ function wrapper() {
 
     loadControls : function() {
       // debugger;
+
       var a = "<div id='spControls'><div id='spToolsMenu'>sp Tools</div><ul id='spTools'></ul></div>";
       $(a).appendTo("#PlanetsContainer");
 
@@ -91,11 +92,12 @@ function wrapper() {
       });
 
       // text, class, function
-      vgapMap.prototype = {
+      vgaPlanets.prototype = {
 	spMenuItem : function(c, a, b) {
 	  spTools.prototype.addTool(c, a, b);
 	}
       };
+
 
       this.addTool("Read Only", "spTools", function() {
 	vgap.readOnly = true;
@@ -114,7 +116,6 @@ function wrapper() {
       if (a == "_massClear") {
 	clearList.push(b);
       } else {
-
 	var html = $("<li class='" + a + "'>" + c + "</li>").tclick(b).appendTo("#spTools");
 
 	html.mouseenter(function() {
@@ -145,7 +146,8 @@ function wrapper() {
     },
 
     clearControls : function() {
-      showMenu = false;
+
+     showMenu = false;
       $("#spControls").hide();
       $("#spTools").hide();
 
@@ -184,9 +186,9 @@ function wrapper() {
 
   var oldLoadControls = vgapMap.prototype.loadControls;
   vgapMap.prototype.loadControls = function() {
-    oldLoadControls.apply(this, arguments);
 
     spTools.prototype.loadControls();
+    oldLoadControls.apply(this, arguments);
   };
 
 };

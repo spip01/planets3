@@ -62,34 +62,34 @@ function wrapper() {
 
       this.clearData();
 
-      if (vgapMap.prototype.spMenuItem != undefined) {
+//      if (vgapMap.prototype.spMenuItem != undefined) {
 	// weird declaration fits the color into the existing class
-	vgapMap.prototype.spMenuItem(res.neu.name, "showMinerals\' style=\'color:" + res.neu.color, function() {
+      vgaPlanets.prototype.spMenuItem(res.neu.name, "showMinerals\' style=\'color:" + res.neu.color, function() {
 	  showMinerals.prototype.toggleRes(res.neu);
 	});
 
-	vgapMap.prototype.spMenuItem(res.dur.name, "showMinerals\' style=\'color:" + res.dur.color, function() {
+      vgaPlanets.prototype.spMenuItem(res.dur.name, "showMinerals\' style=\'color:" + res.dur.color, function() {
 	  showMinerals.prototype.toggleRes(res.dur);
 	});
 
-	vgapMap.prototype.spMenuItem(res.tri.name, "showMinerals\' style=\'color:" + res.tri.color, function() {
+      vgaPlanets.prototype.spMenuItem(res.tri.name, "showMinerals\' style=\'color:" + res.tri.color, function() {
 	  showMinerals.prototype.toggleRes(res.tri);
 	});
 
-	vgapMap.prototype.spMenuItem(res.mol.name, "showMinerals\' style=\'color:" + res.mol.color, function() {
+      vgaPlanets.prototype.spMenuItem(res.mol.name, "showMinerals\' style=\'color:" + res.mol.color, function() {
 	  showMinerals.prototype.toggleRes(res.mol);
 	});
 
-	vgapMap.prototype.spMenuItem(res.mc.name, "showMinerals\' style=\'color:" + res.mc.color, function() {
+      vgaPlanets.prototype.spMenuItem(res.mc.name, "showMinerals\' style=\'color:" + res.mc.color, function() {
 	  showMinerals.prototype.toggleRes(res.mc);
 	});
 
-	vgapMap.prototype.spMenuItem(res.sup.name, "showMinerals\' style=\'color:" + res.sup.color, function() {
+      vgaPlanets.prototype.spMenuItem(res.sup.name, "showMinerals\' style=\'color:" + res.sup.color, function() {
 	  showMinerals.prototype.toggleRes(res.sup);
 	});
 
 
-        vgapMap.prototype.spMenuItem("Text", "showMinerals", function() {
+      vgaPlanets.prototype.spMenuItem("Circles", "showMinerals", function() {
           vgap.map.showresources = true;
           showText = !showText;
           checkStarbase = false;
@@ -99,7 +99,7 @@ function wrapper() {
           vgap.map.draw();
         });
 
-        vgapMap.prototype.spMenuItem("Starbase Build", "showMinerals", function() {
+      vgaPlanets.prototype.spMenuItem("Starbase Build", "showMinerals", function() {
           vgap.map.showresources = true;
           state = !checkStarbase;
           showMinerals.prototype.clearShow();
@@ -107,7 +107,7 @@ function wrapper() {
           vgap.map.draw();
        });
 
-        vgapMap.prototype.spMenuItem("Ship Build", "showMinerals", function() {
+      vgaPlanets.prototype.spMenuItem("Ship Build", "showMinerals", function() {
 	  if (vgap.shipScreen.ship != undefined) {
 	    vgap.map.showresources = true;
 	    selectedBuild = vgap.shipScreen.ship;
@@ -118,7 +118,7 @@ function wrapper() {
 	  }
         });
         
-        vgapMap.prototype.spMenuItem("Fighters Build", "showMinerals", function() {
+      vgaPlanets.prototype.spMenuItem("Fighter Build", "showMinerals", function() {
           vgap.map.showresources = true;
           state = !checkFighters;
           showMinerals.prototype.clearShow();
@@ -126,10 +126,10 @@ function wrapper() {
           vgap.map.draw();
         });
 
-        vgapMap.prototype.spMenuItem("Clear", "_massClear", function() {
+      vgaPlanets.prototype.spMenuItem("Clear", "_massClear", function() {
 	  showMinerals.prototype.clearData();
         });
-      }
+//      }
     },
 
     // display minerals
@@ -434,12 +434,9 @@ function wrapper() {
 	    ctx.fillText(fighters, x2, y2);
 	  }	
 	} else if (checkShip) {
-	  if (planet.isbase) {
-	    for (var i = 0; i < vgap.mystarbases.length; ++i) {
-	      if (vgap.mystarbases[i].planetid == planet.id) {
-		sb = vgap.mystarbases[i];
-	      }
-	    }
+
+	  var sb = vgap.getStarbase(planet.id);
+	  if (sb != null) {
 		  
 	    x2 = this.screenX(planet.x + 12 * 1.5);
 	    
@@ -448,13 +445,17 @@ function wrapper() {
 	    
 	    var cmp = {dur:hull.duranium, tri:hull.tritanium, mol:hull.molybdenum, mc:hull.cost};
 	    
-	    if (ship.beams > 0) {
-	      var b = vgap.beams[ship.beamid - 1];
-	      cmp.dur += b.duranium * ship.beams;
-	      cmp.tri += b.tritanium * ship.beams;
-	      cmp.mol += b.molybdenum * ship.beams;
-	      cmp.mc  += b.cost * ship.beams;
-	    }
+	    b = vgap.engines[ship.engineid - 1];
+	    cmp.dur += b.duranium * hull.engines;
+	    cmp.tri += b.tritanium * hull.engines;
+	    cmp.mol += b.molybdenum * hull.engines;
+	    cmp.mc  += b.cost * hull.engines;
+	  
+	    b = vgap.beams[ship.beamid - 1];
+	    cmp.dur += b.duranium * ship.beams;
+	    cmp.tri += b.tritanium * ship.beams;
+	    cmp.mol += b.molybdenum * ship.beams;
+	    cmp.mc  += b.cost * ship.beams;
 	    
 	    if (ship.torps > 0) {
 	      b = vgap.torpedos[ship.torpedoid - 1];
@@ -464,12 +465,6 @@ function wrapper() {
 	      cmp.mc  += b.cost * ship.torps;
 	    }
 	    
-	    b = vgap.engines[ship.engineid - 1];
-	    cmp.dur += b.duranium * hull.engines;
-	    cmp.tri += b.tritanium * hull.engines;
-	    cmp.mol += b.molybdenum * hull.engines;
-	    cmp.mc  += b.cost * hull.engines;
-	  
 	    var checkdur = dur - cmp.dur;
 	    var checktri = tri - cmp.tri;
 	    var checkmol = mol - cmp.mol;

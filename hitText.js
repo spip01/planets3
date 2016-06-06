@@ -443,6 +443,7 @@ function wrapper() {
     "line-height" : "16px",
     "height" : "14px",
     "padding" : "0 24px",
+    "right" : "15px",
     };
     
     $("<div class='MoreActionButton' id='SellSuppliesButton'>Sell</div>").tclick(function() {
@@ -455,21 +456,20 @@ function wrapper() {
      n = c - mc;
      if (n > 0) {
        if (sp - n > 0) {
-	     console.log("add"+n);
-//       p.megacredits += n;
-//       p.supplies -= n;
-//       p.suppliessold += n;
-//       p.changed = 1;
+       p.megacredits += n;
+       p.supplies -= n;
+       p.suppliessold += n;
+       p.changed = 1;
+       
+//       vgapStarbaseScreen.prototype.renderAssemblyCost.apply(this, arguments);
        }
      }
        
-     console.log("n"+n+" c"+c+" m"+mc+" s"+sp);
-       
-    }).insertBefore("#BuildShipButton");
+    }).appendTo("#BuyShipBox");
     
     $("#SellSuppliesButton").css(s);
     
-    $("<div id='SellSuppliesHdr'>Supplies</div>").insertBefore("#SellSuppliesButton");
+    $("<div id='SellSuppliesHdr'>Supplies</div>").appendTo("#BuyShipBox");
     s.top = 18;
     s.padding = "0 20";
     $("#SellSuppliesHdr").css(s);
@@ -491,7 +491,7 @@ function wrapper() {
     }
     
    s.top = 36;
-    $("<div id='SellSuppliesVar'"+q+">"+p.supplies+"</div>").insertBefore("#SellSuppliesButton");
+    $("<div id='SellSuppliesVar'"+q+">"+p.supplies+"</div>").appendTo("#BuyShipBox");
     $("#SellSuppliesVar").css(s);
   };
 };

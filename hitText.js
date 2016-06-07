@@ -446,8 +446,10 @@ function wrapper() {
     "right" : "15px",
     };
     
-    $("<div class='MoreActionButton' id='SellSuppliesButton'>Sell</div>").tclick(function() {
-     c = hitText.prototype.sbBuildCost(vgap.starbaseScreen.starbase);
+    $("<div class='MoreActionButton' id='SellSuppliesButton'>Sell</div>")
+    .appendTo("#BuyShipBox")
+    .tclick(function() {
+      c = hitText.prototype.sbBuildCost(vgap.starbaseScreen.starbase);
 
      p = vgap.starbaseScreen.planet;
      mc = p.megacredits;
@@ -464,8 +466,7 @@ function wrapper() {
 //       vgapStarbaseScreen.prototype.renderAssemblyCost.apply(this, arguments);
        }
      }
-       
-    }).appendTo("#BuyShipBox");
+    });
     
     $("#SellSuppliesButton").css(s);
     
@@ -473,6 +474,9 @@ function wrapper() {
     s.top = 18;
     s.padding = "0 20";
     $("#SellSuppliesHdr").css(s);
+
+//    var v = $("#BuyShipBox tr .val").first().contents();
+//    console.log(v);
     
     c = hitText.prototype.sbBuildCost(vgap.starbaseScreen.starbase);
     p = vgap.starbaseScreen.planet;

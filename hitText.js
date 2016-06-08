@@ -443,13 +443,16 @@ function wrapper() {
     "line-height" : "16px",
     "height" : "14px",
     "padding" : "0 24px",
-    "right" : "15px",
+    "right" : "14px",
     };
     
     $("<div class='MoreActionButton' id='SellSuppliesButton'>Sell</div>")
     .appendTo("#BuyShipBox")
     .tclick(function() {
-      c = hitText.prototype.sbBuildCost(vgap.starbaseScreen.starbase);
+      
+//    c = hitText.prototype.sbBuildCost(vgap.starbaseScreen.starbase);
+      var v = $("#BuildShipCost .val").contents();
+      c = v[7].data;
 
      p = vgap.starbaseScreen.planet;
      mc = p.megacredits;
@@ -458,46 +461,58 @@ function wrapper() {
      n = c - mc;
      if (n > 0) {
        if (sp - n > 0) {
-       p.megacredits += n;
-       p.supplies -= n;
-       p.suppliessold += n;
-       p.changed = 1;
+	 p.megacredits += n;
+	 p.supplies -= n;
+	 p.suppliessold += n;
+	 p.changed = 1;
        
-//       vgapStarbaseScreen.prototype.renderAssemblyCost.apply(this, arguments);
+	 if (v[8].data != undefined) 
+	   v[8].data = p.megacredits;
+	 else if (v[8].childNodes.length > 0) {
+	   v[8].className = "GreatText";
+	   v[8].childNodes[0].data = p.megacredits;
+	 }
+ 
+	 $("#SellSuppliesVar").replaceWith("<div id='SellSuppliesVar'>"+p.supplies+"</div>");
+	 $("#SellSuppliesVar").css(s);
        }
      }
+     
     });
     
-    $("#SellSuppliesButton").css(s);
-    
-    $("<div id='SellSuppliesHdr'>Supplies</div>").appendTo("#BuyShipBox");
-    s.top = 18;
-    s.padding = "0 20";
-    $("#SellSuppliesHdr").css(s);
+//    c = hitText.prototype.sbBuildCost(vgap.starbaseScreen.starbase);
+    var v = $("#BuildShipCost .val").contents();
+    if (v != undefined && v[7] != undefined) {
+      c = v[7].data;
 
-//    var v = $("#BuyShipBox tr .val").first().contents();
-//    console.log(v);
-    
-    c = hitText.prototype.sbBuildCost(vgap.starbaseScreen.starbase);
-    p = vgap.starbaseScreen.planet;
-    mc = p.megacredits;
-    sp = p.supplies;
-    
-    r = mc - c;
-    if (r > 0)
-      q = "";
-    else {
-      r += sp;
+      p = vgap.starbaseScreen.planet;
+      mc = p.megacredits;
+      sp = p.supplies;
+
+      r = mc - c;
       if (r > 0)
-	q = " class='GreatText'";
-      else
-	q = " class='BadText'";
+	q = "";
+      else {
+	r += sp;
+	if (r > 0)
+	  q = " class='GreatText'";
+	else
+	  q = " class='BadText'";
+      }
+
+      $("#SellSuppliesButton").css(s);
+
+      $("<div id='SellSuppliesHdr'>Supplies</div>").appendTo("#BuyShipBox");
+      s.top = 18;
+      s.padding = "0 20";
+      $("#SellSuppliesHdr").css(s);
+
+      s.top = 36;
+      $("<div id='SellSuppliesVar'"+q+">"+p.supplies+"</div>").appendTo("#BuyShipBox");
+      $("#SellSuppliesVar").css(s);
     }
-    
-   s.top = 36;
-    $("<div id='SellSuppliesVar'"+q+">"+p.supplies+"</div>").appendTo("#BuyShipBox");
-    $("#SellSuppliesVar").css(s);
   };
+  
 };
 
 var script = document.createElement("script");

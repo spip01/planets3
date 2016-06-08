@@ -451,11 +451,13 @@ function wrapper() {
 	    cmp.mol += b.molybdenum * hull.engines;
 	    cmp.mc  += b.cost * hull.engines;
 	  
-	    b = vgap.beams[ship.beamid - 1];
-	    cmp.dur += b.duranium * ship.beams;
-	    cmp.tri += b.tritanium * ship.beams;
-	    cmp.mol += b.molybdenum * ship.beams;
-	    cmp.mc  += b.cost * ship.beams;
+	    if (ship.beams > 0) {
+	      b = vgap.beams[ship.beamid - 1];
+	      cmp.dur += b.duranium * ship.beams;
+	      cmp.tri += b.tritanium * ship.beams;
+	      cmp.mol += b.molybdenum * ship.beams;
+	      cmp.mc  += b.cost * ship.beams;
+	    }
 	    
 	    if (ship.torps > 0) {
 	      b = vgap.torpedos[ship.torpedoid - 1];

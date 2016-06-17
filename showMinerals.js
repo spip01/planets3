@@ -299,7 +299,7 @@ function wrapper() {
 
     for (var d = 0; d < vgap.planets.length; d++) {
       var planet = vgap.planets[d];
-
+      
       showMinerals.prototype.clearAllRes();
       
       showMinerals.prototype.getSurfaceMin(res.neu, planet, planet.neutronium, planet.groundneutronium, planet.densityneutronium);
@@ -403,7 +403,7 @@ function wrapper() {
       var x1 = this.screenX(planet.x);
       var y1 = this.screenY(planet.y);
 
-      if (checkStarbase || checkFighters || (checkShip && selectedBuild)) {
+      if (planet.ownerid == vgap.player.id && (checkStarbase || checkFighters || (checkShip && selectedBuild))) {
 	neu2 = neu + res.neu.mined + res.neu.target;
 	dur2 = dur + res.dur.mined + res.dur.target;
 	tri2 = tri + res.tri.mined + res.tri.target;
@@ -422,7 +422,33 @@ function wrapper() {
 	    }
 	    else if (dur2 >= 120 && tri2 >= 302 && mol2 >= 430 && mcc2 >= 900) {
 	      this.drawCircle(ctx, x1, y1, 12 * this.zoom, "yellow", 3);
-	    }	      
+	    }
+	    else {
+	      td = dur2 - 120 < 0 ? dur2 - 120 : 0;
+	      tt = tri2 - 302 < 0 ? tri2 - 302 : 0;
+	      tm = mol2 - 430 < 0 ? mol2 - 430 : 0;
+	      
+	      if ((td + tt + tm) > -300) {
+		    x2 = this.screenX(planet.x + 12 * 1.5);
+
+		    ctx.fillStyle = res.dur.color;
+		    y2 = this.screenY(planet.y - (-2) * 6 * 1.5);
+		    ctx.fillText(dur2 - 120, x2, y2);
+
+		    ctx.fillStyle = res.tri.color;
+		    y2 = this.screenY(planet.y - (-1) * 6 * 1.5);
+		    ctx.fillText(tri2 - 302, x2, y2);
+
+		    ctx.fillStyle = res.mol.color;
+		    y2 = this.screenY(planet.y - 0 * 6 * 1.5);
+		    ctx.fillText(mol2 - 430, x2, y2);
+
+		    ctx.fillStyle = res.mc.color;
+		    y2 = this.screenY(planet.y - 1  * 6 * 1.5);
+		    ctx.fillText(mcc2 - 900, x2, y2);
+	      }
+
+	    }
 	  }
 	  
 	} else if (checkFighters) {

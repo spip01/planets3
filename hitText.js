@@ -385,9 +385,19 @@ function wrapper() {
     return q
   };
   
+  var oldShipScan = vgapMap.prototype.shipScan;
+  vgapMap.prototype.shipScan = function(e) {
+//    oldShipScan.apply(this, arguments);
+
+    vgapMap.hitTextBox(e);
+
+  };
+  
+  //shipSurvey
+  
   var oldShowInfo = vgapMap.prototype.showInfo;
   vgapMap.prototype.showInfo = function(a, b) {
- // replace completely
+// replace completely
 // oldShowInfo.apply(this, arguments);
 
     var h = Math.round(vgap.map.mapX(a));
@@ -513,6 +523,57 @@ function wrapper() {
     }
   };
   
+  var oldRenderScreen = vgapTransferScreen.prototype.renderScreen;
+  vgapTransferScreen.prototype.renderScreen = function() {
+    oldRenderScreen.apply(this, arguments);
+    
+    var from = this.from.id + ":" + this.from.name;
+    var to = this.to.id + ":" + this.to.name;
+
+ 	if (this.from.isPlanet != undefined && this.from.isPlanet == true)
+ 	  var title = "planet to ship";
+ 	else
+ 	  title = "ship to ship";
+
+    var html = "<table style='width:100%'><tr>";
+    html +=		"<td>"+from+"</td>";
+    html +=		"<td style='text-align:center'>"+title+"</td>";
+    html +=		"<td style='text-align:right'>"+to+"</td>";
+    html +=		"</tr></table>";
+
+    var m = $("#MoreScreen");
+    var t = $("#MoreScreen #TransferScreen");
+
+    t+$(".TransferTitle").replaceWith(html);
+   
+    t+$(".LeftRight1000 .lrtext-small").remove();
+    t+$("h1").remove();
+    t+$(".valsup").replaceWith("<td><div>&nbsp;</div></td>");
+
+//    t+$(".SellSuppliesTable").remove();
+    t+$("td:contains('Total')").replaceWith("<td><div>&nbsp;</div></td>");
+//    t+$("td:contains('Build Fighters')").parent().remove();
+
+    s = {"width" : "230px"};
+    t+$(".LeftRight1000").css(s);
+
+    s = {"width" : "24px",
+	 "height" : "22px"};
+    t+$(".sac-small").css(s);
+  
+    s = {"width" : "420px"};
+    m.css(s);
+    t.css(s);
+    
+    s = {"font-weight": "normal",
+         "color": "white"};
+    t+$(".TransferVal").css(s);
+
+//    var st = $("#MoreScreen #TransferScreen #SuppliesTransfer").parent().parent().detach();
+//    st.insertBefore($("#MoreScreen #TransferScreen #MoneyTransfer").parent().parent());
+    
+
+  };
 };
 
 var script = document.createElement("script");

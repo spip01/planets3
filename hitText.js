@@ -385,11 +385,16 @@ function wrapper() {
     return q
   };
   
-  var oldShipScan = vgapMap.prototype.shipScan;
-  vgapMap.prototype.shipScan = function(e) {
-//    oldShipScan.apply(this, arguments);
+  var oldShipTransferView = sharedContent.prototype.shipTransferView;
+  sharedContent.prototype.shipTransferView = function(e) {
+//    oldShipTransferView.apply(this, arguments);
 
-    vgapMap.hitTextBox(e);
+    var d = "<table class='CleanTable'>";
+
+    d += vgap.map.hitTextBox(e);
+    d += "</table>"
+      return d;
+
 
   };
   

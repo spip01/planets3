@@ -20,72 +20,71 @@ function wrapper() {
   var showNatives = false;
   var showProduction = false;
   var displayLine = 0;
-  
+
   function checkReady() {
   }
   checkReady.prototype = {
-
     loadControls : function() {
 
       this.clearData();
 
-//      if (vgapMap.prototype.spMenuItem != undefined) {
+      //      if (vgapMap.prototype.spMenuItem != undefined) {
       vgaPlanets.prototype.spMenuItem("Check Ready", "checkReady", function() {
-	  state = !showReady;
-	  checkReady.prototype.clearShow();
-	  showReady = state;
-	  vgap.map.draw();
-	});
+        state = !showReady;
+        checkReady.prototype.clearShow();
+        showReady = state;
+        vgap.map.draw();
+      });
 
       vgaPlanets.prototype.spMenuItem("Show Buildings", "checkReady", function() {
-	  state = !showBldg;
-	  checkReady.prototype.clearShow();
-	  showBldg = state;
-	  vgap.map.draw();
-	});
+        state = !showBldg;
+        checkReady.prototype.clearShow();
+        showBldg = state;
+        vgap.map.draw();
+      });
 
       vgaPlanets.prototype.spMenuItem("SB Production", "checkReady", function() {
-	  state = !showProduction;
-	  checkReady.prototype.clearShow();
-	  showProduction = state;
-	  vgap.map.draw();
-	});
+        state = !showProduction;
+        checkReady.prototype.clearShow();
+        showProduction = state;
+        vgap.map.draw();
+      });
 
       vgaPlanets.prototype.spMenuItem("Show Natives", "checkReady", function() {
-	  state = !showNatives;
-	  checkReady.prototype.clearShow();
-	  showNatives = state;
-	  vgap.map.draw();
-	});
+        state = !showNatives;
+        checkReady.prototype.clearShow();
+        showNatives = state;
+        vgap.map.draw();
+      });
 
       vgaPlanets.prototype.spMenuItem("Show Ship", "checkReady", function() {
-	  if (vgap.shipScreen.ship != undefined) {
-	    state = !showHull;
-	    checkReady.prototype.clearShow();
-	    showHull = state;
-	    selectedShip = vgap.shipScreen.ship;
-	    vgap.map.draw();
-	  }
-	});
+        if (vgap.shipScreen.ship != undefined) {
+          state = !showHull;
+          checkReady.prototype.clearShow();
+          showHull = state;
+          selectedShip = vgap.shipScreen.ship;
+          vgap.map.draw();
+        }
+      });
 
-//	vgaPlanets.prototype.spMenuItem("All Ships", "checkReady", function() {
-//	    state = !showShips;
-//	    checkReady.prototype.clearShow();
-//	    showShips = state;
-//	    vgap.map.draw();
-//	});
+      //	vgaPlanets.prototype.spMenuItem("All Ships", "checkReady", function() {
+      //	    state = !showShips;
+      //	    checkReady.prototype.clearShow();
+      //	    showShips = state;
+      //	    vgap.map.draw();
+      //	});
 
       vgaPlanets.prototype.spMenuItem("Show Chunnel", "checkReady", function() {
-	  showChunnel = !showChunnel;
-	  checkReady.prototype.clearShow();
-	  showChunnel = state;
-	  vgap.map.draw();
-	});
+        showChunnel = !showChunnel;
+        checkReady.prototype.clearShow();
+        showChunnel = state;
+        vgap.map.draw();
+      });
 
       vgaPlanets.prototype.spMenuItem("Clear", "_massClear", function() {
-	  checkReady.prototype.clearData();
-	});
-//      }
+        checkReady.prototype.clearData();
+      });
+    //      }
     },
 
     clearShow : function() {
@@ -97,7 +96,7 @@ function wrapper() {
       showNatives = false;
       showProduction = false;
     },
-    
+
     clearData : function() {
       this.clearShow();
       selectedShip = null;
@@ -108,48 +107,47 @@ function wrapper() {
     // 1055 B222b Destroyer - chunnel to B200 or other target
     // 56   Firecloud - chunnel between 2 Fireclouds
     // 51   B200 Probe
-    
-    isChunnelling: function(a) {
-      if ( a.ownerid == vgap.player.id && vgap.canInitiateChunnel(a)) {
-	var b = vgap.getChunnelTarget(a);
-	if (b != null  && vgap.isValidChunnelTarget(a, b)) {
-	  return b
-	}
+
+    isChunnelling : function(a) {
+      if (a.ownerid == vgap.player.id && vgap.canInitiateChunnel(a)) {
+        var b = vgap.getChunnelTarget(a);
+        if (b != null && vgap.isValidChunnelTarget(a, b)) {
+          return b
+        }
       }
       return null;
     },
-    
+
     nativeTaxAmount : function(c, ntr) {
       var nt = 0;
       if (c.nativeclans > 0) {
-	if (c.race == 6 && ntr > 20) { // borg == 6
-	  ntr = 20;
-	}
+        if (c.race == 6 && ntr > 20) { // borg == 6
+          ntr = 20;
+        }
 
-	var nt = (c.nativeclans / 100) * (ntr / 10) * (c.nativegovernment / 5);
+        var nt = (c.nativeclans / 100) * (ntr / 10) * (c.nativegovernment / 5);
 
-	nt = c.nativetype == 5 ? 0 : nt; // amorphous == 5
-	nt = c.nativetype == 6 ? 2 * nt : nt; // insect == 6
-	nt = c.race == 1 ? 2 * nt : nt; // feds == 1
+        nt = c.nativetype == 5 ? 0 : nt; // amorphous == 5
+        nt = c.nativetype == 6 ? 2 * nt : nt; // insect == 6
+        nt = c.race == 1 ? 2 * nt : nt; // feds == 1
 
-	nt = Math.round(nt);
+        nt = Math.round(nt);
       }
       return nt;
     },
-    
+
     nativetaxsupport : function(c) {
       ns = c.clans;
       ns *= c.race == 1 ? 2 : 1; // feds == 1
       ns *= c.nativetype == 6 ? 2 : 1; // insect == 6
       return ns;
     },
-};
-  
+  };
+
 
   var oldDraw = vgapMap.prototype.draw;
   vgapMap.prototype.draw = function(fast, ctx, skipUserContent, secondCanvas) {
     oldDraw.apply(this, arguments);
-
     if (!ctx)
       ctx = this.ctx;
 
@@ -157,7 +155,7 @@ function wrapper() {
     // copies the planets over the ships
     // draw ships not ready
     displayLine = -1;
-    
+
     for (var k = 0; k < vgap.ships.length; ++k) {
       var ship = vgap.ships[k];
       this.drawShip(ship, ctx)
@@ -171,63 +169,61 @@ function wrapper() {
 
     var x = this.screenX(planet.x);
     var y = this.screenY(planet.y);
-	x2 = this.screenX(planet.x + 7.5 * 1.5);
-	y2 = this.screenY(planet.y - (-1) * 6 * 1.5);
-	    
+    x2 = this.screenX(planet.x + 7.5 * 1.5);
+    y2 = this.screenY(planet.y - (-1) * 6 * 1.5);
+
 
     // draw planets not ready
     if (planet.infoturn > 0) {
       if (vgap.player.id == planet.ownerid) {
-	if (showBldg) {
-	  ctx.fillStyle = "lightgreen";
-	  ctx.fillText("m:"+planet.mines + " f:"+ planet.factories + " d:"+ planet.defense, x2, y2);
-	}
-      
-	if (showReady) {
-	  if (planet.readystatus == 0) {
-        
-	    this.drawCircle(ctx, x, y, 13 * this.zoom, "orange", 2);
-	  }
-	  
-	  var n = vgap.getStarbase(planet.id);
-	  if (n != null && n.readystatus == 0) {
+        if (showBldg) {
+          ctx.fillStyle = "lightgreen";
+          ctx.fillText("m:" + planet.mines + " f:" + planet.factories + " d:" + planet.defense, x2, y2);
+        }
+        if (showReady) {
+          if (planet.readystatus == 0) {
 
-	    this.drawCircle(ctx, x, y, 11 * this.zoom, "red", 2);
-	  }
-	}
-	if (showProduction) {
-	  if (planet.buildingstarbase) {
-	    ctx.fillStyle = "lightgreen";
-	    ctx.fillText("building starbase", x2, y2);
-	  }
-	  else if (planet.isbase) {
-	    var n = vgap.getStarbase(planet.id);
-	    if (n != null && n.isbuilding) {
-		
-	      ctx.fillStyle = "lightgreen";
-	      ctx.fillText(vgap.getHull(n.buildhullid).name, x2, y2);
-	    }
-	  }
-	}
-	if (showNatives && planet.nativeclans > 0) {
-	  if (planet.nativehappypoints < 30)
-	    ctx.fillStyle = "red";
-	  else
-	    if (planet.nativehappypoints < 70)
-	      ctx.fillStyle = "orange";
-	    else
-	      ctx.fillStyle = "lightgreen";
-	
-	  nt = checkReady.prototype.nativeTaxAmount(planet, planet.nativetaxrate);
-	  ns = checkReady.prototype.nativetaxsupport(planet);
-	  t = Math.min(nt , ns);
-	  
-	  ctx.fillText(planet.nativeracename+" $"+t, x2, y2);
-	}
-      } 
+            this.drawCircle(ctx, x, y, 13 * this.zoom, "orange", 2);
+          }
+
+          var n = vgap.getStarbase(planet.id);
+          if (n != null && n.readystatus == 0) {
+
+            this.drawCircle(ctx, x, y, 11 * this.zoom, "red", 2);
+          }
+        }
+        if (showProduction) {
+          if (planet.buildingstarbase) {
+            ctx.fillStyle = "lightgreen";
+            ctx.fillText("building starbase", x2, y2);
+          }
+          else if (planet.isbase) {
+            var n = vgap.getStarbase(planet.id);
+            if (n != null && n.isbuilding) {
+
+              ctx.fillStyle = "lightgreen";
+              ctx.fillText(vgap.getHull(n.buildhullid).name, x2, y2);
+            }
+          }
+        }
+        if (showNatives && planet.nativeclans > 0) {
+          if (planet.nativehappypoints < 30)
+            ctx.fillStyle = "red";
+          else if (planet.nativehappypoints < 70)
+            ctx.fillStyle = "orange";
+          else
+            ctx.fillStyle = "lightgreen";
+
+          nt = checkReady.prototype.nativeTaxAmount(planet, planet.nativetaxrate);
+          ns = checkReady.prototype.nativetaxsupport(planet);
+          t = Math.min(nt, ns);
+
+          ctx.fillText(planet.nativeracename + " $" + t, x2, y2);
+        }
+      }
       if (showNatives && planet.nativeclans > 0) {
-	  ctx.fillStyle = "orange";
-	ctx.fillText(planet.nativeracename, x2, y2);
+        ctx.fillStyle = "orange";
+        ctx.fillText(planet.nativeracename, x2, y2);
       }
     }
   };
@@ -241,42 +237,39 @@ function wrapper() {
     if (showReady && ship.readystatus == 0 && vgap.player.id == ship.ownerid) {
       this.drawCircle(ctx, this.screenX(ship.x), this.screenY(ship.y), 16 * this.zoom, "yellow", 2);
     }
-    
-//    if(showSelected) {
-//      var use = vgap.shipScreen.ship;
-//      if (use.ownerid != vgap.player.id) {
-//      }
-	
 
-    if (showHull && selectedShip != null && selectedShip.hullid == ship.hullid) 
+    //    if(showSelected) {
+    //      var use = vgap.shipScreen.ship;
+    //      if (use.ownerid != vgap.player.id) {
+    //      }
+
+    if (showHull && selectedShip != null && selectedShip.hullid == ship.hullid)
       this.drawCircle(ctx, this.screenX(ship.x), this.screenY(ship.y), 13 * this.zoom, "lightgreen", 2);
-    
     if (showChunnel) {
       if ((d = checkReady.prototype.isChunnelling(ship)) != null) {
-      	ctx.strokeStyle="cyan";
-	ctx.beginPath(this.screenX(ship.x), this.screenY(ship.y));
-	ctx.lineto(this.screenX(d.x), this.screenY(d.y));
-	ctx.stroke();
+        ctx.strokeStyle = "cyan";
+        ctx.beginPath(this.screenX(ship.x), this.screenY(ship.y));
+        ctx.lineto(this.screenX(d.x), this.screenY(d.y));
+        ctx.stroke();
       }
     }
-    	
     if (showShips) {
-      if (vgap.player.id == ship.ownerid) 
-	ctx.fillStyle = "lightgreen";
+      if (vgap.player.id == ship.ownerid)
+        ctx.fillStyle = "lightgreen";
       else
-	ctx.fillStyle = "red";
+        ctx.fillStyle = "red";
       x2 = this.screenX(ship.x + 7.5 * 1.5);
       y2 = this.screenY(ship.y - displayLine++ * 6 * 1.5);
-      ctx.fillText(ship.id+":"+vgap.getHull(ship.hullid).name, x2, y2);
+      ctx.fillText(ship.id + ":" + vgap.getHull(ship.hullid).name, x2, y2);
     }
-  
-   // if (warnings && ship.ownerid) {
-    // if (ship.dist > Math.pow(ship.warp, 2)) {
-    // this.drawCircle(ctx, this.screenX(ship.x), this.screenY(ship.y), 14 *
-    // this.zoom, "red", 2);
-    // }
-    // // < required neutronium
-    // }
+
+  // if (warnings && ship.ownerid) {
+  // if (ship.dist > Math.pow(ship.warp, 2)) {
+  // this.drawCircle(ctx, this.screenX(ship.x), this.screenY(ship.y), 14 *
+  // this.zoom, "red", 2);
+  // }
+  // // < required neutronium
+  // }
   };
 
   var oldShipSelectorClick = vgapMap.prototype.shipSelectorClick;

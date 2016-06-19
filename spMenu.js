@@ -80,7 +80,7 @@ function wrapper() {
       this.clearControls();
 
       $("#spControls").mouseenter(function() {
-	$("#spControls").css("cursor:pointer");
+        $("#spControls").css("cursor:pointer");
       });
 
       $("#spControls").mouseleave(function() {

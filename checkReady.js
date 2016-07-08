@@ -13,7 +13,6 @@
 function wrapper() {
   var showReady = false;
   var showBldg = false;
-  var showChunnel = false;
   var showHull = false;
   var selectedShip = null;
   var showShips = false;
@@ -57,27 +56,10 @@ function wrapper() {
         vgap.map.draw();
       });
 
-      vgaPlanets.prototype.spMenuItem("Show Ship", "checkReady", function() {
-        if (vgap.shipScreen.ship != undefined) {
-          state = !showHull;
-          checkReady.prototype.clearShow();
-          showHull = state;
-          selectedShip = vgap.shipScreen.ship;
-          vgap.map.draw();
-        }
-      });
-
-      //	vgaPlanets.prototype.spMenuItem("All Ships", "checkReady", function() {
-      //	    state = !showShips;
-      //	    checkReady.prototype.clearShow();
-      //	    showShips = state;
-      //	    vgap.map.draw();
-      //	});
-
-      vgaPlanets.prototype.spMenuItem("Show Chunnel", "checkReady", function() {
-        showChunnel = !showChunnel;
+      vgaPlanets.prototype.spMenuItem("All Ships", "checkReady", function() {
+        state = !showShips;
         checkReady.prototype.clearShow();
-        showChunnel = state;
+        showShips = state;
         vgap.map.draw();
       });
 
@@ -91,7 +73,6 @@ function wrapper() {
       showReady = false;
       showBldg = false;
       showHull = false;
-      showChunnel = false;
       showShips = false;
       showNatives = false;
       showProduction = false;
@@ -101,21 +82,6 @@ function wrapper() {
       this.clearShow();
       selectedShip = null;
       displayLine = 0;
-    },
-
-    // 1054 B41b Explorer - chunnel target
-    // 1055 B222b Destroyer - chunnel to B200 or other target
-    // 56   Firecloud - chunnel between 2 Fireclouds
-    // 51   B200 Probe
-
-    isChunnelling : function(a) {
-      if (a.ownerid == vgap.player.id && vgap.canInitiateChunnel(a)) {
-        var b = vgap.getChunnelTarget(a);
-        if (b != null && vgap.isValidChunnelTarget(a, b)) {
-          return b
-        }
-      }
-      return null;
     },
 
     nativeTaxAmount : function(c, ntr) {
@@ -245,14 +211,7 @@ function wrapper() {
 
     if (showHull && selectedShip != null && selectedShip.hullid == ship.hullid)
       this.drawCircle(ctx, this.screenX(ship.x), this.screenY(ship.y), 13 * this.zoom, "lightgreen", 2);
-    if (showChunnel) {
-      if ((d = checkReady.prototype.isChunnelling(ship)) != null) {
-        ctx.strokeStyle = "cyan";
-        ctx.beginPath(this.screenX(ship.x), this.screenY(ship.y));
-        ctx.lineto(this.screenX(d.x), this.screenY(d.y));
-        ctx.stroke();
-      }
-    }
+ 
     if (showShips) {
       if (vgap.player.id == ship.ownerid)
         ctx.fillStyle = "lightgreen";
@@ -263,15 +222,76 @@ function wrapper() {
       ctx.fillText(ship.id + ":" + vgap.getHull(ship.hullid).name, x2, y2);
     }
 
-  // if (warnings && ship.ownerid) {
-  // if (ship.dist > Math.pow(ship.warp, 2)) {
-  // this.drawCircle(ctx, this.screenX(ship.x), this.screenY(ship.y), 14 *
-  // this.zoom, "red", 2);
-  // }
-  // // < required neutronium
-  // }
+    if (vgap.canInitiateChunnel(ship)) {
+    	var b = vgap.getChunnelTarget(ship);
+    	if (b != null  && vgap.isValidChunnelTarget(ship, b)) {
+        d = Math.round(Math.dist(ship.x, ship.y, b.x, b.y) * 10) / 10;
+ /* ********************************** */       
+//        x = ship.x - (ship.x - b.x) / 2;
+//        y = ship.y - (ship.y - b.y) / 2;
+
+        /* *********************************** */       
+
+        a = (ship.x - b.x) / d;
+        a = Math.degrees(Math.acos(a));
+        e = (ship.y - b.y) / d;
+        e = Math.degrees(Math.asin(e));
+        
+        ax = Math.cos(Math.radians(a)) * d * .1;
+        x = b.x + ax;
+        ay = Math.sin(Math.radians(e)) * d *.1;
+        y = b.y + ay;
+
+        d = 30;
+
+       // yellow
+        ax = Math.cos(Math.radians(a-15)) * d;
+        x1 = x + ax;
+      console.log(ship.id+" x:"+x+" ax:"+ax+" x1:"+x1+" a:"+a);
+
+        ay = Math.sin(Math.radians(e-15)) * d;
+        y1 = y + ay;
+      console.log(" "+b.id+" y:"+y+" ay:"+ay+" y1:"+y1+" e:"+e);
+      
+
+      // red
+        ax = Math.cos(Math.radians(a+15)) * d;
+        x2 = x + ax;
+
+        ay = Math.sin(Math.radians(e+15)) * d;
+        y2 = y + ay;
+
+//        ctx.beginPath();
+//    		ctx.moveTo(this.screenX(b.x), this.screenY(b.y));
+//    		ctx.lineTo(this.screenX(x), this.screenY(y));
+//    		ctx.strokeStyle = "orange";
+//    		ctx.stroke();
+
+        ctx.beginPath();
+    		ctx.moveTo(this.screenX(x1), this.screenY(y1));
+    		ctx.lineTo(this.screenX(x), this.screenY(y));
+    		ctx.strokeStyle = "aqua";
+    		ctx.stroke();
+    		
+        ctx.beginPath();
+    		ctx.moveTo(this.screenX(x), this.screenY(y));
+    		ctx.lineTo(this.screenX(x2), this.screenY(y2));
+    		ctx.strokeStyle = "aqua";
+    		ctx.stroke();
+    	}
+    }
   };
 
+//Converts from degrees to radians.
+  Math.radians = function(degrees) {
+    return degrees * Math.PI / 180;
+  };
+   
+  // Converts from radians to degrees.
+  Math.degrees = function(radians) {
+    return radians * 180 / Math.PI;
+  };
+  
   var oldShipSelectorClick = vgapMap.prototype.shipSelectorClick;
   vgapMap.prototype.shipSelectorClick = function(event) {
 

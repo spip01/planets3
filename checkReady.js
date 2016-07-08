@@ -221,77 +221,8 @@ function wrapper() {
       y2 = this.screenY(ship.y - displayLine++ * 6 * 1.5);
       ctx.fillText(ship.id + ":" + vgap.getHull(ship.hullid).name, x2, y2);
     }
-
-    if (vgap.canInitiateChunnel(ship)) {
-    	var b = vgap.getChunnelTarget(ship);
-    	if (b != null  && vgap.isValidChunnelTarget(ship, b)) {
-        d = Math.round(Math.dist(ship.x, ship.y, b.x, b.y) * 10) / 10;
- /* ********************************** */       
-//        x = ship.x - (ship.x - b.x) / 2;
-//        y = ship.y - (ship.y - b.y) / 2;
-
-        /* *********************************** */       
-
-        a = (ship.x - b.x) / d;
-        a = Math.degrees(Math.acos(a));
-        e = (ship.y - b.y) / d;
-        e = Math.degrees(Math.asin(e));
-        
-        ax = Math.cos(Math.radians(a)) * d * .1;
-        x = b.x + ax;
-        ay = Math.sin(Math.radians(e)) * d *.1;
-        y = b.y + ay;
-
-        d = 30;
-
-       // yellow
-        ax = Math.cos(Math.radians(a-15)) * d;
-        x1 = x + ax;
-      console.log(ship.id+" x:"+x+" ax:"+ax+" x1:"+x1+" a:"+a);
-
-        ay = Math.sin(Math.radians(e-15)) * d;
-        y1 = y + ay;
-      console.log(" "+b.id+" y:"+y+" ay:"+ay+" y1:"+y1+" e:"+e);
-      
-
-      // red
-        ax = Math.cos(Math.radians(a+15)) * d;
-        x2 = x + ax;
-
-        ay = Math.sin(Math.radians(e+15)) * d;
-        y2 = y + ay;
-
-//        ctx.beginPath();
-//    		ctx.moveTo(this.screenX(b.x), this.screenY(b.y));
-//    		ctx.lineTo(this.screenX(x), this.screenY(y));
-//    		ctx.strokeStyle = "orange";
-//    		ctx.stroke();
-
-        ctx.beginPath();
-    		ctx.moveTo(this.screenX(x1), this.screenY(y1));
-    		ctx.lineTo(this.screenX(x), this.screenY(y));
-    		ctx.strokeStyle = "aqua";
-    		ctx.stroke();
-    		
-        ctx.beginPath();
-    		ctx.moveTo(this.screenX(x), this.screenY(y));
-    		ctx.lineTo(this.screenX(x2), this.screenY(y2));
-    		ctx.strokeStyle = "aqua";
-    		ctx.stroke();
-    	}
-    }
   };
 
-//Converts from degrees to radians.
-  Math.radians = function(degrees) {
-    return degrees * Math.PI / 180;
-  };
-   
-  // Converts from radians to degrees.
-  Math.degrees = function(radians) {
-    return radians * 180 / Math.PI;
-  };
-  
   var oldShipSelectorClick = vgapMap.prototype.shipSelectorClick;
   vgapMap.prototype.shipSelectorClick = function(event) {
 

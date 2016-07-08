@@ -316,7 +316,7 @@ function wrapper() {
 
         p = ship.x == planet.x && ship.y == planet.y;
         hull = vgap.getHull(ship.hullid).id;
-
+// getNextLoc
         sh.neu = ship.neutronium;
         sh.dur = ship.duranium;
         sh.tri = ship.tritanium;
